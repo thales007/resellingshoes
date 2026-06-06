@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Everyday Shoe Flip — Complete Shoe Reselling Guide | ResellingShoes.com</title>
+  <meta name="description" content="The complete 47-page system for turning thrift store shoes into consistent part-time income. Sourcing, cleaning, photography, listing, shipping, and scaling — covered in one guide.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://resellingshoes.com/the-everyday-shoe-flip">
+  <meta property="og:site_name" content="ResellingShoes.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="The Everyday Shoe Flip — Complete Shoe Reselling Guide | ResellingShoes.com">
+  <meta property="og:description" content="The complete 47-page system for turning thrift store shoes into consistent part-time income. Sourcing, cleaning, photography, listing, shipping, and scaling — covered in one guide.">
+  <meta property="og:url" content="https://resellingshoes.com/the-everyday-shoe-flip">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1A1A1A; --ink-2: #4A4540; --ink-3: #7A746E; --ink-4: #A39D97;
+      --cream: #FAF8F5; --warm: #F2EDE6; --border: #E8E2DA; --border-2: #D4CEC6;
+      --walnut: #C4943A; --walnut-lt: #F5EDD8; --walnut-dk: #A87B28;
+      --green: #3D8F65; --green-lt: #EAF4EE; --green-dk: #2D6B4C;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; }
+
+    /* NAV */
+    nav {
+      background: rgba(250,248,245,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-weight: 800; font-size: 16px; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--green); }
+    .nav-cta {
+      background: var(--walnut); color: var(--ink); padding: 9px 20px;
+      border-radius: 8px; font-size: 14px; font-weight: 800; text-decoration: none;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--walnut-dk); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-2); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .launch-banner { background: var(--walnut); color: #fff; text-align: center; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+
+    /* HERO */
+    .hero { background: var(--ink); padding: 80px 24px 0; overflow: hidden; position: relative; }
+    .hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(196,148,58,0.06); pointer-events: none;
+    }
+    .hero-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 64px; align-items: end; }
+    .hero-left { padding-bottom: 64px; }
+    .hero-tag { display: inline-block; background: var(--walnut); color: var(--ink); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 14px; border-radius: 6px; margin-bottom: 24px; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(40px, 5vw, 64px); color: #fff; line-height: 1.0; margin-bottom: 20px; }
+    .hero h1 em { color: var(--walnut); font-style: italic; }
+    .hero-sub { font-size: 17px; color: #C4BDB5; line-height: 1.75; margin-bottom: 36px; max-width: 500px; }
+    .hero-proof { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 36px; }
+    .hero-proof-item { text-align: center; }
+    .hero-proof-num { font-family: var(--serif); font-size: 32px; color: #fff; line-height: 1; }
+    .hero-proof-label { font-size: 12px; color: #6A6460; margin-top: 2px; }
+    .hero-proof-divider { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
+
+    /* Hero buy card */
+    .hero-buy {
+      background: #fff; border-radius: 20px 20px 0 0; padding: 36px;
+      position: relative; align-self: end;
+    }
+    .buy-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--walnut); margin-bottom: 6px; }
+    .buy-title { font-family: var(--serif); font-size: 22px; color: var(--ink); line-height: 1.15; margin-bottom: 20px; }
+    .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+    .price-was { font-size: 16px; color: var(--ink-4); text-decoration: line-through; }
+    .price-now { font-family: var(--serif); font-size: 48px; color: var(--ink); line-height: 1; }
+    .price-sub { font-size: 13px; color: var(--ink-4); margin-bottom: 24px; }
+    .includes { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 9px; }
+    .includes li { font-size: 14px; color: var(--ink-2); display: flex; align-items: center; gap: 9px; }
+    .includes li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .btn-buy {
+      display: block; background: var(--walnut); color: var(--ink);
+      text-align: center; padding: 16px; border-radius: 10px;
+      font-weight: 800; font-size: 16px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; margin-bottom: 10px;
+    }
+    .btn-buy:hover { background: var(--walnut-dk); transform: translateY(-1px); }
+    .buy-guarantee { font-size: 12px; color: var(--ink-4); text-align: center; }
+
+    /* CHAPTERS */
+    .chapters-section { padding: 80px 24px; }
+    .chapters-wrap { max-width: 1060px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--walnut); margin-bottom: 12px; }
+    .section-title { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 48px; line-height: 1.1; }
+    .section-title em { font-style: italic; color: var(--walnut); }
+    .chapters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; }
+    .chapter-card {
+      background: var(--warm); border: 1px solid var(--border); padding: 32px;
+      transition: background 0.2s;
+    }
+    .chapter-card:first-child { border-radius: 16px 0 0 16px; }
+    .chapter-card:last-child { border-radius: 0 16px 16px 0; }
+    .chapter-card:hover { background: #fff; }
+    .ch-num { font-size: 11px; font-weight: 700; color: var(--walnut); letter-spacing: 0.1em; margin-bottom: 8px; }
+    .ch-title { font-family: var(--serif); font-size: 22px; margin-bottom: 12px; line-height: 1.2; }
+    .ch-desc { font-size: 14px; color: var(--ink-3); line-height: 1.65; margin-bottom: 16px; }
+    .ch-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .ch-bullets li { font-size: 13px; color: var(--ink-3); display: flex; align-items: flex-start; gap: 8px; }
+    .ch-bullets li::before { content: '·'; color: var(--walnut); font-weight: 800; flex-shrink: 0; font-size: 16px; line-height: 1.3; }
+
+    /* WHO IT'S FOR */
+    .who-section { background: var(--warm); padding: 72px 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .who-wrap { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .who-cards { display: flex; flex-direction: column; gap: 12px; }
+    .who-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start; }
+    .who-check { width: 32px; height: 32px; border-radius: 8px; background: var(--green-lt); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .who-text strong { font-size: 15px; font-weight: 700; display: block; margin-bottom: 3px; }
+    .who-text span { font-size: 13px; color: var(--ink-3); line-height: 1.5; }
+    .who-not { background: var(--ink); border-radius: 12px; padding: 24px; margin-top: 12px; }
+    .who-not-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6A6460; margin-bottom: 10px; }
+    .who-not p { font-size: 14px; color: #8A847D; line-height: 1.65; }
+
+    /* TESTIMONIALS */
+    .testimonials-section { padding: 72px 24px; }
+    .t-wrap { max-width: 1060px; margin: 0 auto; }
+    .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+    .t-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .stars { color: var(--walnut); letter-spacing: 2px; font-size: 15px; margin-bottom: 14px; }
+    .t-card p { font-size: 14px; color: var(--ink-2); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
+    .t-author { display: flex; align-items: center; gap: 12px; }
+    .t-av { width: 36px; height: 36px; border-radius: 50%; background: var(--warm); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: var(--ink-2); flex-shrink: 0; }
+    .t-name { font-size: 14px; font-weight: 700; }
+    .t-loc { font-size: 12px; color: var(--ink-4); }
+
+    /* GUARANTEE */
+    .guarantee-section { background: var(--green-lt); border-top: 1px solid rgba(61,143,101,0.2); border-bottom: 1px solid rgba(61,143,101,0.2); padding: 48px 24px; text-align: center; }
+    .guarantee-section h3 { font-family: var(--serif); font-size: 28px; color: var(--green-dk); margin-bottom: 10px; }
+    .guarantee-section p { font-size: 15px; color: var(--green-dk); max-width: 520px; margin: 0 auto; line-height: 1.7; opacity: 0.85; }
+
+    /* BOTTOM BUY */
+    .bottom-buy { background: var(--ink); padding: 80px 24px; }
+    .bottom-buy-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+    .bottom-buy h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); color: #fff; margin-bottom: 16px; line-height: 1.1; }
+    .bottom-buy h2 em { color: var(--walnut); font-style: italic; }
+    .bottom-buy p { font-size: 16px; color: #8A847D; margin-bottom: 36px; line-height: 1.7; }
+    .bottom-buy-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px; }
+    .bottom-price-row { display: flex; align-items: baseline; gap: 12px; justify-content: center; margin-bottom: 6px; }
+    .bottom-was { font-size: 18px; color: #5E5953; text-decoration: line-through; }
+    .bottom-now { font-family: var(--serif); font-size: 56px; color: #fff; line-height: 1; }
+    .bottom-price-note { font-size: 13px; color: #5E5953; margin-bottom: 28px; }
+    .btn-buy-lg {
+      display: block; background: var(--walnut); color: var(--ink);
+      text-align: center; padding: 18px; border-radius: 12px;
+      font-weight: 800; font-size: 18px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; margin-bottom: 12px;
+    }
+    .btn-buy-lg:hover { background: #D4A440; transform: translateY(-2px); }
+    .bottom-guarantee { font-size: 13px; color: #5E5953; }
+
+    /* FOOTER */
+    footer { background: var(--warm); border-top: 1px solid var(--border); padding: 32px 24px; }
+    .footer-simple { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-simple p { font-size: 13px; color: var(--ink-4); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: var(--ink-3); text-decoration: none; }
+    .footer-links a:hover { color: var(--ink); }
+
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-buy { border-radius: 20px; margin: 0 0 0; }
+      .hero-left { padding-bottom: 40px; }
+      .who-wrap { grid-template-columns: 1fr; }
+      .chapter-card:first-child { border-radius: 16px 16px 0 0; }
+      .chapter-card:last-child { border-radius: 0 0 16px 16px; }
+    }
+    @media (max-width: 600px) {
+      .hero-proof { gap: 16px; }
+      .hero-proof-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Reselling<span>Shoes</span>.com</a>
+  <div class="nav-links">
+    <a href="/free-guide.html">Free Guide</a>
+    <a href="/the-everyday-shoe-flip.html">The Playbook</a>
+    <a href="/#articles">Articles</a>
+    <a href="https://shoes.timothyhales.com" target="_blank">SoleScore App</a>
+  </div>
+  <a href="#waitlist" class="nav-cta">Join the Waitlist →</a>
+</nav>
+
+<div class="launch-banner">🚧 This guide is almost ready — join the waitlist to be first to know.</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">Complete Guide · 47 Pages</div>
+      <h1>The Everyday<br><em>Shoe Flip</em></h1>
+      <p class="hero-sub">The complete system for turning thrift store shoes into consistent part-time income. Every step — sourcing, cleaning, photographing, listing, shipping, and scaling — in one guide.</p>
+      <div class="hero-proof">
+        <div class="hero-proof-item">
+          <div class="hero-proof-num">47</div>
+          <div class="hero-proof-label">Pages</div>
+        </div>
+        <div class="hero-proof-divider"></div>
+        <div class="hero-proof-item">
+          <div class="hero-proof-num">8</div>
+          <div class="hero-proof-label">Chapters</div>
+        </div>
+        <div class="hero-proof-divider"></div>
+        <div class="hero-proof-item">
+          <div class="hero-proof-num">8</div>
+          <div class="hero-proof-label">Checklists</div>
+        </div>
+        <div class="hero-proof-divider"></div>
+        <div class="hero-proof-item">
+          <div class="hero-proof-num">$27</div>
+          <div class="hero-proof-label">One-time</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-buy">
+      <div class="buy-tag">Get Instant Access</div>
+      <div class="buy-title">The Everyday Shoe Flip</div>
+      <div style="font-family:var(--serif);font-size:24px;color:var(--ink);line-height:1.2;margin-bottom:6px;">Waitlist — Be First to Know</div>
+      <p class="price-sub">Guide launching soon · $27 one-time · 30-day guarantee</p>
+      <ul class="includes">
+        <li>47-page complete guide</li>
+        <li>End-of-chapter checklists</li>
+        <li>Brand quick-reference appendix</li>
+        <li>Recommended supplies list</li>
+        <li>Profit tracking template</li>
+      </ul>
+      <a href="#waitlist" class="btn-buy">Join the Waitlist →</a>
+      <p class="buy-guarantee">🔒 30-day money-back guarantee · Secure checkout</p>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTERS -->
+<section class="chapters-section">
+  <div class="chapters-wrap">
+    <div class="section-eyebrow">What's inside</div>
+    <h2 class="section-title">Eight chapters.<br>The complete <em>system.</em></h2>
+    <div class="chapters-grid">
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 01</div>
+        <div class="ch-title">The Reseller Mindset</div>
+        <div class="ch-desc">Think like a business from day one. Understand the math, manage your time, and avoid the traps that kill most new resellers before they find their rhythm.</div>
+        <ul class="ch-bullets">
+          <li>The death pile problem and how to avoid it</li>
+          <li>Real time-per-flip calculations</li>
+          <li>How to think about profit, not just revenue</li>
+        </ul>
+      </div>
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 02</div>
+        <div class="ch-title">Source Shoes</div>
+        <div class="ch-desc">Where to find the best inventory, when to go, what to skip, and how to evaluate any shoe in seconds without spending your whole day in a thrift store.</div>
+        <ul class="ch-bullets">
+          <li>Thrift stores, yard sales, and auctions ranked</li>
+          <li>The 3-second scan method</li>
+          <li>Route planning for Saturday morning efficiency</li>
+        </ul>
+      </div>
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 03</div>
+        <div class="ch-title">Clean Shoes</div>
+        <div class="ch-desc">A clean shoe sells faster and for more money. The exact cleaning routine for every shoe type — without damaging materials or wasting time on shoes that won't sell.</div>
+        <ul class="ch-bullets">
+          <li>Cleaning by material: leather, mesh, suede</li>
+          <li>What to clean, what to leave alone</li>
+          <li>The supplies that are actually worth buying</li>
+        </ul>
+      </div>
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 04</div>
+        <div class="ch-title">Photo Shoes</div>
+        <div class="ch-desc">Professional-looking photos from your phone. The 9-shot formula that gets clicks and reduces buyer questions — and the common mistakes that kill your listings before they start.</div>
+        <ul class="ch-bullets">
+          <li>The 9-shot sequence, shot by shot</li>
+          <li>Lighting setup with zero equipment</li>
+          <li>Photographing flaws the honest way</li>
+        </ul>
+      </div>
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 05</div>
+        <div class="ch-title">List Shoes</div>
+        <div class="ch-desc">Titles that rank in eBay search, descriptions that answer questions before buyers ask them, and pricing strategy that balances speed with profit.</div>
+        <ul class="ch-bullets">
+          <li>The title formula that gets found</li>
+          <li>How to price for fast sales vs. max profit</li>
+          <li>Condition grading done right</li>
+        </ul>
+      </div>
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 06</div>
+        <div class="ch-title">Ship Shoes</div>
+        <div class="ch-desc">Ship fast, ship cheap, and never overpay on postage again. USPS vs UPS, poly bags vs boxes, print-from-home labels, and how to pack shoes so they arrive looking great.</div>
+        <ul class="ch-bullets">
+          <li>Carrier comparison for shoes by weight</li>
+          <li>Packaging that protects and impresses</li>
+          <li>Automating shipping labels at home</li>
+        </ul>
+      </div>
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 07</div>
+        <div class="ch-title">Build Your System</div>
+        <div class="ch-desc">Scale from occasional to consistent. The weekly workflow that keeps inventory moving, prevents the death pile, and fits around a full-time job or family.</div>
+        <ul class="ch-bullets">
+          <li>The weekly reseller workflow</li>
+          <li>Batch processing to 10× your speed</li>
+          <li>When to reprice, when to donate</li>
+        </ul>
+      </div>
+      <div class="chapter-card">
+        <div class="ch-num">Chapter 08</div>
+        <div class="ch-title">Track Your Business</div>
+        <div class="ch-desc">Know your actual numbers. Profit, ROI, sell-through rate, and which brands are making you money — without a spreadsheet degree or accounting background.</div>
+        <ul class="ch-bullets">
+          <li>The only 4 numbers that actually matter</li>
+          <li>Simple tracking with the included template</li>
+          <li>Using data to buy smarter next week</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<div class="who-section">
+  <div class="who-wrap">
+    <div>
+      <div class="section-eyebrow">Who it's for</div>
+      <h2 class="section-title">Built for <em>real</em> part-time resellers.</h2>
+      <p style="font-size:16px;color:var(--ink-2);line-height:1.75;margin-bottom:32px;">Not for hype sneaker flippers. Not for people who want to quit their job tomorrow. For people with a real thrift store nearby and a few hours a week to make something of it.</p>
+    </div>
+    <div>
+      <div class="who-cards">
+        <div class="who-card">
+          <div class="who-check">✓</div>
+          <div class="who-text">
+            <strong>You're sourcing at thrift stores or yard sales</strong>
+            <span>Goodwill, Salvation Army, estate sales, neighborhood yard sales — this guide is built around those sources.</span>
+          </div>
+        </div>
+        <div class="who-card">
+          <div class="who-check">✓</div>
+          <div class="who-text">
+            <strong>You want $500–$1,500/month, not a full-time business</strong>
+            <span>Real income that fits around your life — not a second job that takes over it.</span>
+          </div>
+        </div>
+        <div class="who-card">
+          <div class="who-check">✓</div>
+          <div class="who-text">
+            <strong>You're selling (or plan to sell) on eBay</strong>
+            <span>eBay has the deepest market for non-hype shoes. This guide is built around eBay primarily.</span>
+          </div>
+        </div>
+        <div class="who-card">
+          <div class="who-check">✓</div>
+          <div class="who-text">
+            <strong>You want a system, not just tips</strong>
+            <span>End-to-end: from picking up a shoe at Goodwill to depositing the profit. Every step, in order.</span>
+          </div>
+        </div>
+      </div>
+      <div class="who-not">
+        <div class="who-not-label">This guide is NOT for you if…</div>
+        <p>You're looking for hype sneaker flipping, StockX / GOAT strategies, or Jordan and Yeezy reselling. This is for everyday brands — Merrell, New Balance, Brooks, Dansko, Keen. If that's not your world, this isn't your guide.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-section">
+  <div class="t-wrap">
+    <div class="section-eyebrow">Reviews</div>
+    <h2 class="section-title">What resellers are<br>saying about it.</h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"I've been reselling shoes for two years and I learned things in the photography chapter I didn't know. My sell-through rate went from about 60% to over 80% after changing my photos."</p>
+        <div class="t-author"><div class="t-av">MK</div><div><div class="t-name">Marcus K.</div><div class="t-loc">Tampa, FL</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"The chapter on building your system is worth the price alone. I used to buy a lot and list a little. Now I have an actual weekly routine and my death pile is basically gone."</p>
+        <div class="t-author"><div class="t-av">JP</div><div><div class="t-name">Jennifer P.</div><div class="t-loc">Austin, TX</div></div></div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"Honest, practical, and written like a real person wrote it. No hype, no fake promises. Just exactly what to do. Worth every dollar and then some."</p>
+        <div class="t-author"><div class="t-av">RL</div><div><div class="t-name">Rachel L.</div><div class="t-loc">Denver, CO</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEE -->
+<div class="guarantee-section">
+  <h3>30-Day Money-Back Guarantee</h3>
+  <p>If you read The Everyday Shoe Flip and don't feel like you got at least 10× the value of what you paid, email us within 30 days for a full refund. No forms, no hoops, no questions.</p>
+</div>
+
+<!-- BOTTOM BUY -->
+<div class="bottom-buy">
+  <div class="bottom-buy-inner">
+    <h2>Start flipping<br><em>smarter</em> today.</h2>
+    <p>One guide. Every step. The system you need to turn thrift store shoes into consistent part-time income.</p>
+    <div class="bottom-buy-card">
+      <div class="bottom-price-row">
+        <span class="bottom-was">$37</span>
+        <span class="bottom-now">$27</span>
+      </div>
+      <p class="bottom-price-note">One-time · Instant PDF download · 30-day guarantee</p>
+      <a href="#waitlist" class="btn-buy-lg">Join the Waitlist →</a>
+      <p class="bottom-guarantee">Secure checkout via Gumroad · Instant delivery · Lifetime updates</p>
+    </div>
+    <p style="margin-top:20px;font-size:14px;color:#5E5953;">Not ready to buy? <a href="/free-guide.html" style="color:#C4943A;font-weight:700;">Grab the free guide first →</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-simple">
+    <p>© 2025 SelahCreativeMedia LLC · resellingshoes.com</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/free-guide.html">Free Guide</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

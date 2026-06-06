@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reselling Shoes — Learn to Flip Shoes for Profit</title>
+  <meta name="description" content="Free guides, proven strategies, and tools for part-time shoe resellers. Learn which shoes to buy at thrift stores and flip for real profit.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://resellingshoes.com/">
+  <meta property="og:site_name" content="ResellingShoes.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Reselling Shoes — Learn to Flip Shoes for Profit">
+  <meta property="og:description" content="Free guides, proven strategies, and tools for part-time shoe resellers. Learn which shoes to buy at thrift stores and flip for real profit.">
+  <meta property="og:url" content="https://resellingshoes.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #1A1A1A;
+      --ink-2:     #4A4540;
+      --ink-3:     #7A746E;
+      --ink-4:     #A39D97;
+      --cream:     #FAF8F5;
+      --warm:      #F2EDE6;
+      --border:    #E8E2DA;
+      --border-2:  #D4CEC6;
+      --walnut:    #C4943A;
+      --walnut-lt: #F5EDD8;
+      --green:     #3D8F65;
+      --green-lt:  #EAF4EE;
+      --green-dk:  #2D6B4C;
+      --serif:     'DM Serif Display', Georgia, serif;
+      --sans:      'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,248,245,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--sans); font-weight: 800; font-size: 17px; color: var(--ink); text-decoration: none; letter-spacing: -0.3px; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-2); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-btn {
+      background: var(--ink); color: var(--cream);
+      padding: 9px 20px; border-radius: 8px;
+      font-size: 14px; font-weight: 700; text-decoration: none;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .nav-btn:hover { background: var(--ink-2); }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 24px 64px;
+      display: grid; grid-template-columns: 1fr 440px; gap: 64px; align-items: center;
+    }
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 20px;
+    }
+    .hero-kicker::before { content: ''; width: 24px; height: 2px; background: var(--green); display: block; }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.05; letter-spacing: -0.5px;
+      color: var(--ink); margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: var(--walnut); }
+    .hero-sub {
+      font-size: 17px; color: var(--ink-2); line-height: 1.7;
+      max-width: 480px; margin-bottom: 36px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--green); color: #fff;
+      padding: 14px 28px; border-radius: 9px;
+      font-weight: 800; font-size: 15px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--green-dk); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--ink);
+      border: 1.5px solid var(--border-2); padding: 14px 28px; border-radius: 9px;
+      font-weight: 700; font-size: 15px; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s; display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--ink-3); background: var(--warm); }
+
+    /* Hero card */
+    .hero-card {
+      background: var(--ink); border-radius: 20px; padding: 36px;
+      position: relative; overflow: hidden;
+    }
+    .hero-card::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(76,175,125,0.08);
+    }
+    .hero-card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--walnut); margin-bottom: 20px; }
+    .hero-card-title { font-family: var(--serif); font-size: 28px; color: #fff; line-height: 1.15; margin-bottom: 24px; }
+    .hero-card-list { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
+    .hero-card-list li { font-size: 14px; color: #C4BDB5; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .hero-card-list li::before { content: '✓'; color: #4CAF7D; font-weight: 800; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    .hero-card-cta {
+      display: block; background: #4CAF7D; color: var(--ink);
+      text-align: center; padding: 13px; border-radius: 9px;
+      font-weight: 800; font-size: 15px; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .hero-card-cta:hover { background: #3B9468; color: #fff; }
+    .hero-card-note { font-size: 12px; color: #6A6460; text-align: center; margin-top: 8px; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 80px 24px; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    .wrap-sm { max-width: 760px; margin: 0 auto; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--walnut); margin-bottom: 14px; display: block; }
+    .sec-title { font-family: var(--serif); font-size: clamp(30px, 4vw, 46px); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.3px; }
+    .sec-title em { font-style: italic; color: var(--walnut); }
+    .sec-sub { font-size: 16px; color: var(--ink-2); line-height: 1.7; max-width: 560px; }
+
+    /* ── PROOF BAR ── */
+    .proof-bar {
+      background: var(--warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 28px 24px;
+    }
+    .proof-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 24px; }
+    .proof-item { text-align: center; }
+    .proof-num { font-family: var(--serif); font-size: 36px; color: var(--ink); line-height: 1; }
+    .proof-label { font-size: 12px; color: var(--ink-3); margin-top: 4px; }
+
+    /* ── FREE GUIDE SECTION ── */
+    .free-guide-section { background: var(--warm); }
+    .free-guide-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+    }
+    .pdf-mockup {
+      background: var(--ink); border-radius: 16px;
+      padding: 48px 40px; position: relative; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(26,26,26,0.15);
+      transform: rotate(-1deg);
+    }
+    .pdf-mockup::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, #4CAF7D, #C4943A);
+    }
+    .pdf-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--walnut); margin-bottom: 12px; }
+    .pdf-title { font-family: var(--serif); font-size: 32px; color: #fff; line-height: 1.1; margin-bottom: 8px; }
+    .pdf-title em { color: #4CAF7D; font-style: italic; }
+    .pdf-subtitle { font-size: 13px; color: #8A847D; margin-bottom: 32px; line-height: 1.5; }
+    .pdf-pages { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pdf-page-chip {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px; padding: 6px 12px;
+      font-size: 11px; font-weight: 600; color: #C4BDB5;
+    }
+    .pdf-badge {
+      position: absolute; top: 24px; right: 24px;
+      background: #4CAF7D; color: var(--ink);
+      font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 100px;
+    }
+    .guide-copy h2 { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1; margin-bottom: 16px; }
+    .guide-copy h2 em { font-style: italic; color: var(--walnut); }
+    .guide-copy p { font-size: 16px; color: var(--ink-2); line-height: 1.75; margin-bottom: 24px; }
+    .guide-checklist { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
+    .guide-checklist li { font-size: 15px; color: var(--ink-2); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .guide-checklist li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+
+    /* Kit/ConvertKit form embed placeholder */
+    .kit-form {
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 28px;
+    }
+    .kit-form-label { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 12px; display: block; }
+    .kit-form-fields { display: flex; flex-direction: column; gap: 10px; }
+    .kit-form-fields input {
+      background: var(--cream); border: 1.5px solid var(--border);
+      border-radius: 8px; padding: 12px 16px;
+      font-size: 15px; font-family: var(--sans); color: var(--ink);
+      outline: none; transition: border-color 0.2s; width: 100%;
+    }
+    .kit-form-fields input:focus { border-color: var(--green); }
+    .kit-form-fields input::placeholder { color: var(--ink-4); }
+    .kit-form-btn {
+      background: var(--green); color: #fff; border: none;
+      border-radius: 8px; padding: 13px; font-weight: 800; font-size: 15px;
+      cursor: pointer; font-family: var(--sans); transition: background 0.2s; width: 100%;
+    }
+    .kit-form-btn:hover { background: var(--green-dk); }
+    .kit-form-disclaimer { font-size: 11px; color: var(--ink-4); text-align: center; margin-top: 10px; }
+    .kit-form-success { display: none; background: var(--green-lt); border: 1px solid rgba(61,143,101,0.2); border-radius: 10px; padding: 20px; text-align: center; }
+    .kit-form-success p { font-size: 14px; color: var(--green-dk); font-weight: 600; }
+
+    /* ── PAID GUIDE SECTION ── */
+    .paid-guide-inner {
+      background: var(--ink); border-radius: 24px; padding: 64px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+      position: relative; overflow: hidden;
+    }
+    .paid-guide-inner::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: rgba(196,148,58,0.07); pointer-events: none;
+    }
+    .paid-tag {
+      display: inline-block; background: var(--walnut); color: var(--ink);
+      font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 6px; margin-bottom: 20px;
+    }
+    .paid-guide-inner h2 { font-family: var(--serif); font-size: clamp(28px, 3vw, 42px); color: #fff; line-height: 1.1; margin-bottom: 16px; }
+    .paid-guide-inner h2 em { font-style: italic; color: var(--walnut); }
+    .paid-guide-inner > div > p { font-size: 15px; color: #C4BDB5; line-height: 1.75; margin-bottom: 28px; }
+    .chapter-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .chapter-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px; color: #C4BDB5;
+    }
+    .chapter-item:last-child { border-bottom: none; }
+    .chapter-num { font-size: 11px; font-weight: 700; color: var(--walnut); width: 24px; flex-shrink: 0; font-family: var(--sans); }
+    .chapter-name { font-weight: 600; color: #F5F2EE; }
+    .chapter-desc { font-size: 13px; color: #6A6460; margin-left: auto; text-align: right; max-width: 160px; }
+
+    .paid-cta-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; }
+    .price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .price-was { font-size: 18px; color: #6A6460; text-decoration: line-through; }
+    .price-now { font-family: var(--serif); font-size: 52px; color: #fff; line-height: 1; }
+    .price-note { font-size: 13px; color: #6A6460; margin-bottom: 28px; }
+    .includes-list { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
+    .includes-list li { font-size: 14px; color: #C4BDB5; display: flex; align-items: flex-start; gap: 10px; }
+    .includes-list li::before { content: '✓'; color: #4CAF7D; font-weight: 800; flex-shrink: 0; }
+    .btn-walnut {
+      display: block; background: var(--walnut); color: var(--ink);
+      text-align: center; padding: 15px; border-radius: 10px;
+      font-weight: 800; font-size: 16px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-walnut:hover { background: #D4A440; transform: translateY(-1px); }
+    .guarantee { font-size: 12px; color: #6A6460; text-align: center; margin-top: 12px; }
+
+    /* ── ARTICLES ── */
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; margin-top: 48px; }
+    .article-card {
+      background: #fff; border: 1px solid var(--border);
+      padding: 32px; text-decoration: none; color: inherit;
+      transition: background 0.2s; display: block;
+    }
+    .article-card:hover { background: var(--warm); }
+    .article-card:first-child { border-radius: 16px 0 0 16px; }
+    .article-card:last-child { border-radius: 0 16px 16px 0; }
+    .article-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--walnut); margin-bottom: 10px; display: block; }
+    .article-title { font-family: var(--serif); font-size: 20px; line-height: 1.2; margin-bottom: 10px; }
+    .article-desc { font-size: 14px; color: var(--ink-3); line-height: 1.6; margin-bottom: 16px; }
+    .article-read { font-size: 13px; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 6px; }
+    .article-read::after { content: '→'; }
+
+    /* ── APP BAND ── */
+    .app-band { background: var(--ink); }
+    .app-band-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+      padding: 72px 24px;
+    }
+    .app-band h2 { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 42px); color: #fff; line-height: 1.1; margin-bottom: 16px; }
+    .app-band h2 em { font-style: italic; color: #4CAF7D; }
+    .app-band p { font-size: 15px; color: #C4BDB5; line-height: 1.75; margin-bottom: 28px; }
+    .app-band-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #4CAF7D; color: var(--ink);
+      padding: 14px 28px; border-radius: 9px;
+      font-weight: 800; font-size: 15px; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .app-band-link:hover { background: #3B9468; color: #fff; }
+    .app-demo-card {
+      background: #242424; border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 28px;
+    }
+    .app-demo-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6A6460; margin-bottom: 4px; }
+    .app-demo-name { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 20px; }
+    .app-demo-score { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .score-ring {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 3px solid #4CAF7D; display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; color: #4CAF7D; flex-shrink: 0;
+    }
+    .score-verdict { font-size: 24px; font-weight: 800; color: #4CAF7D; line-height: 1; }
+    .score-meta { font-size: 12px; color: #6A6460; margin-top: 3px; }
+    .app-demo-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .app-stat { background: #2E2E2E; border-radius: 8px; padding: 10px 12px; }
+    .app-stat-label { font-size: 10px; color: #6A6460; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+    .app-stat-val { font-size: 16px; font-weight: 800; color: #fff; }
+    .app-stat-val.g { color: #4CAF7D; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 48px; }
+    .testimonial {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+    }
+    .stars { color: var(--walnut); letter-spacing: 2px; font-size: 15px; margin-bottom: 14px; }
+    .testimonial p { font-size: 14px; color: var(--ink-2); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
+    .t-author { display: flex; align-items: center; gap: 12px; }
+    .t-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--warm); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; color: var(--ink-2); flex-shrink: 0;
+    }
+    .t-name { font-size: 14px; font-weight: 700; }
+    .t-title { font-size: 12px; color: var(--ink-4); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--warm); border-top: 1px solid var(--border);
+      padding: 56px 24px 32px;
+    }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: 14px; color: var(--ink-3); line-height: 1.7; margin-top: 12px; max-width: 280px; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 14px; color: var(--ink-2); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--ink); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 12px; color: var(--ink-4); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 12px; color: var(--ink-4); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--ink-2); }
+
+    /* ── COMING SOON BADGE ── */
+    .coming-soon { display: inline-block; background: #F2EDE6; color: #7A746E; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px; vertical-align: middle; margin-left: 6px; letter-spacing: 0.04em; }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
+    .fade-up.in { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px 48px; }
+      .free-guide-inner { grid-template-columns: 1fr; gap: 48px; }
+      .paid-guide-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 40px; }
+      .app-band-inner { grid-template-columns: 1fr; padding: 56px 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .article-card:first-child { border-radius: 16px 16px 0 0; }
+      .article-card:last-child { border-radius: 0 0 16px 16px; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: flex; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-logo">Reselling<span>Shoes</span>.com</a>
+  <div class="nav-links">
+    <a href="/free-guide.html">Free Guide</a>
+    <a href="/the-everyday-shoe-flip.html">The Playbook</a>
+    <a href="/#articles">Articles</a>
+    <a href="https://shoes.timothyhales.com" target="_blank">SoleScore App</a>
+  </div>
+  <div style="display:flex;gap:12px;align-items:center;">
+    <a href="/free-guide.html" class="nav-btn">Get the Free Guide →</a>
+    <button class="nav-mobile-btn" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div id="mobile-nav" style="display:none;background:#fff;border-bottom:1px solid var(--border);padding:20px 24px;">
+  <a href="/free-guide.html" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">Free Guide</a>
+  <a href="/the-everyday-shoe-flip.html" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">The Playbook</a>
+  <a href="/#articles" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">Articles</a>
+  <a href="https://shoes.timothyhales.com" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;">SoleScore App</a>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero wrap">
+  <div>
+    <div class="hero-kicker">Free resources for part-time resellers</div>
+    <h1>Flip everyday shoes for <em>real profit.</em></h1>
+    <p class="hero-sub">Learn which shoes to flip at thrift stores, yard sales, and auctions — and use the free SoleScore app to know in 8 seconds if a shoe is worth buying.</p>
+    <div class="hero-ctas">
+      <a href="/free-guide.html" class="btn-primary">Get the Free PDF Guide →</a>
+      <a href="/the-everyday-shoe-flip.html" class="btn-outline">The Everyday Shoe Flip</a>
+    </div>
+  </div>
+  <div class="hero-card fade-up">
+    <div class="hero-card-label">Free Download</div>
+    <div class="hero-card-title">The $1,000 Shoe<br>Reselling Method</div>
+    <ul class="hero-card-list">
+      <li>The exact brands worth buying every time</li>
+      <li>How to spot a $40 profit in 8 seconds</li>
+      <li>Platform fees, profit math, and real examples</li>
+      <li>The one mistake that kills most flippers</li>
+      <li>A printable sourcing cheat sheet</li>
+    </ul>
+    <a href="/free-guide.html" class="hero-card-cta">Download Free →</a>
+    <p class="hero-card-note">No credit card. No spam. Yours instantly.</p>
+  </div>
+</div>
+
+<!-- ── PROOF BAR ── -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <div class="proof-item">
+      <div class="proof-num">$41</div>
+      <div class="proof-label">Avg profit per flip</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">50+</div>
+      <div class="proof-label">Brands covered in the guide</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">8 sec</div>
+      <div class="proof-label">To know if a shoe is worth buying</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">$0</div>
+      <div class="proof-label">To get started</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FREE GUIDE ── -->
+<section class="free-guide-section" id="free-guide">
+  <div class="wrap">
+    <div class="free-guide-inner">
+      <div class="pdf-mockup fade-up">
+        <div class="pdf-badge">FREE</div>
+        <div class="pdf-eyebrow">SoleScore · Free Guide</div>
+        <div class="pdf-title">The <em>$1,000</em> Shoe<br>Reselling Method</div>
+        <div class="pdf-subtitle">The fast-start guide for part-time resellers sourcing everyday shoes at thrift stores and yard sales.</div>
+        <div class="pdf-pages">
+          <div class="pdf-page-chip">16 pages</div>
+          <div class="pdf-page-chip">50+ brands</div>
+          <div class="pdf-page-chip">Profit math</div>
+          <div class="pdf-page-chip">Cheat sheet</div>
+          <div class="pdf-page-chip">Instant PDF</div>
+        </div>
+      </div>
+      <div class="guide-copy">
+        <span class="eyebrow">Free PDF Guide</span>
+        <h2>Stop leaving <em>money</em> on the shelf.</h2>
+        <p>Most people walk past $40 profits every week at their local Goodwill. Not because the shoes aren't there — but because they don't know which ones to pick up. This guide fixes that.</p>
+        <ul class="guide-checklist">
+          <li>50+ non-hype brands ranked by resale value</li>
+          <li>Average eBay sold prices by brand and style</li>
+          <li>The sizes that move vs. the ones that sit</li>
+          <li>Real profit examples with all fees calculated</li>
+          <li>A one-page printable cheat sheet for the field</li>
+        </ul>
+        <!-- REPLACE THIS BLOCK WITH YOUR KIT EMBED CODE -->
+        <div class="kit-form" id="free-guide-form">
+          <span class="kit-form-label">Get instant access — it's completely free.</span>
+          <div class="kit-form-fields">
+            <input type="text" placeholder="First name" id="fg-name">
+            <input type="email" placeholder="Email address" id="fg-email">
+            <button class="kit-form-btn" onclick="handleFreeGuide()">Send Me the Free Guide →</button>
+          </div>
+          <p class="kit-form-disclaimer">Your free guide opens on Gumroad — no account required.</p>
+        </div>
+        <div class="kit-form-success" id="fg-success">
+          <p>🎉 Check your inbox — your free guide is on the way!</p>
+        </div>
+        <!-- END KIT EMBED -->
+        <p style="font-size:13px;color:var(--ink-4);margin-top:16px;">Or <a href="https://resellingshoes.gumroad.com/l/1000-method" target="_blank" style="color:var(--green);font-weight:600;">download directly from Gumroad →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAID GUIDE ── -->
+<section id="paid-guide">
+  <div class="wrap">
+    <div class="paid-guide-inner fade-up">
+      <div>
+        <div class="paid-tag">Complete Guide · $27</div>
+        <h2>The Everyday<br><em>Shoe Flip</em></h2>
+        <p>The complete system for turning thrift store shoes into consistent part-time income. Every step — sourcing, cleaning, photographing, listing, shipping, and scaling — covered in one guide.</p>
+        <ul class="chapter-list">
+          <li class="chapter-item"><span class="chapter-num">01</span><span class="chapter-name">The Reseller Mindset</span><span class="chapter-desc">Think like a business</span></li>
+          <li class="chapter-item"><span class="chapter-num">02</span><span class="chapter-name">Source Shoes</span><span class="chapter-desc">Thrift, yard sales, auctions</span></li>
+          <li class="chapter-item"><span class="chapter-num">03</span><span class="chapter-name">Clean Shoes</span><span class="chapter-desc">Add value before listing</span></li>
+          <li class="chapter-item"><span class="chapter-num">04</span><span class="chapter-name">Photo Shoes</span><span class="chapter-desc">The 9-shot formula</span></li>
+          <li class="chapter-item"><span class="chapter-num">05</span><span class="chapter-name">List Shoes</span><span class="chapter-desc">Titles, pricing, platform</span></li>
+          <li class="chapter-item"><span class="chapter-num">06</span><span class="chapter-name">Ship Shoes</span><span class="chapter-desc">Fast, cheap, professional</span></li>
+          <li class="chapter-item"><span class="chapter-num">07</span><span class="chapter-name">Build Your System</span><span class="chapter-desc">Scale without chaos</span></li>
+          <li class="chapter-item"><span class="chapter-num">08</span><span class="chapter-name">Track Your Business</span><span class="chapter-desc">Know your real numbers</span></li>
+        </ul>
+      </div>
+      <div class="paid-cta-box">
+        <div class="price-row">
+          <span class="price-was">$37</span>
+          <span class="price-now">$27</span>
+        </div>
+        <p class="price-note">One-time · Instant PDF download</p>
+        <ul class="includes-list">
+          <li>47-page complete guide</li>
+          <li>End-of-chapter checklists</li>
+          <li>Brand quick-reference appendix</li>
+          <li>Recommended supplies list</li>
+          <li>Profit tracking template</li>
+          <li>Lifetime updates included</li>
+        </ul>
+        <a href="/the-everyday-shoe-flip.html#waitlist" class="btn-walnut">Join the Waitlist →</a>
+        <p class="guarantee">30-day money-back guarantee · No questions asked</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section style="background:var(--warm);padding-top:64px;padding-bottom:64px;">
+  <div class="wrap">
+    <div class="fade-up" style="margin-bottom:0;">
+      <span class="eyebrow">What resellers are saying</span>
+      <h2 class="sec-title">Real people.<br><em>Real flips.</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"The brand list alone was worth it. I had no idea Dansko was so consistent. Picked up three pairs last week — all sold within 10 days."</p>
+        <div class="t-author">
+          <div class="t-avatar">MK</div>
+          <div><div class="t-name">Marcus K.</div><div class="t-title">Tampa, FL · Thrift reseller</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Finally something built for regular shoes. I'm not buying Jordans — I'm at Goodwill on Saturday morning. This is exactly what I needed."</p>
+        <div class="t-author">
+          <div class="t-avatar">JP</div>
+          <div><div class="t-name">Jennifer P.</div><div class="t-title">Austin, TX · Weekend flipper</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"My average ROI went from about 60% to over 180% in a month. The profit math section changed how I look at every shoe I pick up."</p>
+        <div class="t-author">
+          <div class="t-avatar">DL</div>
+          <div><div class="t-name">David L.</div><div class="t-title">Atlanta, GA · Side hustle reseller</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ARTICLES ── -->
+<section id="articles">
+  <div class="wrap">
+    <div class="fade-up">
+      <span class="eyebrow">Learn</span>
+      <h2 class="sec-title">Free guides &<br><em>resources.</em></h2>
+      <p class="sec-sub">Practical articles for part-time resellers — no fluff, no hype, just what actually works in the field.</p>
+    </div>
+    <div class="articles-grid">
+      <a href="#" class="article-card">
+        <span class="article-tag">Brand Guide</span><span class="coming-soon">Coming soon</span>
+        <div class="article-title">The 12 Best Non-Hype Brands to Flip at Any Thrift Store</div>
+        <div class="article-desc">These brands show up consistently, sell quickly, and almost always turn a profit when you buy them right.</div>
+        <div class="article-read">Read the guide</div>
+      </a>
+      <a href="#" class="article-card">
+        <span class="article-tag">Selling</span><span class="coming-soon">Coming soon</span>
+        <div class="article-title">How to Price Used Shoes on eBay to Actually Sell</div>
+        <div class="article-desc">The exact method for reading sold comps, accounting for fees, and setting a price that moves inventory fast.</div>
+        <div class="article-read">Read the guide</div>
+      </a>
+      <a href="#" class="article-card">
+        <span class="article-tag">Sourcing</span><span class="coming-soon">Coming soon</span>
+        <div class="article-title">How to Source Shoes at Thrift Stores Like a Pro</div>
+        <div class="article-desc">Where to look, when to go, what to skip, and the 3-second scan that tells you if a shoe is worth checking further.</div>
+        <div class="article-read">Read the guide</div>
+      </a>
+      <a href="#" class="article-card">
+        <span class="article-tag">Profit Math</span><span class="coming-soon">Coming soon</span>
+        <div class="article-title">eBay Fees for Shoe Resellers: What You Actually Keep</div>
+        <div class="article-desc">eBay, shipping, and payment fees broken down. Know your real profit before you buy, not after.</div>
+        <div class="article-read">Read the guide</div>
+      </a>
+      <a href="#" class="article-card">
+        <span class="article-tag">Sourcing</span><span class="coming-soon">Coming soon</span>
+        <div class="article-title">Yard Sale Shoe Flipping: The Saturday Morning System</div>
+        <div class="article-desc">How to plan your route, negotiate prices, and find the best deals before 10am on a Saturday.</div>
+        <div class="article-read">Read the guide</div>
+      </a>
+      <a href="#" class="article-card">
+        <span class="article-tag">Selling</span><span class="coming-soon">Coming soon</span>
+        <div class="article-title">How to Grade Shoe Condition for eBay (and Price It Right)</div>
+        <div class="article-desc">New, Like New, Very Good, Good — what these mean in practice and how condition affects your final sale price.</div>
+        <div class="article-read">Read the guide</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── APP BAND ── -->
+<div class="app-band">
+  <div class="app-band-inner">
+    <div>
+      <span class="eyebrow" style="color:#C4943A;">Free Tool</span>
+      <h2>Know in 8 seconds.<br><em>In the store.</em></h2>
+      <p>SoleScore is the free app that gives you a 0–100 score, real profit estimates, and a Good Buy / Maybe / Pass verdict while you're still standing in the aisle. Built for everyday shoes — not hype sneakers.</p>
+      <a href="https://shoes.timothyhales.com" target="_blank" class="app-band-link">Try SoleScore Free →</a>
+    </div>
+    <div class="app-demo-card">
+      <div class="app-demo-label">Nike · Women's 9.5</div>
+      <div class="app-demo-name">Air Max 90 "Triple Black"</div>
+      <div class="app-demo-score">
+        <div class="score-ring">82</div>
+        <div>
+          <div class="score-verdict">Good Buy</div>
+          <div class="score-meta">Based on 47 recent sales</div>
+        </div>
+      </div>
+      <div class="app-demo-stats">
+        <div class="app-stat"><div class="app-stat-label">Avg Sale</div><div class="app-stat-val">$68</div></div>
+        <div class="app-stat"><div class="app-stat-label">Net Profit</div><div class="app-stat-val g">$47</div></div>
+        <div class="app-stat"><div class="app-stat-label">ROI</div><div class="app-stat-val">215%</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="font-size:18px;">Reselling<span>Shoes</span>.com</a>
+        <p>Free guides and tools for part-time resellers flipping everyday shoes — not hype sneakers. Know what's worth buying before you leave the store.</p>
+        <p style="margin-top:8px;font-size:12px;color:var(--ink-4);">A SelahCreativeMedia LLC project</p>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/free-guide.html">Free PDF Guide</a>
+        <a href="/the-everyday-shoe-flip.html">The Everyday Shoe Flip</a>
+        <a href="/#articles">Articles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="https://shoes.timothyhales.com" target="_blank">SoleScore App</a>
+        <a href="https://shoes.timothyhales.com" target="_blank">Profit Calculator</a>
+        <a href="https://shoes.timothyhales.com" target="_blank">Brand Library</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Timothy</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 SelahCreativeMedia LLC · resellingshoes.com</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  function toggleNav() {
+    const n = document.getElementById('mobile-nav');
+    n.style.display = n.style.display === 'none' ? 'block' : 'none';
+  }
+  function closeNav() { document.getElementById('mobile-nav').style.display = 'none'; }
+
+  function handleFreeGuide() {
+    const name = document.getElementById('fg-name').value.trim();
+    const email = document.getElementById('fg-email').value.trim();
+    if (!name || !email) { alert('Please enter your name and email.'); return; }
+    window.open('https://resellingshoes.gumroad.com/l/1000-method', '_blank');
+    document.getElementById('free-guide-form').style.display = 'none';
+    document.getElementById('fg-success').style.display = 'block';
+  }
+</script>
+</body>
+</html>

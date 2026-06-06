@@ -13,6 +13,7 @@
   <meta property="og:title" content="Reselling Shoes — Learn to Flip Shoes for Profit">
   <meta property="og:description" content="Free guides, proven strategies, and tools for part-time shoe resellers. Learn which shoes to buy at thrift stores and flip for real profit.">
   <meta property="og:url" content="https://resellingshoes.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -383,6 +384,16 @@
     .formkit-submit:hover { background: var(--green-dk) !important; }
     .formkit-spinner { display: none !important; }
     .formkit-alert-error { font-size: 13px; color: #c0392b; list-style: none; margin-bottom: 8px; padding: 0; }
+    /* Dark card context overrides */
+    .hero-card .formkit-input {
+      background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.18) !important;
+      color: #fff !important;
+    }
+    .hero-card .formkit-input::placeholder { color: rgba(255,255,255,0.35) !important; }
+    .hero-card .formkit-input:focus { border-color: #4CAF7D !important; }
+    .hero-card .formkit-submit { background: #4CAF7D !important; color: var(--ink) !important; }
+    .hero-card .formkit-submit:hover { background: #3B9468 !important; color: #fff !important; }
+    .hero-card .formkit-alert-error { color: #ff8080; }
 
     /* ── ANIMATIONS ── */
     .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
@@ -436,7 +447,7 @@
 <!-- ── HERO ── -->
 <div class="hero wrap">
   <div>
-    <div class="hero-kicker">Free resources for part-time resellers</div>
+    <div class="hero-kicker">Part-time shoe reselling</div>
     <h1>Flip everyday shoes for <em>real profit.</em></h1>
     <p class="hero-sub">Learn which shoes to flip at thrift stores, yard sales, and auctions — and use the free SoleScore app to know in 8 seconds if a shoe is worth buying.</p>
     <div class="hero-ctas">
@@ -446,15 +457,9 @@
   <div class="hero-card fade-up">
     <div class="hero-card-label">Free Download</div>
     <div class="hero-card-title">The $1,000 Shoe<br>Reselling Method</div>
-    <ul class="hero-card-list">
-      <li>The 5-step system for sourcing, cleaning, photographing, listing, and shipping</li>
-      <li>Where to find shoes at thrift stores, yard sales, and discount stores</li>
-      <li>How to evaluate a shoe in 60 seconds before you buy</li>
-      <li>How to check eBay sold comps from your phone in the store</li>
-      <li>What to look for and what to walk away from</li>
-    </ul>
-    <a href="/free-method" class="hero-card-cta">Download Free →</a>
-    <p class="hero-card-note">No credit card. No spam. Yours instantly.</p>
+    <p style="font-size:13px;color:#8A847D;margin-bottom:20px;line-height:1.6;">Enter your email and get the free PDF instantly — brands to buy, profit math, and a printable field cheat sheet.</p>
+    <form action="https://app.kit.com/forms/9529420/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9529420" data-uid="3e6fc2f3e1" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Send Me the Free Method</span></button></div></div></form>
+    <p class="hero-card-note" style="margin-top:12px;">No credit card. No spam. Yours instantly.</p>
   </div>
 </div>
 

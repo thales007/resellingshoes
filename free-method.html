@@ -281,6 +281,7 @@
     <div class="form-card-sub">Enter your email and we'll send you the PDF instantly. Free, always.</div>
     <hr class="form-divider">
     <form action="https://app.kit.com/forms/9529420/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9529420" data-uid="3e6fc2f3e1" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Send Me the Free Guide</span></button></div></div></form>
+    <p class="form-disclaimer">Your guide will be emailed to you instantly. No spam, unsubscribe any time.</p>
   </div>
 
   <div class="form-card form-success" id="form-success">
@@ -359,12 +360,13 @@
   <p>Takes 30 seconds. Starts paying off the next time you walk into a thrift store.</p>
   <div style="max-width:440px;margin:0 auto;">
     <form action="https://app.kit.com/forms/9529420/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9529420" data-uid="3e6fc2f3e1" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Send Me the Free Method</span></button></div></div></form>
+    <p style="font-size:11px;color:#5E5953;text-align:center;margin-top:10px;line-height:1.5;">Your guide will be emailed to you instantly. No spam, unsubscribe any time.</p>
   </div>
 </div>
 
 <footer>
   <div class="footer-simple">
-    <p>© 2025 SelahCreativeMedia LLC · resellingshoes.com</p>
+    <p>© <span id="year"></span> SelahCreativeMedia LLC · resellingshoes.com</p>
     <nav>
       <a href="/">Home</a>
       <a href="/the-everyday-shoe-flip">The Playbook</a>
@@ -381,6 +383,7 @@
     if (!open) item.classList.add('open');
   }
 
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>

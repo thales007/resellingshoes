@@ -480,7 +480,7 @@
       <li>What to look for and what to walk away from</li>
     </ul>
     <form action="https://app.kit.com/forms/9529420/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9529420" data-uid="3e6fc2f3e1" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Send Me the Free Method</span></button></div></div></form>
-    <p class="hero-card-note" style="margin-top:12px;">No credit card. No spam. Yours instantly.</p>
+    <p class="hero-card-note" style="margin-top:12px;">Your guide will be emailed to you instantly. No spam, unsubscribe any time.</p>
   </div>
 </div>
 
@@ -537,6 +537,7 @@
         </ul>
         <span class="kit-form-label">Get instant access — it's completely free.</span>
         <form action="https://app.kit.com/forms/9529420/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9529420" data-uid="3e6fc2f3e1" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Send Me the Free Method</span></button></div></div></form>
+        <p class="kit-form-disclaimer">Your guide will be emailed to you instantly. No spam, unsubscribe any time.</p>
       </div>
     </div>
   </div>
@@ -726,7 +727,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 SelahCreativeMedia LLC · resellingshoes.com</p>
+      <p>© <span id="year"></span> SelahCreativeMedia LLC · resellingshoes.com</p>
       <div class="footer-bottom-links">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
@@ -747,14 +748,7 @@
   }
   function closeNav() { document.getElementById('mobile-nav').style.display = 'none'; }
 
-  function handleFreeGuide() {
-    const name = document.getElementById('fg-name').value.trim();
-    const email = document.getElementById('fg-email').value.trim();
-    if (!name || !email) { alert('Please enter your name and email.'); return; }
-    window.open('https://resellingshoes.gumroad.com/l/1000-method', '_blank');
-    document.getElementById('free-guide-form').style.display = 'none';
-    document.getElementById('fg-success').style.display = 'block';
-  }
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>

@@ -212,7 +212,65 @@
       .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px 56px; }
       .form-card { position: static; }
     }
+
+    /* Kit form overrides */
+    .formkit-form {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      font-family: 'DM Sans', sans-serif !important;
+    }
+    .formkit-form input[type="text"],
+    .formkit-form input[type="email"] {
+      background: var(--cream) !important;
+      border: 1.5px solid var(--border) !important;
+      border-radius: 8px !important;
+      padding: 12px 16px !important;
+      font-size: 15px !important;
+      font-family: 'DM Sans', sans-serif !important;
+      color: var(--ink) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .formkit-form input:focus {
+      border-color: var(--green) !important;
+      outline: none !important;
+    }
+    .formkit-submit {
+      background: var(--green) !important;
+      color: #fff !important;
+      border: none !important;
+      border-radius: 8px !important;
+      padding: 13px 20px !important;
+      font-weight: 800 !important;
+      font-size: 15px !important;
+      font-family: 'DM Sans', sans-serif !important;
+      width: 100% !important;
+      cursor: pointer !important;
+      transition: background 0.2s !important;
+    }
+    .formkit-submit:hover {
+      background: var(--green-dk) !important;
+    }
+    .formkit-alert {
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 14px !important;
+    }
+    .form-card .formkit-form input[type="text"],
+    .form-card .formkit-form input[type="email"] {
+      background: #2A2A2A !important;
+      border-color: rgba(255,255,255,0.12) !important;
+      color: #fff !important;
+    }
+    .form-card .formkit-form input::placeholder {
+      color: #5E5953 !important;
+    }
+    .form-card .formkit-form input:focus {
+      border-color: #4CAF7D !important;
+    }
   </style>
+  <script async data-uid="3e6fc2f3e1" src="https://timothy-hales.kit.com/3e6fc2f3e1/index.js"></script>
 </head>
 <body>
 
@@ -280,20 +338,7 @@
     <h2>The <em>$1,000</em> Shoe<br>Reselling Method</h2>
     <div class="form-card-sub">Enter your email and we'll send you the PDF instantly. Free, always.</div>
     <hr class="form-divider">
-    <form action="https://app.kit.com/forms/9529420/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9529420" data-uid="3e6fc2f3e1" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Send Me the Free Guide</span></button></div></div></form>
-    <p class="form-disclaimer">Your guide will be emailed to you instantly. No spam, unsubscribe any time.</p>
-  </div>
-
-  <div class="form-card form-success" id="form-success">
-    <div class="icon">📬</div>
-    <h3>Check your inbox!</h3>
-    <p>Your free guide is on its way. If you don't see it in a minute, check your spam folder.</p>
-    <hr class="form-divider">
-    <div style="border:1.5px solid #C4943A;background:#F5EDD8;border-radius:12px;padding:20px;margin-top:8px;">
-      <p style="font-size:13px;font-weight:800;color:#1A1A1A;margin-bottom:6px;">Want the complete system?</p>
-      <p style="font-size:13px;color:#4A4540;line-height:1.6;margin-bottom:14px;">The Everyday Shoe Flip covers every step — sourcing, cleaning, photos, listing, shipping, and scaling. 74 pages. Launch price $17.</p>
-      <a href="https://shop.resellingshoes.com/l/the-everyday-shoe-flip" target="_blank" rel="noopener noreferrer" style="display:block;background:#C4943A;color:#1A1A1A;text-align:center;padding:11px;border-radius:8px;font-weight:800;font-size:14px;text-decoration:none;">Get the Full Guide — $17 →</a>
-    </div>
+    <script async data-uid="3e6fc2f3e1" src="https://timothy-hales.kit.com/3e6fc2f3e1/index.js"></script>
   </div>
 </div>
 
@@ -359,8 +404,7 @@
   <h2>Get the free method<br>right <em>now.</em></h2>
   <p>Takes 30 seconds. Starts paying off the next time you walk into a thrift store.</p>
   <div style="max-width:440px;margin:0 auto;">
-    <form action="https://app.kit.com/forms/9529420/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9529420" data-uid="3e6fc2f3e1" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Send Me the Free Method</span></button></div></div></form>
-    <p style="font-size:11px;color:#5E5953;text-align:center;margin-top:10px;line-height:1.5;">Your guide will be emailed to you instantly. No spam, unsubscribe any time.</p>
+    <script async data-uid="3e6fc2f3e1" src="https://timothy-hales.kit.com/3e6fc2f3e1/index.js"></script>
   </div>
 </div>
 

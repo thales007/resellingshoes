@@ -144,6 +144,31 @@
     .hero-card-cta:hover { background: #3B9468; color: #fff; }
     .hero-card-note { font-size: 12px; color: #6A6460; text-align: center; margin-top: 8px; }
 
+    /* ── HERO PRODUCT CARDS ── */
+    .product-cards { display: flex; flex-direction: column; gap: 16px; }
+    .product-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px;
+    }
+    .product-tag {
+      display: inline-block; font-size: 10px; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px; margin-bottom: 10px;
+    }
+    .product-tag-green { background: var(--green-lt); color: var(--green-dk); }
+    .product-tag-walnut { background: var(--walnut-lt); color: var(--walnut); }
+    .product-tag-blue { background: #E8F0FE; color: #2D6CDF; }
+    .product-title { font-family: var(--serif); font-size: 18px; color: var(--ink); line-height: 1.2; margin-bottom: 8px; }
+    .product-price { font-family: var(--serif); font-size: 24px; color: var(--ink); margin-bottom: 8px; }
+    .product-price-was { font-size: 14px; color: var(--ink-4); text-decoration: line-through; margin-right: 8px; }
+    .product-price-now { color: var(--walnut); }
+    .product-desc { font-size: 13px; color: var(--ink-3); line-height: 1.5; margin-bottom: 14px; }
+    .product-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .product-bullets li { font-size: 13px; color: var(--ink-2); display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+    .product-bullets li::before { content: '✓'; color: var(--green); font-weight: 800; flex-shrink: 0; }
+    .product-link { font-size: 13px; font-weight: 700; color: var(--green); text-decoration: none; }
+    .product-link:hover { text-decoration: underline; }
+
     /* ── DIVIDER ── */
     .divider { border: none; border-top: 1px solid var(--border); }
 
@@ -505,13 +530,12 @@
 <nav>
   <a href="/" class="nav-logo">Reselling<span>Shoes</span>.com</a>
   <div class="nav-links">
-    <a href="/free-method">Free Method</a>
-    <a href="/the-everyday-shoe-flip">The Playbook</a>
+    <a href="/free-method">$1,000 Method</a>
+    <a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a>
     <a href="/#articles">Articles</a>
     <a href="https://solescore.app" target="_blank">SoleScore App</a>
   </div>
   <div style="display:flex;gap:12px;align-items:center;">
-    <a href="/free-method" class="nav-btn">Get the Free Method →</a>
     <button class="nav-mobile-btn" onclick="toggleNav()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -520,8 +544,8 @@
 
 <!-- Mobile nav -->
 <div id="mobile-nav" style="display:none;background:#fff;border-bottom:1px solid var(--border);padding:20px 24px;">
-  <a href="/free-method" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">Free Method</a>
-  <a href="/the-everyday-shoe-flip" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">The Playbook</a>
+  <a href="/free-method" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">$1,000 Method</a>
+  <a href="/the-everyday-shoe-flip" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">The Everyday Shoe Flip</a>
   <a href="/#articles" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--border);">Articles</a>
   <a href="https://solescore.app" onclick="closeNav()" style="display:block;padding:12px 0;font-weight:600;color:var(--ink);text-decoration:none;">SoleScore App</a>
 </div>
@@ -529,12 +553,47 @@
 <!-- ── HERO ── -->
 <div class="hero wrap">
   <div>
-    <div class="hero-kicker">Shoe Reselling Education</div>
     <h1>Learn to flip everyday shoes<br>for <em>real profit.</em></h1>
     <p class="hero-sub">The guide, the system, and the tools to help you earn your first $1,000 reselling thrift store shoes — and keep going from there.</p>
     <div class="hero-ctas">
       <a href="https://shop.resellingshoes.com/l/the-everyday-shoe-flip" target="_blank" rel="noopener noreferrer" class="btn-primary">Get The Everyday Shoe Flip — $17</a>
-      <a href="https://solescore.app" target="_blank" class="btn-outline">Start Your Free Trial</a>
+    </div>
+  </div>
+  <div class="product-cards">
+    <div class="product-card">
+      <span class="product-tag product-tag-green">Free</span>
+      <h3 class="product-title">$1,000 Shoe Reselling Method</h3>
+      <div class="product-price">$0</div>
+      <p class="product-desc">The fast-start overview. Five steps, one page each. Download it instantly.</p>
+      <ul class="product-bullets">
+        <li>The 5-step system: Source, Clean, Photo, List, Ship</li>
+        <li>How to evaluate a shoe before you buy</li>
+        <li>Printable cheat sheet for the field</li>
+      </ul>
+      <a href="https://www.resellingshoes.com/1000-shoe-reselling-method" class="product-link">Get free download →</a>
+    </div>
+    <div class="product-card">
+      <span class="product-tag product-tag-walnut">Launch Special</span>
+      <h3 class="product-title">The Everyday Shoe Flip</h3>
+      <div class="product-price"><span class="product-price-was">$37</span><span class="product-price-now">$17</span></div>
+      <p class="product-desc">74-page complete system. Every step from thrift store to sold listing.</p>
+      <ul class="product-bullets">
+        <li>8 chapters + checklists + brand appendix</li>
+        <li>Sourcing, cleaning, photography, listing, shipping</li>
+        <li>Profit tracking template included</li>
+      </ul>
+      <a href="https://shop.resellingshoes.com/l/the-everyday-shoe-flip" target="_blank" rel="noopener noreferrer" class="product-link">Get instant access →</a>
+    </div>
+    <div class="product-card">
+      <span class="product-tag product-tag-blue">Free Trial</span>
+      <h3 class="product-title">SoleScore App</h3>
+      <p class="product-desc">Photograph a shoe. Get a verdict. Know if it's worth buying before you leave the aisle.</p>
+      <ul class="product-bullets">
+        <li>Real eBay sold data — not guesswork</li>
+        <li>Profit estimate before you buy</li>
+        <li>Built for thrift stores and yard sales</li>
+      </ul>
+      <a href="https://solescore.app" target="_blank" class="product-link">Start free trial →</a>
     </div>
   </div>
 </div>
@@ -727,7 +786,7 @@
       <span class="eyebrow" style="color:#C4943A;">Free Tool</span>
       <h2>Know in 8 seconds.<br><em>In the store.</em></h2>
       <p>SoleScore is the free app that gives you a 0–100 score, real profit estimates, and a Good Buy / Maybe / Pass verdict while you're still standing in the aisle. Built for everyday shoes — not hype sneakers.</p>
-      <a href="https://solescore.app" target="_blank" class="app-band-link">Try SoleScore Free →</a>
+      <a href="https://solescore.app" target="_blank" class="app-band-link">Start Your Free Trial →</a>
     </div>
     <div class="app-demo-card">
       <div class="app-demo-label">Nike · Women's 9.5</div>
@@ -759,7 +818,7 @@
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="/free-method">Free Method</a>
+        <a href="/free-method">$1,000 Method</a>
         <a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a>
         <a href="/#articles">Articles</a>
       </div>

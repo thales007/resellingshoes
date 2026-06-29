@@ -257,7 +257,7 @@
         </div>
         <div class="hero-proof-divider"></div>
         <div class="hero-proof-item">
-          <div class="hero-proof-num">$17</div>
+          <div class="hero-proof-num" data-price="paid-guide">$17</div>
           <div class="hero-proof-label">Launch price</div>
         </div>
       </div>
@@ -267,8 +267,8 @@
       <div class="buy-title">The Everyday Shoe Flip</div>
       <div class="launch-badge">🎉 Launch Price</div>
       <div class="price-row">
-        <span class="price-was">$37</span>
-        <span class="price-now">$17</span>
+        <span class="price-was" data-price-original="paid-guide">$37</span>
+        <span class="price-now" data-price="paid-guide">$17</span>
       </div>
       <p class="price-sub">Launch price · One-time · Instant PDF download</p>
       <ul class="includes">
@@ -460,11 +460,11 @@
     <div class="bottom-buy-card">
       <div class="launch-badge">🎉 Launch Price</div>
       <div class="bottom-price-row">
-        <span class="bottom-was">$37</span>
-        <span class="bottom-now">$17</span>
+        <span class="bottom-was" data-price-original="paid-guide">$37</span>
+        <span class="bottom-now" data-price="paid-guide">$17</span>
       </div>
       <p class="bottom-price-note">Launch price · One-time · Instant PDF download</p>
-      <a href="https://shop.resellingshoes.com/l/the-everyday-shoe-flip" target="_blank" rel="noopener noreferrer" class="btn-buy-lg">Get The Everyday Shoe Flip — $17 →</a>
+      <a href="https://shop.resellingshoes.com/l/the-everyday-shoe-flip" target="_blank" rel="noopener noreferrer" class="btn-buy-lg">Get The Everyday Shoe Flip — <span data-price="paid-guide">$17</span> →</a>
       <p class="bottom-guarantee">Secure checkout via Gumroad · Instant PDF delivery · 30-day guarantee</p>
     </div>
     <p style="margin-top:20px;font-size:14px;color:#5E5953;">Not ready to buy? <a href="/free-method" style="color:#C4943A;font-weight:700;">Grab the free method first →</a></p>
@@ -485,6 +485,21 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script src="/js/site-config.js"></script>
+<script src="/js/cta-cards.js"></script>
+<script>
+  // Auto-populate price spans from config
+  document.querySelectorAll('[data-price="paid-guide"]').forEach(function(el) {
+    el.textContent = SITE_CONFIG.paidGuide.price;
+  });
+  document.querySelectorAll('[data-price-original="paid-guide"]').forEach(function(el) {
+    el.textContent = SITE_CONFIG.paidGuide.originalPrice;
+  });
+  document.querySelectorAll('[data-badge="paid-guide"]').forEach(function(el) {
+    el.textContent = SITE_CONFIG.paidGuide.badge;
+  });
 </script>
 </body>
 </html>

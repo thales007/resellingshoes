@@ -267,6 +267,7 @@
   .articles-note { background: rgba(189,149,64,0.12); color: var(--gold-deep); font-weight: 600; font-size: 14px; padding: 11px 16px; border-radius: 10px; }
   .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .article-card { background: #fff; border: 1px solid rgba(26,25,22,0.09); border-radius: 16px; padding: 26px; opacity: 0.92; }
+  .article-card[href] { display: block; text-decoration: none; color: inherit; opacity: 1; }
   .article-meta-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
   .article-cat { font-size: 12px; letter-spacing: 0.06em; font-weight: 700; color: var(--gold); }
   .article-soon { font-size: 11px; font-weight: 600; color: var(--muted-2); background: rgba(26,25,22,0.06); padding: 3px 9px; border-radius: 100px; }
@@ -531,11 +532,11 @@
     <div class="articles-note">Launching soon — get them first via the free guide ↑</div>
   </div>
   <div class="article-grid">
-    <div class="article-card">
-      <div class="article-meta-row"><span class="article-cat">BRAND GUIDE</span><span class="article-soon">Coming soon</span></div>
-      <h3>The 12 Best Non-Hype Brands to Flip</h3>
-      <p>Brands that show up consistently, sell quickly, and almost always profit when you buy them right.</p>
-    </div>
+    <a href="/how-to-resell-shoes.html" class="article-card">
+      <div class="article-meta-row"><span class="article-cat">BEGINNER</span></div>
+      <h3>How to Resell Shoes: A Beginner's Guide to Flipping Everyday Brands for Profit</h3>
+      <p>The exact steps to find profitable shoes at thrift stores, check if they'll sell, calculate your real profit, and list them on eBay.</p>
+    </a>
     <div class="article-card">
       <div class="article-meta-row"><span class="article-cat">SELLING</span><span class="article-soon">Coming soon</span></div>
       <h3>How to Price Used Shoes on eBay to Actually Sell</h3>

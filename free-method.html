@@ -176,12 +176,6 @@
     .bottom-form button:hover { background: #3B9468; color: #fff; }
 
     /* Footer */
-    footer { background: var(--warm); border-top: 1px solid var(--border); padding: 28px 24px; }
-    .footer-simple { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-simple p { font-size: 13px; color: var(--ink-4); }
-    .footer-simple nav { background: none; border: none; height: auto; padding: 0; display: flex; gap: 20px; }
-    .footer-simple nav a { font-size: 13px; color: var(--ink-3); text-decoration: none; }
-    .footer-simple nav a:hover { color: var(--ink); }
 
     /* ── KIT FORM OVERRIDES ── */
     .seva-form.formkit-form { width: 100%; }
@@ -408,16 +402,8 @@
   </div>
 </div>
 
-<footer>
-  <div class="footer-simple">
-    <p>© <span id="year"></span> Selah Creative Media LLC · resellingshoes.com</p>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/the-everyday-shoe-flip">The Playbook</a>
-      <a href="/privacy">Privacy</a>
-    </nav>
-  </div>
-</footer>
+<div id="footer-root"></div>
+<script src="/js/footer.js"></script>
 
 <script>
   function toggleFaq(btn) {
@@ -426,8 +412,6 @@
     document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
     if (!open) item.classList.add('open');
   }
-
-  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>

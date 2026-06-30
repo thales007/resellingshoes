@@ -46,12 +46,6 @@
     .email-card { background: var(--green-lt); border: 1px solid rgba(61,143,101,0.2); border-radius: 14px; padding: 32px; }
     .email-card a { font-family: var(--serif); font-size: 22px; color: var(--green); text-decoration: none; }
     .email-card .note { font-size: 13px; color: var(--ink-3); margin-top: 10px; }
-    footer { background: var(--warm); border-top: 1px solid var(--border); padding: 28px 24px; }
-    .footer-simple { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-simple p { font-size: 13px; color: var(--ink-4); }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 13px; color: var(--ink-3); text-decoration: none; }
-    .footer-links a:hover { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -71,16 +65,8 @@
   </div>
 </div>
 
-<footer>
-  <div class="footer-simple">
-    <p>© 2025 Selah Creative Media LLC · resellingshoes.com</p>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-    </div>
-  </div>
-</footer>
+<div id="footer-root"></div>
+<script src="/js/footer.js"></script>
 
 </body>
 </html>

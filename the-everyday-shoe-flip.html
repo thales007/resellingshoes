@@ -175,12 +175,6 @@
     .bottom-guarantee { font-size: 13px; color: #5E5953; }
 
     /* FOOTER */
-    footer { background: var(--warm); border-top: 1px solid var(--border); padding: 32px 24px; }
-    .footer-simple { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-simple p { font-size: 13px; color: var(--ink-4); }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a { font-size: 13px; color: var(--ink-3); text-decoration: none; }
-    .footer-links a:hover { color: var(--ink); }
 
     @media (max-width: 860px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -471,21 +465,8 @@
   </div>
 </div>
 
-<footer>
-  <div class="footer-simple">
-    <p>© <span id="year"></span> Selah Creative Media LLC · resellingshoes.com</p>
-    <div class="footer-links">
-      <a href="/">Home</a>
-      <a href="/free-method">Free Method</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<div id="footer-root"></div>
+<script src="/js/footer.js"></script>
 
 <script src="/js/site-config.js"></script>
 <script src="/js/cta-cards.js"></script>

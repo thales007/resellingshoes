@@ -1,3 +1,6 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/free-method", "destination": "/1000-shoe-reselling-method", "permanent": true }
+  ]
 }

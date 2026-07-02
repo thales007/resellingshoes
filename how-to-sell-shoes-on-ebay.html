@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Sell Shoes on eBay: The Complete Listing Guide</title>
+  <meta name="description" content="A complete eBay listing guide for shoe resellers — real titles, pricing strategy, item specifics, shipping tiers, and the mistakes that kill your sales." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Site config & CTA cards -->
+  <script src="/js/site-config.js" defer></script>
+  <script src="/js/cta-cards.js" defer></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0J0XP4QN5Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0J0XP4QN5Q');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --walnut: #C4943A;
+      --charcoal: #1A1A1A;
+      --cream: #faf8f5;
+      --cream-dark: #f0ece4;
+      --text-body: #2d2d2d;
+      --text-muted: #6b6b6b;
+      --green: #2f7a4f;
+      --red: #a3402f;
+      --max-w: 720px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-body);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    nav {
+      border-bottom: 1px solid #e5e0d8;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--walnut); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--walnut); }
+    .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+    .breadcrumb a { color: var(--walnut); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .article-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .article-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--walnut);
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e5e0d8;
+    }
+
+    .article-body p { margin-bottom: 1.4rem; }
+
+    .article-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.65rem;
+      color: var(--charcoal);
+      margin: 2.75rem 0 1rem;
+      line-height: 1.25;
+    }
+
+    .article-body a {
+      color: var(--walnut);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Profit box */
+    .profit-box {
+      background: var(--charcoal);
+      color: #fff;
+      border-radius: 12px;
+      padding: 2rem 2rem 1.75rem;
+      margin: 2.25rem 0;
+    }
+
+    .profit-box-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--walnut);
+      margin-bottom: 0.6rem;
+    }
+
+    .profit-box-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 1.4rem;
+      line-height: 1.3;
+    }
+
+    .profit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .profit-stat {
+      background: rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+    }
+
+    .profit-stat-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+
+    .profit-stat-value {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .profit-stat-value.green { color: #5ecb8a; }
+
+    .profit-box-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+    }
+
+    /* Title examples */
+    .title-examples {
+      background: var(--cream-dark);
+      border: 1px solid #ddd7cc;
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .title-examples-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--walnut);
+      margin-bottom: 1rem;
+    }
+
+    .title-example {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      font-size: 0.82rem;
+      background: rgba(0,0,0,0.04);
+      border: 1px solid #ddd7cc;
+      border-radius: 6px;
+      padding: 0.6rem 0.85rem;
+      margin-bottom: 0.6rem;
+      color: var(--charcoal);
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .title-example:last-child { margin-bottom: 0; }
+
+    /* Step boxes */
+    .step-box {
+      background: var(--cream-dark);
+      border: 1px solid #ddd7cc;
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .step-box h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .step-row {
+      display: flex;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid #ddd7cc;
+      font-size: 0.95rem;
+      align-items: flex-start;
+    }
+
+    .step-row:last-child { border-bottom: none; }
+
+    .step-num {
+      font-weight: 700;
+      color: var(--walnut);
+      min-width: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Shipping tiers */
+    .shipping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .shipping-table th {
+      text-align: left;
+      padding: 0.65rem 1rem;
+      background: var(--charcoal);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    .shipping-table td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid #ddd7cc;
+      color: var(--text-body);
+    }
+
+    .shipping-table tr:nth-child(even) td { background: var(--cream-dark); }
+    .shipping-table tr:last-child td { border-bottom: none; }
+
+    /* Mistakes list */
+    .mistake-item {
+      border-left: 3px solid var(--red);
+      padding: 0.85rem 0 0.85rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .mistake-item strong {
+      display: block;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .mistake-item p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      margin: 0;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 3px solid var(--walnut);
+      padding: 0.25rem 0 0.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pull-quote p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      line-height: 1.45;
+      color: var(--charcoal);
+      margin: 0;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .article-body h2 { font-size: 1.4rem; }
+      .profit-grid { grid-template-columns: 1fr 1fr; }
+      .shipping-table th, .shipping-table td { padding: 0.5rem 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">Reselling<span>Shoes</span>.com</a>
+    <ul class="nav-links">
+      <li><a href="/1000-shoe-reselling-method">Free Guide</a></li>
+      <li><a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a></li>
+      <li><a href="https://solescore.app" target="_blank">SoleScore</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-wrap">
+
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; How to Sell Shoes on eBay</div>
+
+    <p class="article-eyebrow">eBay Strategy</p>
+
+    <h1 class="article-title">How to Sell Shoes on eBay: The Complete Listing Guide</h1>
+
+    <p class="article-meta">
+      By <strong>Timothy Hales</strong> &nbsp;·&nbsp; ResellingShoes.com &nbsp;·&nbsp; Updated June 2026
+    </p>
+
+    <article class="article-body">
+
+      <p>eBay is the best platform for reselling shoes. It has the largest buyer base, the strongest search visibility, and a well-established trust system that moves product consistently. But a good pair sitting in a bad listing won't sell — or it'll sell for less than it should. This guide covers exactly how I list shoes on eBay, from the title format I use to the shipping tiers I've tested over hundreds of sales.</p>
+
+      <p>Here's what a well-executed eBay listing can produce from a thrift store find:</p>
+
+      <div class="profit-box">
+        <p class="profit-box-label">Real eBay sale from inventory records</p>
+        <p class="profit-box-title">Frye Carson Ballet Women's Size 8.5 Leather Slip On Flats</p>
+        <div class="profit-grid">
+          <div class="profit-stat">
+            <p class="profit-stat-label">Source price</p>
+            <p class="profit-stat-value">$13.37</p>
+          </div>
+          <div class="profit-stat">
+            <p class="profit-stat-label">Platform</p>
+            <p class="profit-stat-value">eBay</p>
+          </div>
+          <div class="profit-stat">
+            <p class="profit-stat-label">Days to sell</p>
+            <p class="profit-stat-value">8</p>
+          </div>
+          <div class="profit-stat">
+            <p class="profit-stat-label">Net profit</p>
+            <p class="profit-stat-value green">$45.80</p>
+          </div>
+        </div>
+        <p class="profit-box-note">Sourced for $13.37, listed on eBay, sold in 8 days. Not boots — just a well-made leather flat from a brand with a real buyer market. The listing did the work.</p>
+      </div>
+
+      <h2>Why eBay and not another platform</h2>
+
+      <p>I list everything on eBay first. The buyer pool is larger than any other resale platform, and shoe buyers search specifically — they know what brand, model, and size they want before they ever open a listing. That specificity works in your favor when your listing is built the same way their search is.</p>
+
+      <p>I also cross-list to Poshmark using <a href="https://vendoo.co/register?via=timothy-hales" target="_blank" rel="nofollow">Vendoo</a>, which adds reach without requiring duplicate work. Women's shoes and anything with a style angle tend to perform better on Poshmark. Sneakers and athletic shoes move better on eBay. But eBay is always where I start.</p>
+
+      <!-- CTA: FREE GUIDE -->
+      <div class="cta-card" data-card="free-guide"></div>
+
+      <h2>How to write an eBay title that actually gets found</h2>
+
+      <p>Your title is the most important part of your listing. eBay's search algorithm matches buyer queries against your title text — every word you include is a potential match, and every word you leave out is a missed search. The format I use every time is: <strong>Brand + Model + Style Code + Gender + Size + Key Details + Condition</strong>.</p>
+
+      <p>Here are real titles from my own listings:</p>
+
+      <div class="title-examples">
+        <p class="title-examples-label">Real listing titles — actual eBay sales</p>
+        <div class="title-example">NEW Saucony Mens 12.5 Ride-17 Tide Silver Blue Running Shoes Sneakers S20924-106</div>
+        <div class="title-example">Nike Zoom Gravity Barely Rose Women's Size 10 Running Shoes White CU4824-100</div>
+        <div class="title-example">Skechers Arch Fit Tarver CT Comp Toe Men's Size 10.5 Brown Boot 200161 / BRBK</div>
+        <div class="title-example">ASICS Gel-Kayano 12.1 White / Menthol 1203A827-100 Women's Size 8 Men's 6.5 New</div>
+        <div class="title-example">Cole Haan ZERØGRAND Remastered Wingtip Oxfords Men's Size 15 Black Ivory Shoes</div>
+      </div>
+
+      <p>Notice what every title includes: brand, model name, style code or colorway code, gender, size, and a descriptive detail or two. The style code is critical — serious buyers often search by the exact code on the tag, especially for athletic shoes. Pull it from the size tag inside the shoe every time.</p>
+
+      <p>One thing to avoid: never stuff your title with keywords that don't apply to the shoe. If it's not a Nike, don't put Nike in the title. eBay takes keyword misuse seriously, and buyers who click through expecting one thing and find another will move on without buying.</p>
+
+      <h2>Fixed price vs. auction — and how to price against sold comps</h2>
+
+      <p>I always use fixed price, never auction. Here's why: a shoe in a specific brand, model, and size is only relevant to a narrow group of buyers. That buyer might not be searching today — they might search next week or next month. An auction ends after seven days whether the right buyer has shown up or not. Fixed price keeps the listing live until that person finds it.</p>
+
+      <div class="pull-quote">
+        <p>"A shoe I list today might be found by the right buyer two weeks from now. An auction can't wait for that person. Fixed price can."</p>
+      </div>
+
+      <p>Before I set any price, I check sold comps on eBay. Here's the exact process:</p>
+
+      <div class="step-box">
+        <h3>How to find sold comps on eBay</h3>
+        <div class="step-row">
+          <span class="step-num">1</span>
+          <span>Search the style code from the size tag, or search brand + model name</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">2</span>
+          <span>Filter results to <strong>Sold listings</strong> — active listings show asking prices, not what buyers actually paid</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">3</span>
+          <span>Scan through recent sales to see the price range — note both the high and the low end</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">4</span>
+          <span>Count how many have sold vs. how many were listed — this tells you the sell-through rate and how fast the market moves</span>
+        </div>
+        <div class="step-row">
+          <span class="step-num">5</span>
+          <span>List at the high end of the sold range, with Best Offer enabled — this gives you negotiation room without leaving money on the table</span>
+        </div>
+      </div>
+
+      <p>I almost always enable Best Offer. My strategy is to list at the top of the sold comp range, accept or counter offers that come in, and occasionally get a full-price sale from a buyer who doesn't negotiate. The one time I skip Best Offer is when my profit margin is so tight that I can't afford to go lower — if there's no room to move, I set the price and hold it.</p>
+
+      <h2>Item specifics — what to fill in every time</h2>
+
+      <p>eBay's item specifics are the fields below your title and description — brand, size, color, material, style, and so on. These drive search traffic in ways your title alone can't. Fill in every field eBay recommends for shoes, and treat these as non-negotiable minimums:</p>
+
+      <p><strong>Brand and model.</strong> Always. These are the first things buyers filter by.</p>
+
+      <p><strong>Size — US, UK, and EU.</strong> Include all three when you can find them on the tag. Shoe buyers, especially for performance and specialty brands, often know their size in multiple systems and search accordingly.</p>
+
+      <p><strong>Gender.</strong> Men's, women's, or unisex. Never leave this blank — it affects which search results your listing appears in.</p>
+
+      <p><strong>Condition.</strong> If the shoe is new, specify whether it comes with the box or not. If it's used, be specific about every flaw in the condition notes — a small tear in the toe box, heel drag on the outsole, scuff marks on the midsole. Buyers who know exactly what they're getting leave better reviews and file fewer disputes. Buyers who are surprised do the opposite.</p>
+
+      <p><strong>Material, heel height, and style.</strong> Fill these in when eBay surfaces them. The more fields you complete, the more places your listing shows up in search.</p>
+
+      <!-- CTA: SOLESCORE -->
+      <div class="cta-card" data-card="solescore"></div>
+
+      <h2>Photos that sell</h2>
+
+      <p>Poor photos are one of the most common and most fixable mistakes beginner resellers make. A buyer can't pick up the shoe — your photos are the only way they can evaluate what they're buying. Skipping angles or shooting one overhead photo and calling it done will cost you sales.</p>
+
+      <p>Every shoe listing should include: both side profiles (right side facing right, left side facing left), front and back shots, an overhead shot of both shoes together, a sole shot showing tread wear clearly, and a photo of the size tag. That last one eliminates the most common question buyers ask before purchasing — and every question a buyer has to ask is a reason they might not buy.</p>
+
+      <h2>Shipping — how to price it and how to send it</h2>
+
+      <p>Do not set your postage at the post office counter or through their kiosk. You will pay full retail USPS rates, which can be sixty percent or more above what eBay's discounted rates are. I use eBay's built-in shipping labels for every order — the discount is built in and it keeps everything in one place.</p>
+
+      <p>I use flat-rate shipping tiers rather than calculated shipping. Calculated shipping charges fees on the shipping amount itself, which eats into your net. Flat rate is cleaner. Here are the tiers I use:</p>
+
+      <table class="shipping-table">
+        <thead>
+          <tr>
+            <th>Package weight</th>
+            <th>Shipping rate</th>
+            <th>Typical items</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Under 1 lb</td>
+            <td>$6.99</td>
+            <td>Lightweight flats, sandals, slip-ons</td>
+          </tr>
+          <tr>
+            <td>1–3 lbs</td>
+            <td>$9.99</td>
+            <td>Most sneakers and athletic shoes</td>
+          </tr>
+          <tr>
+            <td>Over 3 lbs</td>
+            <td>$14.99</td>
+            <td>Heavy boots, work boots, tall boots</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>These rates consistently cover costs and align with what other sellers charge on the platform. Weigh your shoes with the packaging before you list — guessing on weight is how you end up losing money on shipping.</p>
+
+      <h2>The mistakes that cost beginners sales</h2>
+
+      <div class="mistake-item">
+        <strong>Pricing off active listings instead of sold comps</strong>
+        <p>An active listing is what someone is asking for a shoe — not what buyers are actually paying. Always filter for sold listings before you set a price. Active prices are wishful thinking. Sold prices are market reality.</p>
+      </div>
+
+      <div class="mistake-item">
+        <strong>Not charging enough for shipping</strong>
+        <p>Underestimating shipping weight or being overly optimistic about rates is a fast way to eat into your margin on every single sale. Use flat-rate tiers you've tested, not guesses.</p>
+      </div>
+
+      <div class="mistake-item">
+        <strong>Poor or incomplete photos</strong>
+        <p>One overhead shot doesn't tell a buyer what they need to know. Shoot every angle, including the sole and the size tag, every time.</p>
+      </div>
+
+      <div class="mistake-item">
+        <strong>Keyword stuffing the title</strong>
+        <p>Adding brand names or model numbers that don't apply to your listing might get more clicks, but they'll be the wrong clicks — buyers who leave immediately and don't buy. Your title should describe exactly what's in the box, nothing else.</p>
+      </div>
+
+      <p>eBay rewards sellers who list consistently, describe honestly, and price based on real data. Get those three things right and the platform does the rest.</p>
+
+      <!-- BOTTOM CTA STACK -->
+      <div class="cta-card" data-card="free-guide"></div>
+      <div class="cta-card" data-card="paid-guide"></div>
+
+    </article>
+  </main>
+
+  <div id="footer-root"></div>
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

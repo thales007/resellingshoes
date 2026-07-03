@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Start Reselling Shoes with Almost Nothing</title>
+  <meta name="description" content="You don't need a lot of money to start reselling shoes. Here's the exact method — from zero capital to your first profitable flip — straight from someone who did it." />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0J0XP4QN5Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0J0XP4QN5Q');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Site config & CTA cards -->
+  <script src="/js/site-config.js" defer></script>
+  <script src="/js/cta-cards.js" defer></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --walnut: #C4943A;
+      --charcoal: #1A1A1A;
+      --cream: #faf8f5;
+      --cream-dark: #f0ece4;
+      --text-body: #2d2d2d;
+      --text-muted: #6b6b6b;
+      --green: #2f7a4f;
+      --max-w: 720px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-body);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── Nav ── */
+    nav {
+      border-bottom: 1px solid #e5e0d8;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--walnut); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--walnut); }
+    @media (max-width: 600px) { .nav-links { display: none; } }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+    .breadcrumb a { color: var(--walnut); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .article-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .article-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--walnut);
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e5e0d8;
+    }
+
+    .article-body p { margin-bottom: 1.4rem; }
+
+    .article-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.65rem;
+      color: var(--charcoal);
+      margin: 2.75rem 0 1rem;
+      line-height: 1.25;
+    }
+
+    .article-body a {
+      color: var(--walnut);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Origin story box */
+    .origin-box {
+      background: var(--charcoal);
+      color: #fff;
+      border-radius: 12px;
+      padding: 2rem 2rem 1.75rem;
+      margin: 2.25rem 0;
+    }
+
+    .origin-box-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--walnut);
+      margin-bottom: 1.25rem;
+    }
+
+    .origin-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .origin-row:last-child { border-bottom: none; }
+
+    .origin-item {
+      font-size: 0.95rem;
+      font-weight: 500;
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .origin-result {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      white-space: nowrap;
+    }
+
+    .origin-result .profit {
+      color: #5ecb8a;
+      font-weight: 600;
+    }
+
+    /* Compound math box */
+    .compound-box {
+      background: var(--cream-dark);
+      border: 1px solid #ddd7cc;
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .compound-box h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .compound-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd7cc;
+      font-size: 0.95rem;
+    }
+
+    .compound-row:last-child { border-bottom: none; }
+    .compound-row-label { color: var(--text-muted); }
+    .compound-row-value { font-weight: 600; color: var(--charcoal); }
+    .compound-row-value.highlight { color: var(--walnut); font-size: 1.05rem; }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 3px solid var(--walnut);
+      padding: 0.25rem 0 0.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pull-quote p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      line-height: 1.45;
+      color: var(--charcoal);
+      margin: 0;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .article-body h2 { font-size: 1.4rem; }
+      .origin-row { flex-direction: column; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">Reselling<span>Shoes</span>.com</a>
+    <ul class="nav-links">
+      <li><a href="/1000-shoe-reselling-method">Free Guide</a></li>
+      <li><a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a></li>
+      <li><a href="https://solescore.app" target="_blank">SoleScore</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-wrap">
+
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; How to Start Reselling Shoes</div>
+
+    <p class="article-eyebrow">Getting Started</p>
+
+    <h1 class="article-title">How to Start Reselling Shoes with Almost Nothing</h1>
+
+    <p class="article-meta">
+      By <strong>Timothy Hales</strong> &nbsp;·&nbsp; ResellingShoes.com &nbsp;·&nbsp; Updated June 2026
+    </p>
+
+    <article class="article-body">
+
+      <p>You don't need a lot of money to start reselling shoes. I didn't put a single dollar of my own money into getting this business off the ground. I started by selling things I already owned — Pampered Chef kitchen tools, a chef's knife, household items sitting in closets — listed them on eBay, and used that money to buy more things to sell. I didn't even start with shoes. I spent about eight or nine months as an everything seller first, flipping whatever I could find: a typewriter, McDonald's collectible plates, toys, hats, and whatever else from yard sales had a buyer market online. Then I narrowed my focus to shoes — and everything got simpler and more profitable from there.</p>
+
+      <h2>Step one: build starting capital before you buy a single shoe</h2>
+
+      <p>Before I bought my first pair of shoes to flip, I looked around my house for things I wasn't using that had resale value and sold those first. Kitchen tools turned out to be a reliable early category — specific brands and items that people search for online but can't easily find in stores.</p>
+
+      <p>Here's what that looked like from my own early eBay sales:</p>
+
+      <div class="origin-box">
+        <p class="origin-box-label">Early eBay sales that built my starting capital</p>
+        <div class="origin-row">
+          <span class="origin-item">Pampered Chef Mini Tart Shaper — new in sealed package</span>
+          <span class="origin-result">Sold for $14.95 → <span class="profit">$13.13 net</span></span>
+        </div>
+        <div class="origin-row">
+          <span class="origin-item">Pampered Chef Microwave Grip — set of two</span>
+          <span class="origin-result">Sold for $13.00 → <span class="profit">$11.36 net</span></span>
+        </div>
+        <div class="origin-row">
+          <span class="origin-item">Allezola Professional Chef's Knife 7.5 inch</span>
+          <span class="origin-result">Sold for $13.98 → <span class="profit">$11.80 net</span></span>
+        </div>
+      </div>
+
+      <p>Three items I already owned, over $36 net. That became seed money for more inventory. I kept selling — clothes, toys, hats, more household items, whatever I found at yard sales that had a buyer market online — for months before I made the deliberate decision to go all-in on shoes.</p>
+
+      <p>If you don't have anything at home to sell, a few dollars is enough to get started. Buy a pair of shoes at a yard sale for $2, flip them for $15, put that $15 back in. The capital builds faster than most people expect once the cycle starts moving.</p>
+
+      <!-- CTA: FREE GUIDE -->
+      <div class="cta-card" data-card="free-guide"></div>
+
+      <h2>Why shoes — and why I switched from selling everything</h2>
+
+      <p>Selling everything sounds like more opportunity. In practice it's more work with less to show for it. Every item was a different research project. A vintage typewriter needed different knowledge than a set of golf clubs. Custom packaging, fragile shipping, inconsistent margins — every sale was its own problem to solve.</p>
+
+      <p>Shoes fixed all of that. They're a consistent size and weight, which means predictable shipping. The brands that resell well are learnable — once you know them, you recognize them instantly in the field. And the market is massive: people buy shoes online constantly, in every size, at every price point. Narrowing my focus built real knowledge instead of scattered experience, and my results became consistent instead of random.</p>
+
+      <div class="pull-quote">
+        <p>"Every item I sold before shoes taught me something. But shoes were the category where everything finally clicked into a system."</p>
+      </div>
+
+      <h2>How to find shoes — and make sourcing a routine</h2>
+
+      <p>The two best sources for everyday shoe reselling are yard sales and thrift stores. Each has its place in a consistent weekly routine.</p>
+
+      <p><strong>Yard sales.</strong> The lowest prices you'll find anywhere. On Saturday mornings I check Facebook buy-and-sell groups for listings, plan a route or focus on a specific area, and go. Neighborhood-wide sales are the priority — you can cover many different sellers in one stop, which maximizes finds per hour on the road. Over time you develop a feel for which neighborhoods produce good inventory and when.</p>
+
+      <p><strong>Thrift stores.</strong> More consistent inventory than yard sales, slightly higher prices. I hit a few stores once a week — Sunday afternoons or one morning during the week. Inventory turns over regularly, so showing up on a consistent schedule means you catch new arrivals before other resellers do.</p>
+
+      <p>The key word in both cases is routine. This is not a browse-when-you-feel-like-it business. Intentional, scheduled sourcing is what keeps your inventory pipeline moving.</p>
+
+      <h2>What to buy on your first sourcing trip</h2>
+
+      <p>If you're walking into Goodwill with $20 for the first time, don't spend it all at once. Look for one or two pairs from brands with strong resale demand — New Balance, HOKA, Brooks, On Running — in good condition and common sizes. Men's 9 through 13 and women's 7 through 10 sell the fastest.</p>
+
+      <p>Before you commit to any pair, check sold listings on eBay for that exact shoe. Search the brand and model, filter to sold results, and see what buyers have actually paid. If the math works — source price low enough to net $15 to $20 after fees and shipping — buy it. If it doesn't, put it back. There will always be more shoes on the next rack.</p>
+
+      <h2>The math behind compounding your profits</h2>
+
+      <p>Capital is the real constraint early on. The reason it builds faster than people expect is compounding — every sale produces money that goes straight back into more inventory.</p>
+
+      <div class="compound-box">
+        <h3>Starting from a $2 yard sale find</h3>
+        <div class="compound-row">
+          <span class="compound-row-label">Buy 1 pair at a yard sale</span>
+          <span class="compound-row-value">$2.00</span>
+        </div>
+        <div class="compound-row">
+          <span class="compound-row-label">Sell for ~$15 net after fees</span>
+          <span class="compound-row-value">$15.00</span>
+        </div>
+        <div class="compound-row">
+          <span class="compound-row-label">Reinvest — buy 2 pairs at $6–7 each</span>
+          <span class="compound-row-value">$14.00</span>
+        </div>
+        <div class="compound-row">
+          <span class="compound-row-label">Sell both, net ~$20 each</span>
+          <span class="compound-row-value">$40.00</span>
+        </div>
+        <div class="compound-row">
+          <span class="compound-row-label">Reinvest — buy 5–6 pairs</span>
+          <span class="compound-row-value">$35.00</span>
+        </div>
+        <div class="compound-row">
+          <span class="compound-row-label">Keep reinvesting every sale</span>
+          <span class="compound-row-value highlight">Capital grows with every cycle</span>
+        </div>
+      </div>
+
+      <p>Most people slow their own growth by pulling profit out before the business has enough runway to build momentum. The more you reinvest in the early months, the faster you reach a level where you can source in real volume.</p>
+
+      <h2>The thing I wish I had known on day one</h2>
+
+      <p>A shoe can be profitable and still be a bad buy — if it takes six to twelve months to sell, your money is tied up the entire time and you can't reinvest it. Early on I bought too much slow-moving inventory: decent profit per pair, but capital sitting idle for months at a stretch.</p>
+
+      <p>Sell-through rate matters as much as profit margin. Inventory that sells consistently within sixty to ninety days lets you reinvest sooner, buy more pairs, and compound your profits at a much higher rate. A $20 net profit on a shoe that sells in two weeks is worth more to your business than a $35 profit on a shoe that sits for five months.</p>
+
+      <p>This is why brand knowledge matters from the start — not just which brands are profitable, but which ones move fast enough to keep your capital working. That combination is what turns a few dollars and a Saturday morning at a yard sale into something real.</p>
+
+      <!-- BOTTOM CTA STACK -->
+      <div class="cta-card" data-card="free-guide"></div>
+      <div class="cta-card" data-card="paid-guide"></div>
+
+    </article>
+  </main>
+
+  <div id="footer-root"></div>
+  <script src="/js/footer.js"></script>
+
+</body>
+</html>

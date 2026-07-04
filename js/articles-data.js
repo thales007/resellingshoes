@@ -66,15 +66,14 @@ const ARTICLES_DATA = [
     comingSoon: false,
   },
   {
-    // TODO: fill in once article 7 is published — title, category, blurb, url, readTime, publishedAt.
-    slug: "article-7",
-    title: "Your 7th Article",
-    category: "TBD",
-    blurb: "Placeholder — swap in the real title, category and summary when it's ready.",
-    url: "",
-    readTime: "— min read",
-    publishedAt: "2026-07-02",
-    comingSoon: true,
+    slug: "how-to-sell-used-shoes-online",
+    title: "How to Sell Used Shoes Online (And Actually Make Money)",
+    category: "SELLING",
+    blurb: "Have shoes sitting in your closet? What they're worth, where to list them, and how 20 minutes can turn into real money.",
+    url: "/how-to-sell-used-shoes-online.html",
+    readTime: "8 min read",
+    publishedAt: "2026-07-04",
+    comingSoon: false,
   },
 ];
 

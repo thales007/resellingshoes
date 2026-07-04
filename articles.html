@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0J0XP4QN5Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0J0XP4QN5Q');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guides & Resources — ResellingShoes.com</title>
+  <meta name="description" content="Free guides on flipping everyday thrift-store and yard-sale shoes for profit — sourcing, pricing, listing, and platform strategy." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://resellingshoes.com/articles.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:title" content="Guides & Resources — ResellingShoes.com" />
+  <meta property="og:description" content="Free guides on flipping everyday thrift-store and yard-sale shoes for profit." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --walnut: #C4943A;
+      --walnut-light: #f5ecd8;
+      --charcoal: #1A1A1A;
+      --body-text: #2e2e2e;
+      --muted: #6b6b6b;
+      --border: #e5e0d8;
+      --bg: #ffffff;
+      --bg-soft: #faf8f5;
+      --new-bg: #e3f3ea;
+      --new-text: #2e7d52;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--body-text);
+      background: var(--bg);
+    }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--charcoal); text-decoration: none; }
+    .nav-logo span { color: var(--walnut); }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--walnut); }
+
+    .wrapper { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--walnut); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 40px); color: var(--charcoal); margin-bottom: 8px; }
+    .subhead { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+
+    /* Featured */
+    .featured {
+      display: block; text-decoration: none; color: inherit;
+      background: var(--bg-soft); border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px; margin-bottom: 36px;
+    }
+    .featured-tags { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag-latest { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--charcoal); color: #fff; padding: 4px 10px; border-radius: 4px; }
+    .tag-category { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--walnut); }
+    .tag-new { font-size: 11px; font-weight: 700; color: var(--new-text); background: var(--new-bg); padding: 2px 8px; border-radius: 100px; }
+    .tag-soon { font-size: 11px; font-weight: 600; color: var(--muted); background: var(--walnut-light); padding: 2px 8px; border-radius: 100px; }
+    .featured h2 { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--charcoal); margin: 0 0 10px; line-height: 1.25; }
+    .featured p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 65ch; }
+
+    /* Pills */
+    .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .pill {
+      font-size: 13px; font-weight: 600; border: none; cursor: pointer;
+      padding: 8px 14px; border-radius: 100px; background: var(--walnut-light); color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .pill.active { background: var(--charcoal); color: #fff; }
+
+    /* Toolbar */
+    .toolbar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+    .toolbar input, .toolbar select {
+      padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px;
+      font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; background: #fff;
+    }
+    .toolbar input { flex: 1; min-width: 200px; }
+
+    .count { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+
+    /* Grid */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card {
+      display: block; text-decoration: none; color: inherit;
+      border: 1px solid var(--border); border-radius: 12px; padding: 20px;
+    }
+    .card-tags { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+    .card h3 { font-size: 16px; font-weight: 700; color: var(--charcoal); margin: 0 0 8px; line-height: 1.3; }
+    .card p { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 0 0 10px; }
+    .card .meta { font-size: 12px; color: var(--muted); }
+
+    .empty { text-align: center; padding: 48px 24px; color: var(--muted); font-size: 15px; }
+    .empty strong { color: var(--charcoal); }
+
+    .load-more-wrap { display: flex; justify-content: center; margin-top: 32px; }
+    .load-more-btn {
+      font-size: 14px; font-weight: 600; color: var(--charcoal); background: #fff;
+      border: 1.5px solid var(--charcoal); padding: 12px 28px; border-radius: 8px; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .load-more-btn:hover { background: var(--walnut-light); }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .wrapper { padding: 32px 18px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">Reselling<span>Shoes</span>.com</a>
+  <ul class="nav-links">
+    <li><a href="/1000-shoe-reselling-method">Free Guide</a></li>
+    <li><a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a></li>
+    <li><a href="https://solescore.app" target="_blank">SoleScore</a></li>
+  </ul>
+</nav>
+
+<div class="wrapper">
+  <div class="breadcrumb"><a href="/">Home</a> &rsaquo; Articles</div>
+  <h1>Guides &amp; Resources</h1>
+  <p class="subhead">Free guides on flipping everyday thrift-store and yard-sale shoes for profit.</p>
+
+  <a class="featured" id="featured-card" href="#"></a>
+
+  <div class="pills" id="pills"></div>
+
+  <div class="toolbar">
+    <input type="text" id="search-input" placeholder="Search articles…" />
+    <select id="sort-select">
+      <option value="newest">Newest first</option>
+      <option value="oldest">Oldest first</option>
+      <option value="az">A–Z</option>
+    </select>
+  </div>
+
+  <div class="count" id="count-label"></div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="empty" id="empty-state" style="display:none;"></div>
+
+  <div class="load-more-wrap" id="load-more-wrap" style="display:none;">
+    <button class="load-more-btn" id="load-more-btn">Load more articles</button>
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script src="js/articles-data.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/site-config.js"></script>
+
+<script>
+(function () {
+  var CATEGORY_ORDER = ["GETTING STARTED", "BEGINNER", "SOURCING", "SELLING", "PLATFORM STRATEGY", "TBD"];
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var PAGE_SIZE = 10;
+
+  function shortDate(dateStr) {
+    var d = new Date(dateStr + "T00:00:00");
+    return MONTHS[d.getMonth()] + " " + d.getDate();
+  }
+  function isNew(dateStr) {
+    var d = new Date(dateStr + "T00:00:00");
+    var days = (Date.now() - d.getTime()) / 86400000;
+    return days >= 0 && days <= 14;
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var state = {
+    query: params.get('q') || '',
+    category: params.get('cat') || 'all',
+    sort: params.get('sort') || 'newest',
+    visibleCount: PAGE_SIZE,
+  };
+
+  var newestFirst = ARTICLES_DATA.slice().sort(function (a, b) {
+    return new Date(b.publishedAt) - new Date(a.publishedAt);
+  });
+  var featured = newestFirst[0];
+  var rest = newestFirst.slice(1);
+
+  var uniqueCats = [];
+  ARTICLES_DATA.forEach(function (a) { if (uniqueCats.indexOf(a.category) === -1) uniqueCats.push(a.category); });
+  uniqueCats.sort(function (a, b) { return CATEGORY_ORDER.indexOf(a) - CATEGORY_ORDER.indexOf(b); });
+
+  function updateUrl() {
+    var p = new URLSearchParams(window.location.search);
+    state.query ? p.set('q', state.query) : p.delete('q');
+    (state.category && state.category !== 'all') ? p.set('cat', state.category) : p.delete('cat');
+    (state.sort && state.sort !== 'newest') ? p.set('sort', state.sort) : p.delete('sort');
+    var qs = p.toString();
+    history.replaceState(null, '', qs ? '?' + qs : window.location.pathname);
+  }
+
+  function renderFeatured() {
+    var el = document.getElementById('featured-card');
+    el.href = featured.url || '#';
+    el.innerHTML =
+      '<div class="featured-tags">' +
+        '<span class="tag-latest">Latest</span>' +
+        '<span class="tag-category">' + escapeHtml(featured.category) + '</span>' +
+        (isNew(featured.publishedAt) ? '<span class="tag-new">New</span>' : '') +
+      '</div>' +
+      '<h2>' + escapeHtml(featured.title) + '</h2>' +
+      '<p>' + escapeHtml(featured.blurb) + '</p>';
+  }
+
+  function renderPills() {
+    var el = document.getElementById('pills');
+    var all = [{ name: 'All categories', value: 'all' }].concat(uniqueCats.map(function (c) { return { name: c, value: c }; }));
+    el.innerHTML = all.map(function (c) {
+      var active = c.value === state.category;
+      return '<button type="button" class="pill' + (active ? ' active' : '') + '" data-cat="' + escapeHtml(c.value) + '">' + escapeHtml(c.name) + '</button>';
+    }).join('');
+    el.querySelectorAll('.pill').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        state.category = btn.getAttribute('data-cat');
+        state.visibleCount = PAGE_SIZE;
+        updateUrl();
+        render();
+      });
+    });
+  }
+
+  function getFilteredSorted() {
+    var q = state.query.toLowerCase();
+    var list = rest.filter(function (a) {
+      var matchesQuery = (a.title + ' ' + a.blurb + ' ' + a.category).toLowerCase().indexOf(q) !== -1;
+      var matchesCat = state.category === 'all' || a.category === state.category;
+      return matchesQuery && matchesCat;
+    });
+    list.sort(function (a, b) {
+      if (state.sort === 'newest') return new Date(b.publishedAt) - new Date(a.publishedAt);
+      if (state.sort === 'oldest') return new Date(a.publishedAt) - new Date(b.publishedAt);
+      return a.title.localeCompare(b.title);
+    });
+    return list;
+  }
+
+  function cardHtml(a) {
+    return (
+      '<a class="card" href="' + (a.url || '#') + '">' +
+        '<div class="card-tags">' +
+          '<span class="tag-category">' + escapeHtml(a.category) + '</span>' +
+          (isNew(a.publishedAt) ? '<span class="tag-new">New</span>' : '') +
+          (a.comingSoon ? '<span class="tag-soon">Coming soon</span>' : '') +
+        '</div>' +
+        '<h3>' + escapeHtml(a.title) + '</h3>' +
+        '<p>' + escapeHtml(a.blurb) + '</p>' +
+        '<div class="meta">' + escapeHtml(a.readTime) + ' &middot; ' + shortDate(a.publishedAt) + '</div>' +
+      '</a>'
+    );
+  }
+
+  function render() {
+    var full = getFilteredSorted();
+    var shown = full.slice(0, state.visibleCount);
+
+    document.getElementById('count-label').textContent = 'Showing ' + shown.length + ' of ' + full.length + ' articles';
+    document.getElementById('grid').innerHTML = shown.map(cardHtml).join('');
+
+    var emptyEl = document.getElementById('empty-state');
+    if (full.length === 0) {
+      emptyEl.style.display = 'block';
+      emptyEl.innerHTML = 'No articles match "<strong>' + escapeHtml(state.query) + '</strong>". Try a different search or category.';
+    } else {
+      emptyEl.style.display = 'none';
+    }
+
+    document.getElementById('load-more-wrap').style.display = (state.visibleCount < full.length) ? 'flex' : 'none';
+
+    document.querySelectorAll('.pill').forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-cat') === state.category);
+    });
+  }
+
+  document.getElementById('search-input').value = state.query;
+  document.getElementById('sort-select').value = state.sort;
+
+  document.getElementById('search-input').addEventListener('input', function (e) {
+    state.query = e.target.value;
+    state.visibleCount = PAGE_SIZE;
+    updateUrl();
+    render();
+  });
+  document.getElementById('sort-select').addEventListener('change', function (e) {
+    state.sort = e.target.value;
+    state.visibleCount = PAGE_SIZE;
+    updateUrl();
+    render();
+  });
+  document.getElementById('load-more-btn').addEventListener('click', function () {
+    state.visibleCount += PAGE_SIZE;
+    render();
+  });
+
+  renderFeatured();
+  renderPills();
+  render();
+})();
+</script>
+
+</body>
+</html>

@@ -2,6 +2,12 @@
   "cleanUrls": true,
   "redirects": [
     { "source": "/free-method", "destination": "/1000-shoe-reselling-method", "permanent": true },
-    { "source": "/home", "destination": "/", "permanent": true }
+    { "source": "/home", "destination": "/", "permanent": true },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.resellingshoes.com" }],
+      "destination": "https://resellingshoes.com/:path*",
+      "permanent": true
+    }
   ]
 }

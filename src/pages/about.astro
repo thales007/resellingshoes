@@ -23,55 +23,142 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --ink: #1A1A1A; --ink-2: #4A4540; --ink-3: #7A746E; --ink-4: #A39D97;
-      --cream: #FAF8F5; --warm: #F2EDE6; --border: #E8E2DA;
-      --walnut: #C4943A; --green: #3D8F65; --green-lt: #EAF4EE;
+      --ink: #1A1A1A; --ink-2: #3A3630; --ink-3: #6b6b6b; --ink-4: #A39D97;
+      --cream: #faf8f5; --cream-dark: #f0ece4; --border: #e5e0d8;
+      --walnut: #C4943A; --green: #2F8B5C; --green-hover: #267049;
       --serif: 'DM Serif Display', Georgia, serif;
       --sans: 'DM Sans', sans-serif;
     }
-    body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; }
+
     nav {
       background: rgba(250,248,245,0.95); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border); padding: 0 24px; height: 64px;
       display: flex; align-items: center; justify-content: space-between;
       position: sticky; top: 0; z-index: 100;
     }
-    .nav-logo { font-weight: 800; font-size: 17px; color: var(--ink); text-decoration: none; }
+    .nav-logo { font-weight: 800; font-size: 18px; color: var(--ink); }
     .nav-logo span { color: var(--green); }
-    .nav-back { font-size: 14px; color: var(--ink-3); text-decoration: none; }
-    .nav-back:hover { color: var(--ink); }
-    .content { max-width: 680px; margin: 0 auto; padding: 64px 24px 96px; }
-    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--walnut); margin-bottom: 14px; display: block; }
-    .content h1 { font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px; line-height: 1.1; }
-    .content h1 em { font-style: italic; color: var(--walnut); }
-    .content p { font-size: 16px; color: var(--ink-2); margin-bottom: 18px; line-height: 1.8; }
-    .content a { color: var(--green); font-weight: 700; text-decoration: none; }
-    .cta-box { background: var(--green-lt); border: 1px solid rgba(61,143,101,0.2); border-radius: 14px; padding: 28px; margin-top: 32px; }
-    .cta-box p { color: var(--ink-2); margin-bottom: 16px; }
-    .cta-box a.btn { display: inline-block; background: var(--green); color: #fff; padding: 12px 24px; border-radius: 9px; font-weight: 800; font-size: 14px; text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-3); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { background: var(--green); color: #fff !important; padding: 9px 18px; border-radius: 8px; font-weight: 700 !important; }
+    .nav-cta:hover { background: var(--green-hover) !important; }
+    @media (max-width: 600px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    .page-wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+
+    .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--walnut); margin-bottom: 16px; display: block;
+    }
+    h1 {
+      font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.1; margin-bottom: 40px; color: var(--ink);
+    }
+    h1 em { font-style: italic; color: var(--walnut); }
+
+    .about-grid {
+      display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; margin-bottom: 40px;
+    }
+    .about-photo {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 20%;
+      border-radius: 14px; border: 1px solid var(--border); display: block;
+    }
+    .about-body p { font-size: 16px; color: var(--ink-2); margin-bottom: 18px; line-height: 1.8; }
+    .about-body a { color: var(--green); font-weight: 600; }
+    .about-body strong { color: var(--ink); }
+
+    .about-sig {
+      font-family: var(--serif); font-size: 1.1rem; color: var(--ink-3); font-style: italic; margin-top: 8px;
+    }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+    .stat { background: var(--cream-dark); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+    .stat-value { font-family: var(--serif); font-size: 1.8rem; color: var(--ink); display: block; margin-bottom: 4px; }
+    .stat-label { font-size: 13px; color: var(--ink-3); line-height: 1.4; }
+
+    .cta-banner {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      background: #f5ecd8; border: 1px solid rgba(196,148,58,0.3); border-radius: 12px; padding: 22px 26px;
+    }
+    .cta-banner-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--walnut); margin-bottom: 4px; }
+    .cta-banner-title { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); margin-bottom: 2px; }
+    .cta-banner-sub { font-size: 13px; color: #7a6640; }
+    .cta-banner-btn { flex-shrink: 0; background: var(--walnut); color: #fff; font-size: 14px; font-weight: 700; padding: 11px 20px; border-radius: 8px; white-space: nowrap; }
+    .cta-banner-btn:hover { opacity: 0.88; }
+
+    @media (max-width: 600px) {
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .about-photo { max-width: 180px; }
+      .stat-row { grid-template-columns: 1fr; gap: 12px; }
+      .cta-banner { flex-direction: column; align-items: flex-start; }
+      .cta-banner-btn { width: 100%; text-align: center; }
+    }
   </style>
 </head>
 <body>
 
 <nav>
   <a href="/" class="nav-logo">Reselling<span>Shoes</span>.com</a>
-  <a href="/" class="nav-back">← Back to home</a>
+  <div class="nav-links">
+    <a href="/articles">Articles</a>
+    <a href="/the-everyday-shoe-flip">The Playbook</a>
+    <a href="/1000-shoe-reselling-method" class="nav-cta">Free Guide</a>
+  </div>
 </nav>
 
-<div class="content">
+<div class="page-wrap">
   <span class="eyebrow">About</span>
-  <h1>Helping you earn your<br>first <em>$1,000.</em></h1>
+  <h1>Helping you earn your first <em>$1,000.</em></h1>
 
-  <p>I'm Timothy Hales. ResellingShoes.com exists for one reason: to help part-time resellers earn their first $1,000 flipping everyday shoes — Merrell, Dansko, New Balance, Brooks, Keen — not hype sneakers.</p>
-
-  <p>Most reselling content online is built for people chasing Jordans and limited drops. That's a different game with different rules. This site is for the person with a Goodwill nearby, a few hours a week, and a willingness to learn the actual system: what to buy, how to clean and photograph it, how to price it, and how to ship it without losing your margin.</p>
-
-  <p>That system is what became <a href="/1000-shoe-reselling-method">The $1,000 Shoe Reselling Method</a> (free) and <a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a> (the complete playbook). I also built <a href="https://solescore.app" target="_blank">SoleScore</a>, a free tool that scores a shoe's resale potential in seconds, right from the thrift store aisle.</p>
-
-  <div class="cta-box">
-    <p>Want to start with the free method?</p>
-    <a href="/1000-shoe-reselling-method" class="btn">Get the Free Method →</a>
+  <div class="about-grid">
+    <img src="/images/timothy.jpg" alt="Timothy Hales" class="about-photo">
+    <div class="about-body">
+      <p>I'm Timothy Hales — a shoe reseller, content creator, and founder of ResellingShoes.com. This site exists for one reason: to help part-time resellers earn their first $1,000 flipping everyday shoes.</p>
+      <p>Not Jordans. Not limited drops. <strong>Everyday brands</strong> — Merrell, Dansko, New Balance, Brooks, KEEN — the kind of shoes sitting on thrift store shelves every single day, mostly ignored.</p>
+      <p>I've done <strong>over $100,000 in gross shoe sales</strong> sourced almost entirely from Goodwill, yard sales, and estate sales. No sneaker connections, no reseller network, no special access — just a system that works when you apply it consistently.</p>
+      <div class="about-sig">— Timothy Hales</div>
+    </div>
   </div>
+
+  <div class="stat-row">
+    <div class="stat">
+      <span class="stat-value">$100K+</span>
+      <span class="stat-label">in gross shoe sales from thrift stores</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">400+</span>
+      <span class="stat-label">pairs flipped and tracked since 2023</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">0</span>
+      <span class="stat-label">hype sneakers — all everyday brands</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="about-body">
+    <p>Most reselling content online is built for people chasing Jordans and limited drops. That's a different game — one that requires insider connections, a lot of capital, and a tolerance for thin margins on high-risk inventory.</p>
+    <p>This site is for a different kind of reseller: someone with a Goodwill nearby, a few hours a week, and a willingness to learn a repeatable system. What to buy, how to clean and photograph it, how to price it, and how to ship it without eating your margin.</p>
+    <p>That system became <a href="/1000-shoe-reselling-method">The $1,000 Shoe Reselling Method</a> (free) — the 5-step overview I wish I'd had at the start. And for resellers ready to go deeper, <a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a> is the complete 74-page playbook.</p>
+    <p>I also built <a href="https://solescore.app" target="_blank">SoleScore</a> — a tool that lets you photograph a shoe in the thrift store aisle and get a resale score in seconds. It's in beta now and free to try.</p>
+  </div>
+
+  <hr class="divider">
+
+  <a href="/1000-shoe-reselling-method" class="cta-banner">
+    <div>
+      <div class="cta-banner-label">Free · Instant PDF</div>
+      <div class="cta-banner-title">The $1,000 Shoe Reselling Method</div>
+      <div class="cta-banner-sub">The brands, profit math, and sourcing strategy — 16 pages.</div>
+    </div>
+    <span class="cta-banner-btn">Get it free →</span>
+  </a>
 </div>
 
 <div id="footer-root"></div>

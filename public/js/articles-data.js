@@ -12,7 +12,7 @@ const ARTICLES_DATA = [
     blurb: "The exact steps to find profitable shoes, check if they'll sell, calculate real profit, and list them on eBay.",
     url: "/how-to-resell-shoes",
     readTime: "12 min read",
-    publishedAt: "2026-01-22",
+    publishedAt: "2026-06-22",
     comingSoon: false,
   },
   {
@@ -22,7 +22,7 @@ const ARTICLES_DATA = [
     blurb: "After $100K+ in gross shoe sales from thrift stores and yard sales, here's what the numbers actually look like.",
     url: "/is-reselling-shoes-profitable",
     readTime: "9 min read",
-    publishedAt: "2026-02-18",
+    publishedAt: "2026-06-24",
     comingSoon: false,
   },
   {
@@ -32,7 +32,7 @@ const ARTICLES_DATA = [
     blurb: "The brands with proven buyer demand — ranked by real sales data from 400+ pairs flipped since 2023.",
     url: "/best-shoes-to-resell",
     readTime: "11 min read",
-    publishedAt: "2026-03-10",
+    publishedAt: "2026-06-26",
     comingSoon: false,
   },
   {
@@ -42,7 +42,7 @@ const ARTICLES_DATA = [
     blurb: "The title format, pricing strategy, item specifics, and shipping tiers used across hundreds of eBay sales.",
     url: "/how-to-sell-shoes-on-ebay",
     readTime: "14 min read",
-    publishedAt: "2026-04-02",
+    publishedAt: "2026-06-28",
     comingSoon: false,
   },
   {
@@ -52,7 +52,7 @@ const ARTICLES_DATA = [
     blurb: "How to build starting capital, find your first inventory, and compound your way to a real business.",
     url: "/how-to-start-reselling-shoes",
     readTime: "10 min read",
-    publishedAt: "2026-04-30",
+    publishedAt: "2026-06-30",
     comingSoon: false,
   },
   {
@@ -62,7 +62,7 @@ const ARTICLES_DATA = [
     blurb: "eBay, Poshmark, Mercari, Facebook Marketplace — where to start and how to cross-list without doubling your work.",
     url: "/where-to-sell-used-shoes",
     readTime: "8 min read",
-    publishedAt: "2026-05-14",
+    publishedAt: "2026-07-02",
     comingSoon: false,
   },
   {

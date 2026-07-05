@@ -66,6 +66,16 @@ const ARTICLES_DATA = [
     comingSoon: false,
   },
   {
+    slug: "how-to-flip-shoes",
+    title: "How to Flip Shoes for Profit",
+    category: "BEGINNER",
+    blurb: "The complete beginner's breakdown — brands, math, sourcing, listing, and what a real flip actually looks like.",
+    url: "/how-to-flip-shoes",
+    readTime: "7 min read",
+    publishedAt: "2026-07-05",
+    comingSoon: false,
+  },
+  {
     slug: "how-to-sell-used-shoes-online",
     title: "How to Sell Used Shoes Online (And Actually Make Money)",
     category: "SELLING",

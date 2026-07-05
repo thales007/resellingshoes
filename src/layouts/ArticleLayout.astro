@@ -67,7 +67,9 @@ const { title, description, slug, category, readTime } = Astro.props;
     .nav-links { display: flex; gap: 24px; list-style: none; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; }
     .nav-links a:hover { color: var(--walnut); }
-    @media (max-width: 600px) { .nav-links { display: none; } }
+    .nav-links .nav-cta { background: var(--green); color: #fff; padding: 9px 18px; border-radius: 8px; font-weight: 700; }
+    .nav-links .nav-cta:hover { background: var(--green-hover); color: #fff; }
+    @media (max-width: 600px) { .nav-links li:not(:last-child) { display: none; } }
 
     .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
     .breadcrumb a { color: var(--walnut); text-decoration: none; }
@@ -322,9 +324,9 @@ const { title, description, slug, category, readTime } = Astro.props;
 <nav>
   <a class="nav-logo" href="/">Reselling<span>Shoes</span>.com</a>
   <ul class="nav-links">
-    <li><a href="/1000-shoe-reselling-method">Free Guide</a></li>
-    <li><a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a></li>
-    <li><a href="https://solescore.app" target="_blank">SoleScore</a></li>
+    <li><a href="/learn">Learn</a></li>
+    <li><a href="/the-everyday-shoe-flip">The Playbook</a></li>
+    <li><a href="/1000-shoe-reselling-method" class="nav-cta">Free Guide</a></li>
   </ul>
 </nav>
 

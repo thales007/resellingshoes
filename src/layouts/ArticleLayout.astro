@@ -140,12 +140,12 @@ const { title, description, slug, category, readTime } = Astro.props;
   </article>
 </main>
 
-<!-- Bottom CTAs -->
-<div class="cta-card" data-card="free-guide"></div>
-<div class="cta-card" data-card="paid-guide"></div>
-
-<!-- Related articles -->
-<div id="related-articles" data-category={category} data-current={slug}></div>
+<!-- Bottom CTAs + Related articles in constrained container -->
+<div style="max-width:720px;margin:0 auto;padding:0 1.5rem;">
+  <div class="cta-card" data-card="free-guide"></div>
+  <div class="cta-card" data-card="paid-guide"></div>
+  <div id="related-articles" data-category={category} data-current={slug}></div>
+</div>
 <script is:inline src="/js/articles-data.js"></script>
 <script is:inline src="/js/related-articles.js"></script>
 

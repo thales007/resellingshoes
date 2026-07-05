@@ -1,6 +1,6 @@
 ---
-title: "Where to Sell Used Shoes (Platform Breakdown)"
-category: "Platform Strategy"
+title: "Where to Sell Used Shoes: A Platform Breakdown"
+category: "PLATFORM STRATEGY"
 description: "eBay, Poshmark, Mercari, Facebook Marketplace — where should you actually sell used shoes? A breakdown from someone who has sold on all of them."
 publishedAt: "2026-05-14"
 readTime: "10 min read"
@@ -9,155 +9,153 @@ blurb: "eBay, Poshmark, Mercari, Facebook Marketplace — where should you actua
 
 <p>If you have a pair of shoes to sell, the platform you choose matters — different platforms attract different buyers, charge different fees, and reward different selling styles. I've sold on eBay, Poshmark, Mercari, and Facebook Marketplace. My honest recommendation for most beginners: start with eBay. It has the largest buyer pool, strong search functionality, and the most straightforward path from listing to sale. But there's more to the picture than that, so here's how each platform actually works in practice.</p>
 
-      <h2>eBay — the platform to build on first</h2>
+<h2>eBay — the platform to build on first</h2>
 
-      <div class="platform-card">
-        <div class="platform-card-header">
-          <span class="platform-name">eBay</span>
-          <span class="platform-tag tag-primary">Start here</span>
-        </div>
-        <p class="platform-fee"><strong>Fees:</strong> ~13.25% of the sale price. If you promote listings, ad fees bring that closer to 15–16%.</p>
-        <div class="platform-body">
-          <p>eBay works like a search engine for products. A buyer knows what they want — brand, model, size — and they search for it. Your listing either shows up or it doesn't. There's no social component, no following, no feed to work. List it right and wait for the right buyer to find it.</p>
-          <p>Shipping is your responsibility. You buy the label through eBay — which gives you a significant discount off USPS retail rates — and ship within your handling window. Payment deposits automatically into your connected bank account on a regular schedule.</p>
-          <p>eBay accepts returns if you opt in, which builds buyer confidence but means you occasionally eat a return. The fee structure is the most competitive of the major platforms, though promoting listings to stay visible is increasingly common and adds to your effective rate.</p>
-          <p>One thing I wish I had set up earlier: shipping tables and flat-rate shipping tiers. Building those out upfront saves time on every listing and prevents undercharging on heavier pairs. eBay's store subscription also unlocks sales, coupons, and promotional tools worth using once you're listing consistently.</p>
-        </div>
-      </div>
+<div class="platform-card">
+<div class="platform-card-header">
+<span class="platform-name">eBay</span>
+<span class="platform-tag tag-primary">Start here</span>
+</div>
+<p class="platform-fee"><strong>Fees:</strong> ~13.25% of the sale price. If you promote listings, ad fees bring that closer to 15–16%.</p>
+<div class="platform-body">
+<p>eBay works like a search engine for products. A buyer knows what they want — brand, model, size — and they search for it. Your listing either shows up or it doesn't. There's no social component, no following, no feed to work. List it right and wait for the right buyer to find it.</p>
+<p>Shipping is your responsibility. You buy the label through eBay — which gives you a significant discount off USPS retail rates — and ship within your handling window. Payment deposits automatically into your connected bank account on a regular schedule.</p>
+<p>eBay accepts returns if you opt in, which builds buyer confidence but means you occasionally eat a return. The fee structure is the most competitive of the major platforms, though promoting listings to stay visible is increasingly common and adds to your effective rate.</p>
+<p>One thing I wish I had set up earlier: shipping tables and flat-rate shipping tiers. Building those out upfront saves time on every listing and prevents undercharging on heavier pairs. eBay's store subscription also unlocks sales, coupons, and promotional tools worth using once you're listing consistently.</p>
+</div>
+</div>
 
-      <!-- CTA: FREE GUIDE -->
+<!-- CTA: FREE GUIDE -->
 
-      <h2>Poshmark — worth adding as your second platform</h2>
+<h2>Poshmark — worth adding as your second platform</h2>
 
-      <div class="platform-card">
-        <div class="platform-card-header">
-          <span class="platform-name">Poshmark</span>
-          <span class="platform-tag tag-secondary">Add second</span>
-        </div>
-        <p class="platform-fee"><strong>Fees:</strong> 20% flat on every sale. If you offer the buyer a shipping discount, that comes out of your pocket too.</p>
-        <div class="platform-body">
-          <p>Poshmark is a social selling platform, not a search-driven one. Sellers have closets. Buyers follow closets that match their style and size. Your listings surface in those feeds — but only if you share them regularly. Sharing takes time, or you can automate it with a cross-listing tool like <a href="https://vendoo.co/register?via=timothy-hales" target="_blank" rel="nofollow">Vendoo</a> or Flyp.</p>
-          <p>The buyer behavior is different too. Poshmark buyers are conditioned to negotiate — expect offers of 30–40% below your list price. Some buyers will purchase at full price, but it's less common than on eBay. List at the top of your comp range and build in negotiation room.</p>
-          <p>Shipping works differently: Poshmark provides a prepaid label and the buyer pays the shipping cost (currently a flat rate for packages up to 5 lbs). Above 5 lbs, there's an additional fee. You print the label, pack the shoes, and drop them off — no weight calculation needed on your end.</p>
-          <p>Your balance stays in your Poshmark account until you transfer it to your bank manually. Poshmark makes it easy to spend your balance on other sellers' items — their preferred outcome. Build the habit of transferring your earnings regularly.</p>
-          <p>Poshmark performs best for women's shoes, designer styles, and anything with a fashion angle. That said, I cross-list everything to both platforms because the additional time using a cross-listing tool is minimal, and the incremental reach is worth it.</p>
-        </div>
-      </div>
+<div class="platform-card">
+<div class="platform-card-header">
+<span class="platform-name">Poshmark</span>
+<span class="platform-tag tag-secondary">Add second</span>
+</div>
+<p class="platform-fee"><strong>Fees:</strong> 20% flat on every sale. If you offer the buyer a shipping discount, that comes out of your pocket too.</p>
+<div class="platform-body">
+<p>Poshmark is a social selling platform, not a search-driven one. Sellers have closets. Buyers follow closets that match their style and size. Your listings surface in those feeds — but only if you share them regularly. Sharing takes time, or you can automate it with a cross-listing tool like <a href="https://vendoo.co/register?via=timothy-hales" target="_blank" rel="nofollow">Vendoo</a> or Flyp.</p>
+<p>The buyer behavior is different too. Poshmark buyers are conditioned to negotiate — expect offers of 30–40% below your list price. Some buyers will purchase at full price, but it's less common than on eBay. List at the top of your comp range and build in negotiation room.</p>
+<p>Shipping works differently: Poshmark provides a prepaid label and the buyer pays the shipping cost (currently a flat rate for packages up to 5 lbs). Above 5 lbs, there's an additional fee. You print the label, pack the shoes, and drop them off — no weight calculation needed on your end.</p>
+<p>Your balance stays in your Poshmark account until you transfer it to your bank manually. Poshmark makes it easy to spend your balance on other sellers' items — their preferred outcome. Build the habit of transferring your earnings regularly.</p>
+<p>Poshmark performs best for women's shoes, designer styles, and anything with a fashion angle. That said, I cross-list everything to both platforms because the additional time using a cross-listing tool is minimal, and the incremental reach is worth it.</p>
+</div>
+</div>
 
-      <p>Here's a real Poshmark sale that shows what the platform can do for the right pair:</p>
+<p>Here's a real Poshmark sale that shows what the platform can do for the right pair:</p>
 
-      <div class="profit-box">
-        <p class="profit-box-label">Real Poshmark sale from inventory records</p>
-        <p class="profit-box-title">Vintage Frye Campus Boots — Women's 7.5B, 14" Mid Calf Brown Leather</p>
-        <div class="profit-grid">
-          <div class="profit-stat">
-            <p class="profit-stat-label">Source price</p>
-            <p class="profit-stat-value">$16.27</p>
-          </div>
-          <div class="profit-stat">
-            <p class="profit-stat-label">Platform</p>
-            <p class="profit-stat-value">Poshmark</p>
-          </div>
-          <div class="profit-stat">
-            <p class="profit-stat-label">Days to sell</p>
-            <p class="profit-stat-value">2</p>
-          </div>
-          <div class="profit-stat">
-            <p class="profit-stat-label">Net profit</p>
-            <p class="profit-stat-value green">$71.73</p>
-          </div>
-        </div>
-        <p class="profit-box-note">Vintage Frye boots sold in 2 days on Poshmark. Women's leather boots with a fashion angle — exactly the category where Poshmark's buyer base is strongest.</p>
-      </div>
+<div class="profit-box">
+<p class="profit-box-label">Real Poshmark sale from inventory records</p>
+<p class="profit-box-title">Vintage Frye Campus Boots — Women's 7.5B, 14" Mid Calf Brown Leather</p>
+<div class="profit-grid">
+<div class="profit-stat">
+<p class="profit-stat-label">Source price</p>
+<p class="profit-stat-value">$16.27</p>
+</div>
+<div class="profit-stat">
+<p class="profit-stat-label">Platform</p>
+<p class="profit-stat-value">Poshmark</p>
+</div>
+<div class="profit-stat">
+<p class="profit-stat-label">Days to sell</p>
+<p class="profit-stat-value">2</p>
+</div>
+<div class="profit-stat">
+<p class="profit-stat-label">Net profit</p>
+<p class="profit-stat-value green">$71.73</p>
+</div>
+</div>
+<p class="profit-box-note">Vintage Frye boots sold in 2 days on Poshmark. Women's leather boots with a fashion angle — exactly the category where Poshmark's buyer base is strongest.</p>
+</div>
 
-      <h2>Mercari — possible, but requires its own learning curve</h2>
+<h2>Mercari — possible, but requires its own learning curve</h2>
 
-      <div class="platform-card">
-        <div class="platform-card-header">
-          <span class="platform-name">Mercari</span>
-          <span class="platform-tag tag-situational">Optional third</span>
-        </div>
-        <p class="platform-fee"><strong>Fees:</strong> 10% seller fee on the combined item price and shipping. Buyers pay an additional service fee (typically 3–7%) on top of that.</p>
-        <div class="platform-body">
-          <p>Mercari is a legitimate platform with real buyers, and cross-listing there via Vendoo doesn't take much additional time. My experience: I listed consistently, got a handful of sales, and found that buyers sent very low offers expecting me to accept them. The shipping setup was different enough from eBay that it required its own learning curve.</p>
-          <p>I already had a strong rhythm with eBay and Poshmark, and adding a third platform added complexity without proportional return. My philosophy is to master one platform before adding the next, then master that one before adding another. Mercari might make sense for you — but only after eBay and Poshmark are running smoothly.</p>
-        </div>
-      </div>
+<div class="platform-card">
+<div class="platform-card-header">
+<span class="platform-name">Mercari</span>
+<span class="platform-tag tag-situational">Optional third</span>
+</div>
+<p class="platform-fee"><strong>Fees:</strong> 10% seller fee on the combined item price and shipping. Buyers pay an additional service fee (typically 3–7%) on top of that.</p>
+<div class="platform-body">
+<p>Mercari is a legitimate platform with real buyers, and cross-listing there via Vendoo doesn't take much additional time. My experience: I listed consistently, got a handful of sales, and found that buyers sent very low offers expecting me to accept them. The shipping setup was different enough from eBay that it required its own learning curve.</p>
+<p>I already had a strong rhythm with eBay and Poshmark, and adding a third platform added complexity without proportional return. My philosophy is to master one platform before adding the next, then master that one before adding another. Mercari might make sense for you — but only after eBay and Poshmark are running smoothly.</p>
+</div>
+</div>
 
-      <h2>Facebook Marketplace — fast turnover, smaller audience</h2>
+<h2>Facebook Marketplace — fast turnover, smaller audience</h2>
 
-      <div class="platform-card">
-        <div class="platform-card-header">
-          <span class="platform-name">Facebook Marketplace</span>
-          <span class="platform-tag tag-situational">Local only</span>
-        </div>
-        <p class="platform-fee"><strong>Fees:</strong> No fees for local pickup sales. Shipping sales have a fee.</p>
-        <div class="platform-body">
-          <p>Facebook Marketplace has a real advantage: no fees on local sales, no shipping to deal with, and a buyer can pick up from your front porch the same day. For turning over shoes quickly with zero platform cost, it's hard to beat.</p>
-          <p>The trade-off is audience size. You're selling locally, not nationally. That limits who can buy any given pair and slows down sales on specialty sizes or less common brands. You also have to be available to coordinate pickups, answer "is this still available?" messages, and deal with no-shows — all of which takes time that doesn't scale the way a shipping-based platform does.</p>
-          <p>My free time runs early mornings and evenings, which doesn't line up well with coordinating local transactions. That's why I chose not to make it part of my regular workflow. But if your schedule is more flexible, Facebook Marketplace is a genuinely good option for moving common sizes and brands quickly with no fees.</p>
-        </div>
-      </div>
+<div class="platform-card">
+<div class="platform-card-header">
+<span class="platform-name">Facebook Marketplace</span>
+<span class="platform-tag tag-situational">Local only</span>
+</div>
+<p class="platform-fee"><strong>Fees:</strong> No fees for local pickup sales. Shipping sales have a fee.</p>
+<div class="platform-body">
+<p>Facebook Marketplace has a real advantage: no fees on local sales, no shipping to deal with, and a buyer can pick up from your front porch the same day. For turning over shoes quickly with zero platform cost, it's hard to beat.</p>
+<p>The trade-off is audience size. You're selling locally, not nationally. That limits who can buy any given pair and slows down sales on specialty sizes or less common brands. You also have to be available to coordinate pickups, answer "is this still available?" messages, and deal with no-shows — all of which takes time that doesn't scale the way a shipping-based platform does.</p>
+<p>My free time runs early mornings and evenings, which doesn't line up well with coordinating local transactions. That's why I chose not to make it part of my regular workflow. But if your schedule is more flexible, Facebook Marketplace is a genuinely good option for moving common sizes and brands quickly with no fees.</p>
+</div>
+</div>
 
-      <div class="pull-quote">
-        <p>"Master one platform before you add another. Every new platform is its own learning curve — don't let complexity slow you down before you have momentum."</p>
-      </div>
+<div class="pull-quote">
+<p>"Master one platform before you add another. Every new platform is its own learning curve — don't let complexity slow you down before you have momentum."</p>
+</div>
 
-      <h2>Quick comparison</h2>
+<h2>Quick comparison</h2>
 
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Platform</th>
-            <th>Fee</th>
-            <th>Shipping</th>
-            <th>Best for</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>eBay</strong></td>
-            <td>~13.25%</td>
-            <td>You buy label (discounted)</td>
-            <td>Sneakers, athletic shoes, all categories</td>
-          </tr>
-          <tr>
-            <td><strong>Poshmark</strong></td>
-            <td>20%</td>
-            <td>Prepaid label, buyer pays</td>
-            <td>Women's, designer, fashion styles</td>
-          </tr>
-          <tr>
-            <td><strong>Mercari</strong></td>
-            <td>10% seller fee + buyer service fee (3–7%)</td>
-            <td>Buyer-paid shipping</td>
-            <td>General resale, optional third platform</td>
-          </tr>
-          <tr>
-            <td><strong>Facebook Marketplace</strong></td>
-            <td>None (local)</td>
-            <td>Local pickup</td>
-            <td>Fast local turnover, flexible schedule</td>
-          </tr>
-        </tbody>
-      </table>
+<table class="compare-table">
+<thead>
+<tr>
+<th>Platform</th>
+<th>Fee</th>
+<th>Shipping</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>eBay</strong></td>
+<td>~13.25%</td>
+<td>You buy label (discounted)</td>
+<td>Sneakers, athletic shoes, all categories</td>
+</tr>
+<tr>
+<td><strong>Poshmark</strong></td>
+<td>20%</td>
+<td>Prepaid label, buyer pays</td>
+<td>Women's, designer, fashion styles</td>
+</tr>
+<tr>
+<td><strong>Mercari</strong></td>
+<td>10% seller fee + buyer service fee (3–7%)</td>
+<td>Buyer-paid shipping</td>
+<td>General resale, optional third platform</td>
+</tr>
+<tr>
+<td><strong>Facebook Marketplace</strong></td>
+<td>None (local)</td>
+<td>Local pickup</td>
+<td>Fast local turnover, flexible schedule</td>
+</tr>
+</tbody>
+</table>
 
-      <h2>How to list on two platforms without doubling your work</h2>
+<h2>How to list on two platforms without doubling your work</h2>
 
-      <p>I list everything on eBay first using the sell-similar feature from a sold listing or one of my own previous listings. Then I open <a href="https://vendoo.co/register?via=timothy-hales" target="_blank" rel="nofollow">Vendoo</a> and import the eBay listing. From there I go into each listing, select the Poshmark tab, verify the title, category, size, and price, and list. You don't have to wait for one listing to finish before starting the next — move on while it processes.</p>
+<p>I list everything on eBay first using the sell-similar feature from a sold listing or one of my own previous listings. Then I open <a href="https://vendoo.co/register?via=timothy-hales" target="_blank" rel="nofollow">Vendoo</a> and import the eBay listing. From there I go into each listing, select the Poshmark tab, verify the title, category, size, and price, and list. You don't have to wait for one listing to finish before starting the next — move on while it processes.</p>
 
-      <p>The most important thing cross-listing solves is the delist problem. If you manually list the same pair on eBay and Poshmark yourself, you have to remember to take it down on the other platform the moment it sells — and that's easy to forget, especially when sales come in overnight or while you're at work. Selling the same pair twice is a real problem, and it creates a mess: cancellations, refunds, negative feedback. Vendoo automatically delists a shoe from all other platforms the moment it sells on one. That alone is worth it.</p>
+<p>The most important thing cross-listing solves is the delist problem. If you manually list the same pair on eBay and Poshmark yourself, you have to remember to take it down on the other platform the moment it sells — and that's easy to forget, especially when sales come in overnight or while you're at work. Selling the same pair twice is a real problem, and it creates a mess: cancellations, refunds, negative feedback. Vendoo automatically delists a shoe from all other platforms the moment it sells on one. That alone is worth it.</p>
 
-      <h2>What about other platforms — StockX, GOAT, Depop, live selling?</h2>
+<h2>What about other platforms — StockX, GOAT, Depop, live selling?</h2>
 
-      <p>StockX and GOAT are built for new and hype sneakers — authentication requirements and buyer expectations make them a poor fit for everyday thrift-sourced shoes. If you find yourself in the new or hype sneaker space, they're worth learning.</p>
+<p>StockX and GOAT are built for new and hype sneakers — authentication requirements and buyer expectations make them a poor fit for everyday thrift-sourced shoes. If you find yourself in the new or hype sneaker space, they're worth learning.</p>
 
-      <p>Depop is one I'd consider. I know resellers who do well there, and it has a growing buyer base with a younger, style-focused audience. It's worth watching.</p>
+<p>Depop is one I'd consider. I know resellers who do well there, and it has a growing buyer base with a younger, style-focused audience. It's worth watching.</p>
 
-      <p>Live selling — eBay Live, Poshmark Shows, and similar — is a real opportunity for sellers who build an audience. It works best for new shoes or very clean used pairs where you can show condition in real time. The buyer pool in any given stream is smaller than a passive listing, so pricing needs to account for that. Build the audience first, then use live selling to accelerate it.</p>
+<p>Live selling — eBay Live, Poshmark Shows, and similar — is a real opportunity for sellers who build an audience. It works best for new shoes or very clean used pairs where you can show condition in real time. The buyer pool in any given stream is smaller than a passive listing, so pricing needs to account for that. Build the audience first, then use live selling to accelerate it.</p>
 
-      <p>For most beginners, the answer is simpler than all of that: start on eBay, add Poshmark when you have the rhythm, cross-list with a tool to multiply your reach, and stay focused on the platforms that are already working before you add more.</p>
+<p>For most beginners, the answer is simpler than all of that: start on eBay, add Poshmark when you have the rhythm, cross-list with a tool to multiply your reach, and stay focused on the platforms that are already working before you add more.</p>
 
-      <!-- BOTTOM CTA STACK -->
-      <div class="cta-card" data-card="free-guide"></div>
-      <div class="cta-card" data-card="paid-guide"></div>
+<!-- BOTTOM CTA STACK -->

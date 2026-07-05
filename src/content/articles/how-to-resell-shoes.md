@@ -1,10 +1,195 @@
 ---
-title: "How to Resell Shoes: A Beginner's Guide for Profit"
-category: ""
+title: "How to Resell Shoes: A Beginner's Guide to Flipping Everyday Brands for Profit"
+category: "BEGINNER"
 description: "Learn how to resell shoes from thrift stores and yard sales for profit. A practical guide to flipping everyday brands like New Balance, HOKA, Brooks, and ASICS on eBay."
 publishedAt: "2026-01-22"
 readTime: "12 min read"
 blurb: "Learn how to resell shoes from thrift stores and yard sales for profit."
 ---
 
+<p>Reselling shoes is one of the most accessible side hustles available today. You don't need a storefront, a warehouse, or a big budget to start. You need a thrift store, a smartphone, and the knowledge to tell the difference between a $6 shoe that sells for $55 and one that collects dust in your closet for six months.</p>
 
+<p>I've done over $100,000 in shoe sales sourced almost entirely from thrift stores and yard sales — and I've never touched a hype sneaker. No Jordans, no Yeezys, no StockX. Every dollar came from everyday brands: New Balance, HOKA, Brooks, ASICS, Salomon, KEEN, and dozens more.</p>
+
+<p>This guide covers exactly how to start, what to look for, which brands actually sell, and how to price your finds so you walk away with real money in your pocket.</p>
+
+<blockquote>"The best resellers aren't hunting for hype. They're hunting for brands nobody else in the thrift store recognizes."</blockquote>
+
+<h2>Why Everyday Shoes Beat Hype Sneakers for Beginners</h2>
+
+<p>The sneaker reselling world is saturated, competitive, and increasingly dominated by bots, insiders, and people who've been doing it for years. Margins on hype shoes are shrinking. The barrier to entry is high. And the risk is real — buy the wrong colorway, the wrong size, and you're stuck.</p>
+
+<p>Everyday shoes are the opposite. A pair of Brooks Ghost 14s doesn't have a drop date. Nobody's camping outside Goodwill for them. But a buyer who needs that exact model in a size 11 will pay $65 for them on eBay without blinking — and you paid $7 at the thrift store.</p>
+
+<p>The math is better, the competition is lower, and the supply is steady. Every thrift store in America gets athletic shoes donated every single day. Most resellers walk right past them.</p>
+
+<h2>Step-by-Step: How to Start Reselling Shoes</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h3>Learn the Brands Worth Buying</h3>
+<p>Before you can spot a good shoe, you need to know which names to look for. Not every brand resells well, and condition matters more than brand alone. Start with a short list you know cold — New Balance, HOKA, Brooks, ASICS, Salomon, Danner, and KEEN are a strong starting six. Once those are automatic, expand from there.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h3>Check Sold Listings Before You Buy</h3>
+<p>This is the single most important habit in shoe reselling. Before you put any shoe in your cart, pull up eBay on your phone and search the brand and model. Filter for <strong>Sold listings</strong> only — not active listings. Active listings show what people are asking. Sold listings show what buyers actually paid. They are very different numbers, and the difference matters.</p>
+<p>If the sold average is $40 and the shoe is priced at $8, you have a solid flip. If the sold average is $22 and the shoe has scuffs, put it back.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h3>Inspect Condition Carefully</h3>
+<p>Condition is everything in used shoe reselling. The areas to check every time: the outsole (bottom) for wear, the midsole for compression or yellowing, the upper for stains or cracking, and the insoles for odor or heavy wear. A shoe that looks fine on the shelf can have a destroyed insole underneath. Always check.</p>
+<p>Slight scuffs on the toe box are usually fine — they photograph out. Heavily worn outsoles kill the resale value. Missing laces don't matter; replacement laces cost $2.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h3>Calculate Your Real Profit Before You Buy</h3>
+<p>A shoe that sells for $45 on eBay does not put $45 in your pocket. eBay takes approximately 13% in fees. Shipping a shoe typically runs $8–$12 depending on weight and distance. Factor both before committing to any purchase.</p>
+
+<div class="profit-example">
+<div class="profit-example-label">Real Profit Example — Brooks Ghost 14, Men's Size 11</div>
+<div class="profit-row"><span>eBay sale price</span><span>$52.00</span></div>
+<div class="profit-row negative"><span>eBay fees (~13%)</span><span>−$6.76</span></div>
+<div class="profit-row negative"><span>Shipping (USPS)</span><span>−$9.50</span></div>
+<div class="profit-row negative"><span>Purchase price (thrift)</span><span>−$7.00</span></div>
+<div class="profit-row positive"><span>Net profit</span><span>+$28.74</span></div>
+</div>
+
+<p>$28 clear profit on a $7 investment is a 410% return. That's the kind of math that makes this business work.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content">
+<h3>Clean, Photograph, and List</h3>
+<p>A clean shoe photographs better and sells faster. A magic eraser handles most scuffs on rubber soles. A light scrub with a soft brush and mild soap cleans most uppers. Ten minutes of cleaning can add $10–$15 to what a buyer is willing to pay.</p>
+<p>For photos, natural light near a window is all you need. Shoot both sides, the toe, the heel, the outsole, and the insole. More photos = more buyer confidence = fewer lowball offers.</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-content">
+<h3>Price Competitively and Ship Fast</h3>
+<p>Price within 5–10% of the recent sold average. Don't go high hoping someone doesn't notice — buyers can see the same sold data you can. Ship within two business days. Fast shipping improves your seller metrics, which improves your search placement, which means more sales. It compounds over time.</p>
+</div>
+</div>
+
+</div>
+
+<h2>Which Brands to Look For at Thrift Stores</h2>
+
+<p>Not every shoe brand resells well. Here's a quick reference for the brands worth picking up versus the ones to leave on the shelf.</p>
+
+<table class="brand-table">
+<thead>
+<tr>
+<th>Brand</th>
+<th>Resale Tier</th>
+<th>What to Know</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HOKA</strong></td>
+<td><span class="tier tier-high">High</span></td>
+<td>Strong resale on running models. Bondi and Clifton series move fast.</td>
+</tr>
+<tr>
+<td><strong>New Balance</strong></td>
+<td><span class="tier tier-high">High</span></td>
+<td>990 series and USA-made models command premium prices. Wide range of buyers.</td>
+</tr>
+<tr>
+<td><strong>Brooks</strong></td>
+<td><span class="tier tier-high">High</span></td>
+<td>Ghost and Adrenaline series are consistent sellers. Condition matters a lot.</td>
+</tr>
+<tr>
+<td><strong>Salomon</strong></td>
+<td><span class="tier tier-high">High</span></td>
+<td>Trail runners sell extremely well. Even lightly worn pairs hold value.</td>
+</tr>
+<tr>
+<td><strong>ASICS</strong></td>
+<td><span class="tier tier-med">Medium</span></td>
+<td>Gel-Kayano and Gel-Nimbus are the best movers. Avoid older, basic models.</td>
+</tr>
+<tr>
+<td><strong>KEEN</strong></td>
+<td><span class="tier tier-med">Medium</span></td>
+<td>Hiking styles and Newport sandals sell reliably. Work boot styles are slower.</td>
+</tr>
+<tr>
+<td><strong>Danner</strong></td>
+<td><span class="tier tier-high">High</span></td>
+<td>Premium work and hiking boots with loyal buyers. USA-made pairs especially strong.</td>
+</tr>
+<tr>
+<td><strong>Skechers</strong></td>
+<td><span class="tier tier-low">Low–Med</span></td>
+<td>High volume but low margin. Only worth picking up at very low buy prices ($3–$4).</td>
+</tr>
+<tr>
+<td><strong>Nike / Adidas (non-hype)</strong></td>
+<td><span class="tier tier-low">Low</span></td>
+<td>Flooded market. Unless it's a specific collector model, margins are thin. Skip most.</td>
+</tr>
+</tbody>
+</table>
+
+<p>This is not an exhaustive list — there are dozens of other brands worth knowing. The free guide below goes deeper on 25+ brands with specific models to look for and ones to avoid.</p>
+
+<h2>The Biggest Mistakes Beginners Make</h2>
+
+<h3>Buying based on active listings instead of sold listings</h3>
+<p>Someone listing a shoe for $80 means nothing. What matters is whether anyone bought a similar shoe for $80. Always filter for sold. Always.</p>
+
+<h3>Ignoring size</h3>
+<p>Men's sizes 10–12 and women's sizes 7–9 sell fastest. Extremes on either end (very small or very large) take significantly longer to sell. Factor time into your decision.</p>
+
+<h3>Overestimating condition</h3>
+<p>You found it, you like it, you want it to be worth more than it is. Be honest about condition. Buyers will not be charitable if the shoe arrives looking worse than the photos suggested. Negative feedback hurts your account long-term.</p>
+
+<h3>Not tracking profit</h3>
+<p>If you don't know what you actually made on each pair, you don't have a business — you have a hobby. Track every purchase price, every sale price, every fee. You'll quickly see which brands are worth your time and which ones aren't.</p>
+
+<h2>Where to Sell Your Shoes</h2>
+
+<p>eBay is the best starting platform for everyday shoe reselling. It has the largest buyer pool for used athletic and casual shoes, the best search tools for buyers looking for specific models, and the most established seller feedback system. Start there.</p>
+
+<p>Poshmark is a secondary option that works well for women's shoes, boots, and fashion-forward brands. The fees are higher (20% flat), but the audience skews differently and some shoes sell faster there.</p>
+
+<p>Facebook Marketplace works for local, same-day sales on bulkier items or when you want cash without shipping. The audience is more price-sensitive, but there are no fees on local pickups.</p>
+
+<!-- Second inline CTA -->
+
+<h2>Is Reselling Shoes Profitable?</h2>
+
+<p>Honestly — yes, but with an important qualification. The margins are real. The $28 example above is not unusual. Consistent resellers who know their brands and source regularly can generate $500–$2,000 per month working part-time. Some do considerably more.</p>
+
+<p>What kills profitability is buying the wrong shoes, overestimating what buyers will pay, and letting inventory sit unsold. The business rewards knowledge. The more you know about which brands sell, which models to target, and what condition buyers will accept, the better your margins get. This is a learnable skill, not luck.</p>
+
+<p>The resellers who fail are usually ones who started with wishful thinking instead of sold data. The ones who succeed treat every purchase like a small business decision — because that's exactly what it is.</p>
+
+<h2>Your Next Step</h2>
+
+<p>The framework above is enough to get you started. But knowing which specific models of New Balance sell for over $100, which Brooks colorways move in three days versus three weeks, and which HOKA models to avoid — that's the difference between a profitable route and a pile of slow-moving inventory.</p>
+
+<p>The free guide below covers that in detail, built from years of firsthand sourcing experience across hundreds of thrift stores.</p>
+
+<!-- Bottom CTA block -->

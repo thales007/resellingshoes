@@ -42,7 +42,6 @@
         + '<div class="footer-col-title">TOOLS</div>'
         + '<div class="footer-col-links">'
           + '<a href="https://solescore.app" target="_blank" rel="noopener noreferrer">SoleScore App (beta)</a>'
-          + '<a href="/learn">Learn</a>'
         + '</div>'
       + '</div>'
       + '<div>'

@@ -36,7 +36,7 @@ const { title, description, slug, category, readTime } = Astro.props;
   <script is:inline src="/js/site-config.js" defer></script>
   <script is:inline src="/js/cta-cards.js" defer></script>
 
-  <style>
+  <style is:global>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -46,6 +46,10 @@ const { title, description, slug, category, readTime } = Astro.props;
       --cream-dark: #f0ece4;
       --text-body: #2d2d2d;
       --text-muted: #6b6b6b;
+      --border: #e5e0d8;
+      --bg-soft: #f0ece4;
+      --red: #c0392b;
+      --green-profit: #2e7d52;
       --max-w: 720px;
     }
 
@@ -57,7 +61,7 @@ const { title, description, slug, category, readTime } = Astro.props;
       line-height: 1.75;
     }
 
-    nav { border-bottom: 1px solid #e5e0d8; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: var(--cream); position: sticky; top: 0; z-index: 100; }
+    nav { border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; background: var(--cream); position: sticky; top: 0; z-index: 100; }
     .nav-logo { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--charcoal); text-decoration: none; }
     .nav-logo span { color: var(--walnut); }
     .nav-links { display: flex; gap: 24px; list-style: none; }
@@ -97,9 +101,10 @@ const { title, description, slug, category, readTime } = Astro.props;
       color: var(--text-muted);
       margin-bottom: 2.5rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid #e5e0d8;
+      border-bottom: 1px solid var(--border);
     }
 
+    /* ── Article body base ── */
     .article-body p { margin-bottom: 1.4rem; }
     .article-body h2 {
       font-family: 'DM Serif Display', serif;
@@ -108,10 +113,122 @@ const { title, description, slug, category, readTime } = Astro.props;
       margin: 2.75rem 0 1rem;
       line-height: 1.25;
     }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--charcoal); margin: 1.5rem 0 0.5rem; }
     .article-body a { color: var(--walnut); text-decoration: underline; text-underline-offset: 3px; }
     .article-body strong { color: var(--charcoal); }
+    .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.4rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body blockquote {
+      border-left: 3px solid var(--walnut);
+      padding: 0.25rem 0 0.25rem 1.25rem;
+      margin: 1.75rem 0;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Pull quote ── */
+    .pull-quote { border-left: 3px solid var(--walnut); padding: 0.25rem 0 0.25rem 1.25rem; margin: 1.75rem 0; }
+    .pull-quote p { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--charcoal); font-style: italic; margin: 0; }
+
+    /* ── Steps ── */
+    .steps { margin: 28px 0; }
+    .step { display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px;
+      background: var(--walnut); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 14px;
+    }
+    .step-content h3 { margin-top: 0; font-family: 'DM Serif Display', serif; font-size: 1.1rem; }
+
+    /* ── Step box (numbered list variant) ── */
+    .step-box { background: var(--cream-dark); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .step-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .step-row { display: flex; gap: 1rem; padding: 0.65rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .step-row:last-child { border-bottom: none; }
+    .step-row .step-num { font-weight: 700; color: var(--walnut); min-width: 24px; background: none; height: auto; width: auto; border-radius: 0; font-size: 14px; }
+
+    /* ── Profit example ── */
+    .profit-example { background: var(--bg-soft); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin: 1.5rem 0; }
+    .profit-example-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .profit-row { display: flex; justify-content: space-between; font-size: 15px; padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+    .profit-row:last-child { border-bottom: none; font-weight: 700; color: var(--charcoal); }
+    .profit-row.negative span:last-child { color: var(--red); }
+    .profit-row.positive span:last-child { color: var(--green-profit); font-weight: 700; }
+    .profit { color: #5ecb8a; font-weight: 600; }
+
+    /* ── Profit / sale dark box ── */
+    .profit-box, .sale-box {
+      background: var(--charcoal); color: #fff;
+      border-radius: 12px; padding: 1.5rem;
+      margin: 1.75rem 0;
+    }
+    .profit-box-label, .sale-box-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem;
+    }
+    .profit-box-title, .sale-box-title {
+      font-family: 'DM Serif Display', serif; font-size: 1.25rem; margin-bottom: 1rem;
+    }
+    .profit-box-note, .sale-box-note {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 0.75rem;
+    }
+    .profit-grid, .sale-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; margin-bottom: 0.5rem;
+    }
+    .profit-stat, .sale-stat { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 0.75rem; }
+    .profit-stat-label, .sale-stat-label { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+    .profit-stat-value, .sale-stat-value { font-size: 1.3rem; font-weight: 600; color: #fff; }
+    .profit-stat-value.green, .sale-stat-value.green { color: #5ecb8a; }
+
+    /* ── Brand table ── */
+    .brand-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 14px; }
+    .brand-table th { text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); padding: 8px 12px; border-bottom: 2px solid var(--border); }
+    .brand-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+    .brand-table tr:last-child td { border-bottom: none; }
+    .brand-table tr:hover td { background: var(--bg-soft); }
+
+    /* ── Compare table ── */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 15px; }
+    .compare-table th { text-align: left; padding: 0.65rem 1rem; background: var(--cream-dark); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; }
+    .compare-table td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--cream-dark); }
+    @media (max-width: 600px) { .compare-table { font-size: 0.8rem; } .compare-table th, .compare-table td { padding: 0.5rem 0.65rem; } }
+
+    /* ── Checklist box ── */
+    .checklist-box { background: var(--cream-dark); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .checklist-box h3 { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .checklist-item { display: flex; gap: 0.65rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 15px; align-items: flex-start; }
+    .checklist-item:last-child { border-bottom: none; }
+    .checklist-x { color: var(--red); font-weight: 600; flex-shrink: 0; }
+
+    /* ── Platform cards ── */
+    .platform-card { background: var(--cream-dark); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .platform-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+    .platform-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--charcoal); }
+    .platform-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+    .tag-primary { background: #e8f0e8; color: #2f7a4f; }
+    .tag-secondary { background: var(--cream-dark); border: 1px solid var(--border); color: var(--text-muted); }
+    .tag-situational { background: #fef5e6; color: #8a5f1a; }
+    .tag-optional { background: #f0ecf8; color: #5a3d8a; }
+    .platform-fee { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.65rem; }
+    .platform-fee strong { color: var(--charcoal); }
+    .platform-body { font-size: 0.95rem; color: var(--text-body); }
+    .platform-body p { margin-bottom: 0.85rem; }
+    .platform-body p:last-child { margin-bottom: 0; }
+
+    /* ── Brand pills ── */
+    .brand-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+    .brand-pill { background: rgba(196,148,58,0.1); border: 1px solid rgba(196,148,58,0.25); color: var(--charcoal); font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
+
+    /* ── Highlight ── */
+    .highlight { color: var(--walnut); font-size: 1.05rem; }
+
     @media (max-width: 600px) {
       .article-body h2 { font-size: 1.4rem; }
+      .profit-grid, .sale-grid { grid-template-columns: 1fr 1fr; }
+      .step { gap: 14px; }
     }
   </style>
 </head>

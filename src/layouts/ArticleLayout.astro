@@ -225,10 +225,94 @@ const { title, description, slug, category, readTime } = Astro.props;
     /* ── Highlight ── */
     .highlight { color: var(--walnut); font-size: 1.05rem; }
 
+    /* ── Article bottom ── */
+    .article-bottom {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    .related-strip {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .related-strip-heading {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .related-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .related-strip-grid a {
+      display: block;
+      text-decoration: none;
+      color: var(--charcoal);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.35;
+      transition: border-color 0.15s;
+    }
+    .related-strip-grid a:hover { border-color: var(--walnut); }
+
+    .free-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: #f5ecd8;
+      border: 1px solid rgba(196,148,58,0.3);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .free-banner-text { flex: 1; min-width: 0; }
+    .free-banner-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--walnut);
+      margin-bottom: 4px;
+    }
+    .free-banner-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      margin-bottom: 2px;
+    }
+    .free-banner-sub {
+      font-size: 13px;
+      color: #7a6640;
+    }
+    .free-banner-btn {
+      flex-shrink: 0;
+      background: var(--walnut);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .free-banner-btn:hover { opacity: 0.88; }
+
     @media (max-width: 600px) {
       .article-body h2 { font-size: 1.4rem; }
       .profit-grid, .sale-grid { grid-template-columns: 1fr 1fr; }
       .step { gap: 14px; }
+      .related-strip-grid { grid-template-columns: 1fr; }
+      .free-banner { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .free-banner-btn { width: 100%; text-align: center; padding: 13px 20px; }
     }
   </style>
 </head>
@@ -257,14 +341,41 @@ const { title, description, slug, category, readTime } = Astro.props;
   </article>
 </main>
 
-<!-- Bottom CTAs + Related articles in constrained container -->
-<div style="max-width:720px;margin:0 auto;padding:0 1.5rem;">
-  <div class="cta-card" data-card="free-guide"></div>
-  <div class="cta-card" data-card="paid-guide"></div>
-  <div id="related-articles" data-category={category} data-current={slug}></div>
+<div class="article-bottom">
+  <!-- Related articles first -->
+  <div id="related-articles-mount" data-category={category} data-current={slug}></div>
+
+  <!-- Single slim free-guide banner -->
+  <a href="/1000-shoe-reselling-method" class="free-banner">
+    <div class="free-banner-text">
+      <div class="free-banner-label">Free · Instant PDF</div>
+      <div class="free-banner-title">The $1,000 Shoe Reselling Method</div>
+      <div class="free-banner-sub">The brands, profit math, and sourcing strategy — 16 pages.</div>
+    </div>
+    <span class="free-banner-btn">Get it free →</span>
+  </a>
 </div>
+
 <script is:inline src="/js/articles-data.js"></script>
-<script is:inline src="/js/related-articles.js"></script>
+<script is:inline>
+(function() {
+  var mount = document.getElementById('related-articles-mount');
+  if (!mount || typeof ARTICLES_DATA === 'undefined') return;
+  var category = mount.getAttribute('data-category');
+  var current = mount.getAttribute('data-current');
+  var related = ARTICLES_DATA.filter(function(a) {
+    return a.category === category && a.slug !== current && !a.comingSoon;
+  }).slice(0, 3);
+  if (related.length === 0) return;
+  var html = '<div class="related-strip"><div class="related-strip-heading">More in ' + category + '</div>';
+  html += '<div class="related-strip-grid">';
+  related.forEach(function(a) {
+    html += '<a href="' + a.url + '">' + a.title + '</a>';
+  });
+  html += '</div></div>';
+  mount.innerHTML = html;
+})();
+</script>
 
 <!-- Footer -->
 <div id="footer-root"></div>

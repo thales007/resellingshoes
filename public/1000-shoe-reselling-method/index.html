@@ -50,6 +50,8 @@
     .nav-links { display: flex; align-items: center; gap: 24px; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-2); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--ink); }
+    .nav-links .nav-cta { background: var(--green); color: #fff; padding: 9px 18px; border-radius: 8px; font-weight: 700; }
+    .nav-links .nav-cta:hover { background: var(--green-hover, #267049); color: #fff; }
     .nav-back { font-size: 14px; color: var(--ink-3); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
     .nav-back:hover { color: var(--ink); }
     @media (max-width: 700px) { .nav-links { display: none; } }
@@ -271,10 +273,9 @@
 <nav>
   <a href="/" class="nav-logo">Reselling<span>Shoes</span>.com</a>
   <div class="nav-links">
-    <a href="/1000-shoe-reselling-method">Free Method</a>
+    <a href="/learn">Learn</a>
     <a href="/the-everyday-shoe-flip">The Playbook</a>
-    <a href="/#articles">Articles</a>
-    <a href="https://shoes.timothyhales.com" target="_blank">SoleScore App</a>
+    <a href="/1000-shoe-reselling-method" class="nav-cta">Free Guide</a>
   </div>
   <a href="/" class="nav-back">← Back to home</a>
 </nav>

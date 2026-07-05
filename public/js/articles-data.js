@@ -66,6 +66,16 @@ const ARTICLES_DATA = [
     comingSoon: false,
   },
   {
+    slug: "is-shoe-reselling-dead",
+    title: "Is Shoe Reselling Dead? Here's the Honest Answer",
+    category: "BEGINNER",
+    blurb: "The market has changed. That doesn't mean it's dead — it means you have to adapt. Here's what that actually looks like.",
+    url: "/is-shoe-reselling-dead",
+    readTime: "6 min read",
+    publishedAt: "2026-07-05",
+    comingSoon: false,
+  },
+  {
     slug: "how-to-flip-shoes",
     title: "How to Flip Shoes for Profit",
     category: "BEGINNER",

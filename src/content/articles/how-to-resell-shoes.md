@@ -1,5 +1,5 @@
 ---
-title: "How to Resell Shoes: A Beginner's Guide to Flipping Everyday Brands for Profit"
+title: "How to Resell Shoes: A Beginner's Guide to Flipping Everyday Brands"
 category: "BEGINNER"
 description: "Learn how to resell shoes from thrift stores and yard sales for profit. A practical guide to flipping everyday brands like New Balance, HOKA, Brooks, and ASICS on eBay."
 publishedAt: "2026-01-22"

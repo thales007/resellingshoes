@@ -7,7 +7,7 @@
 const ARTICLES_DATA = [
   {
     slug: "how-to-resell-shoes",
-    title: "How to Resell Shoes: A Beginner's Guide to Flipping Everyday Brands for Profit",
+    title: "How to Resell Shoes: A Beginner's Guide to Flipping Everyday Brands",
     category: "BEGINNER",
     blurb: "The exact steps to find profitable shoes, check if they'll sell, calculate real profit, and list them on eBay.",
     url: "/how-to-resell-shoes",

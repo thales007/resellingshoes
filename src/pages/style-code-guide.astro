@@ -1,0 +1,220 @@
+---
+const brands = [
+  { name: "Adidas", images: ["adidas-style-tag-1.jpg","adidas-style-tag-2.jpg","adidas-style-tag-3.jpg"] },
+  { name: "Airwalk", images: ["airwalk-style-tag-1.jpg"] },
+  { name: "Altra", images: ["altra-style-tag-1.jpg","altra-style-tag-2.jpg"] },
+  { name: "Ariat / Ariat Work", images: ["ariat-style-tag-1.jpg","ariat-style-tag-2.jpg","ariat-style-tag-3.jpg","ariat-style-tag-4.jpg","ariat-style-tag-5.jpg","ariat-work-style-tag-1.jpg","ariat-work-style-tag-2.jpg"] },
+  { name: "ASICS", images: ["asics-style-tag-1.jpg","asics-style-tag-2.jpg","asics-style-tag-3.jpg","asics-style-tag-4.jpg","asics-style-tag-5.jpg","asics-style-tag-6.jpg"] },
+  { name: "Avalanche", images: ["avalanche-style-tag-1.jpg"] },
+  { name: "Bogs", images: ["bogs-style-tag-1.jpg","bogs-style-tag-2.jpg","bogs-style-tag-3.jpg"] },
+  { name: "Brooks", images: ["brooks-style-tag-1.jpg","brooks-style-tag-2.jpg"] },
+  { name: "Chaco", images: ["chaco-style-tag-1.jpg","chaco-style-tag-2.jpg"] },
+  { name: "Circle G", images: ["circle-g-style-tag-1.jpg"] },
+  { name: "Clarks", images: ["clarks-style-tag-1.jpg","clarks-style-tag-2.jpg"] },
+  { name: "Clove", images: ["clove-style-tag-1.jpg"] },
+  { name: "Cody James", images: ["cody-james-style-tag-1.jpg","cody-james-style-tag-2.jpg","cody-james-style-tag-3.jpg"] },
+  { name: "Cole Haan", images: ["cole-haan-style-tag-1.jpg","cole-haan-style-tag-2.jpg","cole-haan-style-tag-3.jpg"] },
+  { name: "Columbia", images: ["columbia-style-tag-1.jpg"] },
+  { name: "Converse", images: ["converse-style-tag-1.jpg","converse-style-tag-2.jpg","converse-style-tag-3.jpg"] },
+  { name: "Dan Post", images: ["dan-post-style-tag-1.jpg","dan-post-style-tag-2.jpg"] },
+  { name: "Danner", images: ["danner-style-tag-1.jpg"] },
+  { name: "Dexter", images: ["dexter-style-tag-1.jpg"] },
+  { name: "Dingo", images: ["dingo-style-tag-1.jpg"] },
+  { name: "Donald Pliner", images: ["donald-pliner-style-tag-1.jpg"] },
+  { name: "Dr. Martens", images: ["dr-martens-style-tag-1.jpg","dr-martens-style-tag-2.jpg","dr-martens-style-tag-3.jpg","dr-martens-style-tag-4.jpg"] },
+  { name: "ECCO", images: ["ecco-style-tag-1.jpg","ecco-style-tag-2.jpg"] },
+  { name: "Fitville", images: ["fitville-style-tag-1.jpg"] },
+  { name: "Fizik", images: ["fizik-style-tag-1.jpg"] },
+  { name: "FootJoy", images: ["foot-joy-style-tag-1.jpg","foot-joy-style-tag-2.jpg"] },
+  { name: "Free Soldier", images: ["free-soldier-style-tag-1.jpg"] },
+  { name: "Frye", images: ["frye-style-tag-1.jpg","frye-style-tag-2.jpg","frye-style-tag-3.jpg","frye-style-tag-4.jpg","frye-style-tag-5.jpg"] },
+  { name: "Georgia Boot", images: ["georgia-boot-style-tag-1.jpg"] },
+  { name: "Harley-Davidson", images: ["harley-davison-style-tag-1.jpg"] },
+  { name: "Hi-Tec", images: ["hi-tec-style-tag-1.jpg"] },
+  { name: "HOKA", images: ["hoka-style-tag-1.jpg","hoka-style-tag-2.jpg"] },
+  { name: "Hunter Boots", images: ["hunter-boots-style-tag-1.jpg"] },
+  { name: "Idyllwind", images: ["idyllwind-style-tag-1.jpg"] },
+  { name: "Johnston & Murphy", images: ["johnston-murphy-style-tag-1.jpg"] },
+  { name: "Keds", images: ["keds-style-tag-1.jpg"] },
+  { name: "Korkers", images: ["korkers-style-tag-1.jpg"] },
+  { name: "LaCrosse", images: ["lacrosse-style-tag-1.jpg"] },
+  { name: "Lake", images: ["lake-style-tag-1.jpg"] },
+  { name: "Laredo", images: ["laredo-style-tag-1.jpg"] },
+  { name: "Lucky", images: ["lucky-style-tag-1.jpg"] },
+  { name: "Magnanni", images: ["magnanni-style-tag-1.jpg"] },
+  { name: "Marc Fisher LTD", images: ["marc-fisher-ltd-style-tag-1.jpg"] },
+  { name: "Merinos", images: ["merinos-style-tag-1.jpg"] },
+  { name: "Merrell", images: ["merrell-style-tag-1.jpg"] },
+  { name: "Mizuno", images: ["mizuno-style-tag-1.jpg"] },
+  { name: "New Balance", images: ["new-balance-style-tag-1.jpg","new-balance-style-tag-2.jpg","new-balance-style-tag-3.jpg","new-balance-style-tag-4.jpg"] },
+  { name: "Nike", images: ["nike-style-tag-1.jpg","nike-style-tag-2.jpg","nike-style-tag-3.jpg","nike-style-tag-4.jpg","nike-style-tag-5.jpg","nike-style-tag-6.jpg"] },
+  { name: "NOBULL", images: ["nobull-style-tag-1.jpg"] },
+  { name: "Oakley", images: ["oakley-style-tag-1.jpg"] },
+  { name: "On", images: ["on-style-tag-1.jpg","on-style-tag-2.jpg"] },
+  { name: "Peal & Co.", images: ["peal-co-style-tag-1.jpg"] },
+  { name: "Peloton", images: ["peleton-style-tag-1.jpg"] },
+  { name: "Pro-Keds", images: ["pro-keds-style-tag-1.jpg"] },
+  { name: "Reebok Work", images: ["reebok-work-style-tag-1.jpg","reebok-work-style-tag-2.jpg","reebok-work-style-tag-3.jpg"] },
+  { name: "Rocky", images: ["rocky-style-tag-1.jpg"] },
+  { name: "Rollerblade", images: ["rollerblade-style-tag-1.jpg"] },
+  { name: "Rothy's", images: ["rothy-style-tag-1.jpg"] },
+  { name: "Salomon", images: ["salomon-style-tag-1.jpg"] },
+  { name: "Salvatore Ferragamo", images: ["salvatore-ferragamo-style-tag-1.jpg"] },
+  { name: "Saucony", images: ["saucony-style-tag-1.jpg","saucony-style-tag-2.jpg"] },
+  { name: "Shyanne", images: ["shyanne-style-tag-1.jpg"] },
+  { name: "Skechers / Skechers Work", images: ["skechers-style-tag-1.jpg","skechers-style-tag-2.jpg","skechers-style-tag-3.jpg","skechers-style-tag-4.jpg","skechers-work-style-tag-1.jpg"] },
+  { name: "Sorel", images: ["sorel-style-tag-1.jpg","sorel-style-tag-2.jpg"] },
+  { name: "Steve Madden", images: ["steve-madden-style-tag-1.jpg"] },
+  { name: "Teva", images: ["teva-style-tag-1.jpg","teva-style-tag-2.jpg","teva-style-tag-3.jpg"] },
+  { name: "Timberland / Timberland Pro", images: ["timberland-style-tag-1.jpg","timberland-style-tag-2.jpg","timberland-style-tag-3.jpg","timberland-pro-style-tag-1.jpg","timberland-pro-style-tag-2.jpg"] },
+  { name: "Tony Lama", images: ["tony-lama-style-tag-1.jpg"] },
+  { name: "Twisted X", images: ["twisted-x-style-tag-1.jpg"] },
+  { name: "UGG", images: ["ugg-style-tag-1.jpg"] },
+  { name: "Vans", images: ["vans-style-tag-1.jpg"] },
+  { name: "Venum", images: ["venum-style-tag-1.jpg"] },
+  { name: "Vibram Five Fingers", images: ["vibram-five-finger-style-tag-1.jpg"] },
+  { name: "Vionic", images: ["vionic-style-tag-1.jpg"] },
+  { name: "Wolverine", images: ["wolverine-style-tag-1.jpg","wolverine-style-tag-2.jpg"] },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Read Shoe Style Codes — ResellingShoes.com</title>
+  <meta name="description" content="A visual reference for shoe style codes and tags across 70+ brands. Use this to identify the model number when reselling shoes on eBay.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://resellingshoes.com/style-code-guide">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1A1A1A; --ink-2: #3A3630; --ink-3: #6b6b6b; --ink-4: #A39D97;
+      --cream: #faf8f5; --cream-dark: #f0ece4; --border: #e5e0d8;
+      --walnut: #C4943A; --green: #2F8B5C; --green-hover: #267049;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; }
+
+    nav {
+      background: rgba(250,248,245,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-weight: 800; font-size: 18px; color: var(--ink); }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-3); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { background: var(--green); color: #fff !important; padding: 9px 18px; border-radius: 8px; font-weight: 700 !important; }
+    .nav-cta:hover { background: var(--green-hover) !important; }
+    @media (max-width: 600px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 56px 24px 96px; }
+
+    .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--walnut); margin-bottom: 16px; display: block;
+    }
+    h1 {
+      font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.1; margin-bottom: 12px; color: var(--ink);
+    }
+    .page-sub { font-size: 16px; color: var(--ink-3); margin-bottom: 48px; max-width: 56ch; line-height: 1.7; }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 640px) {
+      .brand-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .brand-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden;
+    }
+    .brand-card-header {
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-name {
+      font-size: 15px; font-weight: 700; color: var(--ink);
+    }
+    .brand-images {
+      display: flex;
+      gap: 10px;
+      padding: 16px 20px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .brand-images::-webkit-scrollbar { display: none; }
+    .brand-images img {
+      height: 160px;
+      width: auto;
+      flex-shrink: 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      object-fit: cover;
+      display: block;
+    }
+    .brand-card.single-image .brand-images img {
+      height: 180px;
+      width: 100%;
+      object-fit: contain;
+      background: var(--cream-dark);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Reselling<span>Shoes</span>.com</a>
+  <div class="nav-links">
+    <a href="/learn">Learn</a>
+    <a href="/the-everyday-shoe-flip">The Playbook</a>
+    <a href="/1000-shoe-reselling-method" class="nav-cta">Free Guide</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <span class="eyebrow">Reference</span>
+  <h1>How to Read Shoe Style Codes</h1>
+  <p class="page-sub">A visual reference for style tags across {brands.length} brands. Use this to identify the model number when listing shoes on eBay.</p>
+
+  <div class="brand-grid">
+    {brands.map((brand) => (
+      <div class={`brand-card${brand.images.length === 1 ? ' single-image' : ''}`}>
+        <div class="brand-card-header">
+          <div class="brand-name">{brand.name}</div>
+        </div>
+        <div class="brand-images">
+          {brand.images.map((img) => (
+            <img
+              src={`/style-tags/${img}`}
+              alt={`${brand.name} style tag`}
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div id="footer-root"></div>
+<script is:inline src="/js/footer.js"></script>
+
+</body>
+</html>

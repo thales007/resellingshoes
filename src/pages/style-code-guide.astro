@@ -1,103 +1,614 @@
 ---
 const brands = [
-  { name: "Adidas", images: ["adidas-style-tag-1.jpg","adidas-style-tag-2.jpg","adidas-style-tag-3.jpg"] },
-  { name: "Airwalk", images: ["airwalk-style-tag-1.jpg"] },
-  { name: "Altra", images: ["altra-style-tag-1.jpg","altra-style-tag-2.jpg"] },
-  { name: "Ariat / Ariat Work", images: ["ariat-style-tag-1.jpg","ariat-style-tag-2.jpg","ariat-style-tag-3.jpg","ariat-style-tag-4.jpg","ariat-style-tag-5.jpg","ariat-work-style-tag-1.jpg","ariat-work-style-tag-2.jpg"] },
-  { name: "ASICS", images: ["asics-style-tag-1.jpg","asics-style-tag-2.jpg","asics-style-tag-3.jpg","asics-style-tag-4.jpg","asics-style-tag-5.jpg","asics-style-tag-6.jpg"] },
-  { name: "Avalanche", images: ["avalanche-style-tag-1.jpg"] },
-  { name: "Bogs", images: ["bogs-style-tag-1.jpg","bogs-style-tag-2.jpg","bogs-style-tag-3.jpg"] },
-  { name: "Brooks", images: ["brooks-style-tag-1.jpg","brooks-style-tag-2.jpg"] },
-  { name: "Chaco", images: ["chaco-style-tag-1.jpg","chaco-style-tag-2.jpg"] },
-  { name: "Circle G", images: ["circle-g-style-tag-1.jpg"] },
-  { name: "Clarks", images: ["clarks-style-tag-1.jpg","clarks-style-tag-2.jpg"] },
-  { name: "Clove", images: ["clove-style-tag-1.jpg"] },
-  { name: "Cody James", images: ["cody-james-style-tag-1.jpg","cody-james-style-tag-2.jpg","cody-james-style-tag-3.jpg"] },
-  { name: "Cole Haan", images: ["cole-haan-style-tag-1.jpg","cole-haan-style-tag-2.jpg","cole-haan-style-tag-3.jpg"] },
-  { name: "Columbia", images: ["columbia-style-tag-1.jpg"] },
-  { name: "Converse", images: ["converse-style-tag-1.jpg","converse-style-tag-2.jpg","converse-style-tag-3.jpg"] },
-  { name: "Dan Post", images: ["dan-post-style-tag-1.jpg","dan-post-style-tag-2.jpg"] },
-  { name: "Danner", images: ["danner-style-tag-1.jpg"] },
-  { name: "Dexter", images: ["dexter-style-tag-1.jpg"] },
-  { name: "Dingo", images: ["dingo-style-tag-1.jpg"] },
-  { name: "Donald Pliner", images: ["donald-pliner-style-tag-1.jpg"] },
-  { name: "Dr. Martens", images: ["dr-martens-style-tag-1.jpg","dr-martens-style-tag-2.jpg","dr-martens-style-tag-3.jpg","dr-martens-style-tag-4.jpg"] },
-  { name: "ECCO", images: ["ecco-style-tag-1.jpg","ecco-style-tag-2.jpg"] },
-  { name: "Fitville", images: ["fitville-style-tag-1.jpg"] },
-  { name: "Fizik", images: ["fizik-style-tag-1.jpg"] },
-  { name: "FootJoy", images: ["foot-joy-style-tag-1.jpg","foot-joy-style-tag-2.jpg"] },
-  { name: "Free Soldier", images: ["free-soldier-style-tag-1.jpg"] },
-  { name: "Frye", images: ["frye-style-tag-1.jpg","frye-style-tag-2.jpg","frye-style-tag-3.jpg","frye-style-tag-4.jpg","frye-style-tag-5.jpg"] },
-  { name: "Georgia Boot", images: ["georgia-boot-style-tag-1.jpg"] },
-  { name: "Harley-Davidson", images: ["harley-davison-style-tag-1.jpg"] },
-  { name: "Hi-Tec", images: ["hi-tec-style-tag-1.jpg"] },
-  { name: "HOKA", images: ["hoka-style-tag-1.jpg","hoka-style-tag-2.jpg"] },
-  { name: "Hunter Boots", images: ["hunter-boots-style-tag-1.jpg"] },
-  { name: "Idyllwind", images: ["idyllwind-style-tag-1.jpg"] },
-  { name: "Johnston & Murphy", images: ["johnston-murphy-style-tag-1.jpg"] },
-  { name: "Keds", images: ["keds-style-tag-1.jpg"] },
-  { name: "Korkers", images: ["korkers-style-tag-1.jpg"] },
-  { name: "LaCrosse", images: ["lacrosse-style-tag-1.jpg"] },
-  { name: "Lake", images: ["lake-style-tag-1.jpg"] },
-  { name: "Laredo", images: ["laredo-style-tag-1.jpg"] },
-  { name: "Lucky", images: ["lucky-style-tag-1.jpg"] },
-  { name: "Magnanni", images: ["magnanni-style-tag-1.jpg"] },
-  { name: "Marc Fisher LTD", images: ["marc-fisher-ltd-style-tag-1.jpg"] },
-  { name: "Merinos", images: ["merinos-style-tag-1.jpg"] },
-  { name: "Merrell", images: ["merrell-style-tag-1.jpg"] },
-  { name: "Mizuno", images: ["mizuno-style-tag-1.jpg"] },
-  { name: "New Balance", images: ["new-balance-style-tag-1.jpg","new-balance-style-tag-2.jpg","new-balance-style-tag-3.jpg","new-balance-style-tag-4.jpg"] },
-  { name: "Nike", images: ["nike-style-tag-1.jpg","nike-style-tag-2.jpg","nike-style-tag-3.jpg","nike-style-tag-4.jpg","nike-style-tag-5.jpg","nike-style-tag-6.jpg"] },
-  { name: "NOBULL", images: ["nobull-style-tag-1.jpg"] },
-  { name: "Oakley", images: ["oakley-style-tag-1.jpg"] },
-  { name: "On", images: ["on-style-tag-1.jpg","on-style-tag-2.jpg"] },
-  { name: "Peal & Co.", images: ["peal-co-style-tag-1.jpg"] },
-  { name: "Peloton", images: ["peleton-style-tag-1.jpg"] },
-  { name: "Pro-Keds", images: ["pro-keds-style-tag-1.jpg"] },
-  { name: "Reebok Work", images: ["reebok-work-style-tag-1.jpg","reebok-work-style-tag-2.jpg","reebok-work-style-tag-3.jpg"] },
-  { name: "Rocky", images: ["rocky-style-tag-1.jpg"] },
-  { name: "Rollerblade", images: ["rollerblade-style-tag-1.jpg"] },
-  { name: "Rothy's", images: ["rothy-style-tag-1.jpg"] },
-  { name: "Salomon", images: ["salomon-style-tag-1.jpg"] },
-  { name: "Salvatore Ferragamo", images: ["salvatore-ferragamo-style-tag-1.jpg"] },
-  { name: "Saucony", images: ["saucony-style-tag-1.jpg","saucony-style-tag-2.jpg"] },
-  { name: "Shyanne", images: ["shyanne-style-tag-1.jpg"] },
-  { name: "Skechers / Skechers Work", images: ["skechers-style-tag-1.jpg","skechers-style-tag-2.jpg","skechers-style-tag-3.jpg","skechers-style-tag-4.jpg","skechers-work-style-tag-1.jpg"] },
-  { name: "Sorel", images: ["sorel-style-tag-1.jpg","sorel-style-tag-2.jpg"] },
-  { name: "Steve Madden", images: ["steve-madden-style-tag-1.jpg"] },
-  { name: "Teva", images: ["teva-style-tag-1.jpg","teva-style-tag-2.jpg","teva-style-tag-3.jpg"] },
-  { name: "Timberland / Timberland Pro", images: ["timberland-style-tag-1.jpg","timberland-style-tag-2.jpg","timberland-style-tag-3.jpg","timberland-pro-style-tag-1.jpg","timberland-pro-style-tag-2.jpg"] },
-  { name: "Tony Lama", images: ["tony-lama-style-tag-1.jpg"] },
-  { name: "Twisted X", images: ["twisted-x-style-tag-1.jpg"] },
-  { name: "UGG", images: ["ugg-style-tag-1.jpg"] },
-  { name: "Vans", images: ["vans-style-tag-1.jpg"] },
-  { name: "Venum", images: ["venum-style-tag-1.jpg"] },
-  { name: "Vibram Five Fingers", images: ["vibram-five-finger-style-tag-1.jpg"] },
-  { name: "Vionic", images: ["vionic-style-tag-1.jpg"] },
-  { name: "Wolverine", images: ["wolverine-style-tag-1.jpg","wolverine-style-tag-2.jpg"] },
+  {
+    name: "Adidas",
+    slug: "adidas",
+    images: ["adidas-style-tag-1.jpg","adidas-style-tag-2.jpg","adidas-style-tag-3.jpg"],
+    whereToLook: `Find the letters "ART" on the tongue label. The style code is the alphanumeric number that follows it.`,
+    format: `Two letters + four numbers — example: <code>S80476</code>`,
+    searchTip: `Search just the code itself — skip the "ART" prefix. Add "Adidas" before the code if results are thin.`,
+  },
+  {
+    name: "Altra",
+    slug: "altra",
+    images: ["altra-style-tag-1.jpg","altra-style-tag-2.jpg"],
+    whereToLook: "Look right under the width designation (W for women's, M for men's) on the inner tag.",
+    format: `Alphanumeric — example: <code>AL LAVQY460</code>`,
+  },
+  {
+    name: "Ariat",
+    slug: "ariat",
+    images: ["ariat-style-tag-1.jpg","ariat-style-tag-2.jpg","ariat-style-tag-3.jpg","ariat-style-tag-4.jpg","ariat-style-tag-5.jpg"],
+    whereToLook: `Look for the word "Style" on the tag. The style code follows it.`,
+    format: `Five or seven digit number — varies by boot or shoe type — example: <code>10027315</code>`,
+    note: "The number of digits varies between boots and shoes within the Ariat brand.",
+  },
+  {
+    name: "Ariat Work",
+    slug: "ariat-work",
+    images: ["ariat-work-style-tag-1.jpg","ariat-work-style-tag-2.jpg"],
+    whereToLook: `Similar to standard Ariat but followed by the SKU rather than preceded by "Style." Look for the SKU number.`,
+    format: "Alphanumeric, similar structure to standard Ariat",
+  },
+  {
+    name: "ASICS",
+    slug: "asics",
+    images: ["asics-style-tag-1.jpg","asics-style-tag-2.jpg","asics-style-tag-3.jpg","asics-style-tag-4.jpg","asics-style-tag-5.jpg","asics-style-tag-6.jpg"],
+    whereToLook: "Look at the top of the inner tag for the primary code.",
+    format: `Alphanumeric — example: <code>1201A827-100</code>. Typically three or four numbers, a letter, more numbers, a dash, then three more numbers.`,
+    searchTip: "Search the full code including the dash and the three-digit suffix — it includes the colorway.",
+  },
+  {
+    name: "Avalanche",
+    slug: "avalanche",
+    images: ["avalanche-style-tag-1.jpg"],
+    whereToLook: "Standard inner tag location — look for the numeric style code.",
+    format: "Numeric",
+    searchTip: "If the code returns no results, search brand name + model name instead.",
+  },
+  {
+    name: "Bogs",
+    slug: "bogs",
+    images: ["bogs-style-tag-1.jpg","bogs-style-tag-2.jpg","bogs-style-tag-3.jpg"],
+    whereToLook: "Top right of the tag box.",
+    format: `Numeric with dash — example: <code>71325-001</code>`,
+    searchTip: "Include the full number with the dash for accurate results.",
+  },
+  {
+    name: "Brooks",
+    slug: "brooks",
+    images: ["brooks-style-tag-1.jpg","brooks-style-tag-2.jpg"],
+    whereToLook: "Inner tag — similar position to ASICS.",
+    format: `Alphanumeric — example: <code>120365 1B</code> where the letter indicates width and following numbers indicate color`,
+    note: "The letter after the main number indicates width (B = standard, D = wide). The final digits may represent the colorway.",
+  },
+  {
+    name: "Chaco",
+    slug: "chaco",
+    images: ["chaco-style-tag-1.jpg","chaco-style-tag-2.jpg"],
+    whereToLook: "Right under the gender category (Men's or Women's) on the tag.",
+    format: `Starts with J — example: <code>J105362</code>`,
+  },
+  {
+    name: "Circle G (by Corral)",
+    slug: "circle-g",
+    images: ["circle-g-style-tag-1.jpg"],
+    whereToLook: "Look for the STK number on the tag.",
+    format: `Alphanumeric — example: <code>J7111</code>`,
+    searchTip: `Search "Circle G" + the style number for best results.`,
+  },
+  {
+    name: "Clarks",
+    slug: "clarks",
+    images: ["clarks-style-tag-1.jpg","clarks-style-tag-2.jpg"],
+    whereToLook: "Right side of the inner tag.",
+    format: `Five digit numeric — example: <code>23535</code>`,
+  },
+  {
+    name: "Clove",
+    slug: "clove",
+    images: ["clove-style-tag-1.jpg"],
+    whereToLook: "SN number on the tag.",
+    format: `Alphanumeric — example: <code>LEXI LO10</code>`,
+  },
+  {
+    name: "Cody James",
+    slug: "cody-james",
+    images: ["cody-james-style-tag-1.jpg","cody-james-style-tag-2.jpg","cody-james-style-tag-3.jpg"],
+    whereToLook: "Varies by style. Look for the style number on the inner tag.",
+    format: `Three variations exist within this brand:<br>• Children's styles: starts with <code>BDS</code> — example: <code>BDS1904</code><br>• Men's/Women's: starts with <code>BCJ</code><br>• Cody James star styles: starts with <code>STAFF</code> — example: <code>STAFF43108</code>`,
+    note: "Check the prefix letters to confirm which format you have.",
+  },
+  {
+    name: "Cole Haan",
+    slug: "cole-haan",
+    images: ["cole-haan-style-tag-1.jpg","cole-haan-style-tag-2.jpg","cole-haan-style-tag-3.jpg"],
+    whereToLook: "Near the top of the tag, right under the size designation.",
+    format: `Starts with C (men's) or W (women's) followed by numbers — example: <code>C31199</code>`,
+  },
+  {
+    name: "Columbia",
+    slug: "columbia",
+    images: ["columbia-style-tag-1.jpg"],
+    whereToLook: "After the gender designation (Men's or Women's) on the tag.",
+    format: `Numeric with dash — example: <code>1839370-014</code>`,
+  },
+  {
+    name: "Converse",
+    slug: "converse",
+    images: ["converse-style-tag-1.jpg","converse-style-tag-2.jpg","converse-style-tag-3.jpg"],
+    whereToLook: `Varies by tag generation. Newer tags: alphanumeric starting with C near the top left — example: <code>149455C</code>. Older tags: Q number at the bottom of the tag.`,
+    format: "C-number (newer) or Q-number (older)",
+    commonMistake: `Some Converse tags show a long SK number at the top (example: <code>SK0810848</code>). This is NOT the style code — do not search this number. Use the C-number or Q-number only.`,
+  },
+  {
+    name: "Dan Post",
+    slug: "dan-post",
+    images: ["dan-post-style-tag-1.jpg","dan-post-style-tag-2.jpg"],
+    whereToLook: `Under the word "Style" on the tag.`,
+    format: `Four digit numeric — example: <code>4319</code>`,
+  },
+  {
+    name: "Danner",
+    slug: "danner",
+    images: ["danner-style-tag-1.jpg"],
+    whereToLook: "To the left of the gender category on the tag.",
+    format: `Five digit numeric — example: <code>44211</code>`,
+  },
+  {
+    name: "Dexter",
+    slug: "dexter",
+    images: ["dexter-style-tag-1.jpg"],
+    whereToLook: "Under the model name, which is written out in full on the tag.",
+    format: "The model name itself is searchable — use it directly.",
+    searchTip: `Search "Dexter" + the model name written on the tag. No numeric code needed.`,
+  },
+  {
+    name: "Dingo",
+    slug: "dingo",
+    images: ["dingo-style-tag-1.jpg"],
+    whereToLook: "First part of the code before the color and size designations.",
+    format: `Starts with DI — example: <code>DI85</code>`,
+  },
+  {
+    name: "Donald Pliner",
+    slug: "donald-pliner",
+    images: ["donald-pliner-style-tag-1.jpg"],
+    whereToLook: "Model name is written directly on the tag. No numeric style code.",
+    searchByModelName: true,
+    searchTip: `Search "Donald Pliner" + the model name on the tag.`,
+  },
+  {
+    name: "Dr. Martens",
+    slug: "dr-martens",
+    images: ["dr-martens-style-tag-1.jpg","dr-martens-style-tag-2.jpg","dr-martens-style-tag-3.jpg","dr-martens-style-tag-4.jpg"],
+    whereToLook: "Varies by tag style. Some tags show a numeric code in the middle. Others show the model name only.",
+    format: `Numeric — example: <code>11822</code> OR model name — example: <code>AW004</code>`,
+    note: "Search whichever identifier is present. Both formats are searchable on eBay.",
+  },
+  {
+    name: "ECCO",
+    slug: "ecco",
+    images: ["ecco-style-tag-1.jpg","ecco-style-tag-2.jpg"],
+    whereToLook: "Look near the bottom of the tag — but not the very last number. Find the area where two numbers are stacked on top of each other. Use the top number.",
+    format: "Long numeric code",
+    commonMistake: "The very bottom number on an ECCO tag is NOT the style code. Look for the stacked pair of numbers and use the upper one.",
+  },
+  {
+    name: "FitVille",
+    slug: "fitville",
+    images: ["fitville-style-tag-1.jpg"],
+    whereToLook: "Article number at the very bottom of the tag.",
+    format: "Numeric",
+  },
+  {
+    name: "Fizik",
+    slug: "fizik",
+    images: ["fizik-style-tag-1.jpg"],
+    whereToLook: "Model name directly under the brand name. No numeric style code.",
+    searchByModelName: true,
+    searchTip: `Search "Fizik" + model name — example: "Fizik Tempo Powerstrap"`,
+  },
+  {
+    name: "FootJoy",
+    slug: "footjoy",
+    images: ["foot-joy-style-tag-1.jpg","foot-joy-style-tag-2.jpg"],
+    whereToLook: "Large five digit number at the top of the tag.",
+    format: `Five digit numeric — example: <code>53070</code>`,
+  },
+  {
+    name: "Free Soldier",
+    slug: "free-soldier",
+    images: ["free-soldier-style-tag-1.jpg"],
+    whereToLook: "Right under the brand name.",
+    format: `Alphanumeric — example: <code>ACC0037</code>`,
+  },
+  {
+    name: "Frye",
+    slug: "frye",
+    images: ["frye-style-tag-1.jpg","frye-style-tag-2.jpg","frye-style-tag-3.jpg","frye-style-tag-4.jpg","frye-style-tag-5.jpg"],
+    whereToLook: "Five digit number underneath the main identifier on the tag.",
+    format: `Five digit numeric — example: <code>77050</code>`,
+    commonMistake: `Frye tags often have two numbers — a shorter five digit style code AND a longer unique shoe identifier. Use the shorter five digit number only. The longer number is a one-of-a-kind ID for that specific pair and will not return search results.`,
+  },
+  {
+    name: "Georgia Boot",
+    slug: "georgia-boot",
+    images: ["georgia-boot-style-tag-1.jpg"],
+    whereToLook: "Near the top left of the tag, under the sizing information.",
+    format: `Alphanumeric — example: <code>G8342</code>`,
+  },
+  {
+    name: "Harley-Davidson",
+    slug: "harley-davidson",
+    images: ["harley-davison-style-tag-1.jpg"],
+    whereToLook: "Stock number on the tag.",
+    format: `Alphanumeric — example: <code>D84783</code>`,
+    searchTip: `Search "Harley Davidson shoes" + stock number.`,
+  },
+  {
+    name: "Hi-Tec",
+    slug: "hi-tec",
+    images: ["hi-tec-style-tag-1.jpg"],
+    whereToLook: "Top of the tag, right under the size.",
+    format: `Numeric — example: <code>24045</code>`,
+  },
+  {
+    name: "HOKA",
+    slug: "hoka",
+    images: ["hoka-style-tag-1.jpg","hoka-style-tag-2.jpg"],
+    whereToLook: "Two pieces of information matter on a HOKA tag: the model name AND the colorway code.",
+    format: `Model name (example: <code>Bondi 6</code>) + numeric color code (example: <code>1019270</code>) + letter colorway abbreviation (example: <code>BBLC</code>)`,
+    searchTip: "Search the model name + colorway code together for the most accurate sold comps. The colorway code differentiates between colorways that may sell for very different prices.",
+  },
+  {
+    name: "Hunter Boots",
+    slug: "hunter-boots",
+    images: ["hunter-boots-style-tag-1.jpg"],
+    whereToLook: "Style number near the sizing information on the inner tag.",
+    format: "Alphanumeric",
+  },
+  {
+    name: "Idyllwind",
+    slug: "idyllwind",
+    images: ["idyllwind-style-tag-1.jpg"],
+    whereToLook: `Beside the "Style" label on the tag.`,
+    format: `Alphanumeric — example: <code>BIWSP223</code>`,
+    note: "Idyllwind is Miranda Lambert's western boot brand. Niche but growing resale market.",
+  },
+  {
+    name: "Johnston & Murphy",
+    slug: "johnston-murphy",
+    images: ["johnston-murphy-style-tag-1.jpg"],
+    whereToLook: "Very top of the tag.",
+    format: `Two digit number + space + four digit number — example: <code>59 2374</code>`,
+    searchTip: `Search "Johnston Murphy" + the full number including both parts.`,
+  },
+  {
+    name: "Keds",
+    slug: "keds",
+    images: ["keds-style-tag-1.jpg"],
+    whereToLook: "Far left of the inner tag.",
+    format: `Alphanumeric — example: <code>WF5734</code>`,
+  },
+  {
+    name: "Korkers",
+    slug: "korkers",
+    images: ["korkers-style-tag-1.jpg"],
+    whereToLook: "Top of the tag — style name and number.",
+    format: "Alphanumeric",
+    searchTip: "Search brand + model name for best results.",
+  },
+  {
+    name: "LaCrosse",
+    slug: "lacrosse",
+    images: ["lacrosse-style-tag-1.jpg"],
+    whereToLook: "Near the top of the tag, above the sizing. Both a style name and style number appear — use the numeric code.",
+    format: `Numeric — example: <code>150040</code>`,
+  },
+  {
+    name: "Lake (Cycling Shoes)",
+    slug: "lake",
+    images: ["lake-style-tag-1.jpg"],
+    whereToLook: "No traditional style code. Tag shows EU sizing and millimeter measurements only.",
+    searchByModelName: true,
+    searchTip: `Search "Lake" + model name — example: "Lake CX301". Lake is a specialty cycling shoe brand.`,
+  },
+  {
+    name: "Laredo",
+    slug: "laredo",
+    images: ["laredo-style-tag-1.jpg"],
+    whereToLook: "Four digit number before the women's size designation.",
+    format: "Four digit numeric",
+  },
+  {
+    name: "Lucky Brand",
+    slug: "lucky-brand",
+    images: ["lucky-style-tag-1.jpg"],
+    whereToLook: "LK prefix followed by the model name.",
+    format: `"LK-" + model name — example: <code>LK-CALLAN</code>`,
+    searchTip: `Search "Lucky Brand" + the model name for best results.`,
+  },
+  {
+    name: "Magnanni",
+    slug: "magnanni",
+    images: ["magnanni-style-tag-1.jpg"],
+    whereToLook: "Five digit code before the sizing information.",
+    format: "Five digit numeric",
+    searchTip: `Search "Magnanni" + style number. Strong resale value brand.`,
+  },
+  {
+    name: "Marc Fisher / Marc Fisher LTD",
+    slug: "marc-fisher",
+    images: ["marc-fisher-ltd-style-tag-1.jpg"],
+    whereToLook: "Alphanumeric model code on the tag — functions as the model name.",
+    format: `Model name — example: <code>HILARIA</code>`,
+    searchTip: `Search "Marc Fisher" + model name.`,
+  },
+  {
+    name: "Merinos",
+    slug: "merinos",
+    images: ["merinos-style-tag-1.jpg"],
+    whereToLook: "Inner tag — use the primary style number on the tag.",
+    format: "Numeric or alphanumeric",
+  },
+  {
+    name: "Merrell",
+    slug: "merrell",
+    images: ["merrell-style-tag-1.jpg"],
+    whereToLook: "Top of the inner tag.",
+    format: `Starts with J — example: <code>J037029</code>`,
+    searchTip: "Search the full J-number for accurate results.",
+  },
+  {
+    name: "Mizuno",
+    slug: "mizuno",
+    images: ["mizuno-style-tag-1.jpg"],
+    whereToLook: "Very bottom of the inner tag.",
+    format: `Numeric with periods — example: <code>4115453.NA00</code>`,
+  },
+  {
+    name: "New Balance",
+    slug: "new-balance",
+    images: ["new-balance-style-tag-1.jpg","new-balance-style-tag-2.jpg","new-balance-style-tag-3.jpg","new-balance-style-tag-4.jpg"],
+    whereToLook: "Right under the width designation on the tag.",
+    format: `Width letter + model number + color code — example: <code>MWRD</code> then <code>NW1448K</code> where 1448 is the model number and K is the color`,
+    searchTip: "Search the model number (example: 1440) + the color letter abbreviation for best results. The model number alone will return results but adding the color narrows it significantly.",
+  },
+  {
+    name: "Nike",
+    slug: "nike",
+    images: ["nike-style-tag-1.jpg","nike-style-tag-2.jpg","nike-style-tag-3.jpg","nike-style-tag-4.jpg","nike-style-tag-5.jpg","nike-style-tag-6.jpg"],
+    whereToLook: "Inner tongue label.",
+    format: `Six digit number + dash + three digit number — example: <code>CU4824-100</code> where the last three digits identify the colorway`,
+    note: "Some older or specialty styles begin with letters (example: R92, R93) followed by numbers.",
+    searchTip: "Always search the full code including the dash and three-digit colorway suffix. Different colorways of the same model can sell for very different prices.",
+  },
+  {
+    name: "NOBULL",
+    slug: "nobull",
+    images: ["nobull-style-tag-1.jpg"],
+    whereToLook: "No standard style code visible on the tag.",
+    searchByModelName: true,
+    searchTip: "Search by visual description or model name.",
+  },
+  {
+    name: "Oakley (Footwear)",
+    slug: "oakley",
+    images: ["oakley-style-tag-1.jpg"],
+    whereToLook: "Tag shows size only — no style code.",
+    searchByModelName: true,
+    searchTip: `Search "Oakley shoes" + visual description of the style.`,
+  },
+  {
+    name: "On Running",
+    slug: "on-running",
+    images: ["on-style-tag-1.jpg","on-style-tag-2.jpg"],
+    whereToLook: "Long numeric code on the right side of the tag. Appears consistently across On Running tag variations.",
+    format: `Long numeric — example: <code>26.98448</code>`,
+    searchTip: "Search the full number. On Running has strong and consistent resale demand — accurate sold comps are easy to find with the style code.",
+  },
+  {
+    name: "Peal & Co (Brooks Brothers)",
+    slug: "peal-co",
+    images: ["peal-co-style-tag-1.jpg"],
+    whereToLook: "Handwritten or printed number on the tag.",
+    format: `Numeric — example: <code>78975026</code>`,
+    note: "Peal & Co is the Brooks Brothers shoe line. Strong resale value — worth knowing when you see this brand at a thrift store.",
+  },
+  {
+    name: "Pro-Keds",
+    slug: "pro-keds",
+    images: ["pro-keds-style-tag-1.jpg"],
+    whereToLook: "Right before the style information on the tag.",
+    format: `Alphanumeric — example: <code>PH60411</code>`,
+  },
+  {
+    name: "Reebok Work",
+    slug: "reebok-work",
+    images: ["reebok-work-style-tag-1.jpg","reebok-work-style-tag-2.jpg","reebok-work-style-tag-3.jpg"],
+    whereToLook: "Stock number on the tag.",
+    format: `Starts with RB — example: <code>RB116</code>`,
+  },
+  {
+    name: "Rocky",
+    slug: "rocky",
+    images: ["rocky-style-tag-1.jpg"],
+    whereToLook: "Left side of the inner tag.",
+    format: `Numeric — example: <code>FQ0001108</code>`,
+  },
+  {
+    name: "Rothy's",
+    slug: "rothys",
+    images: ["rothy-style-tag-1.jpg"],
+    whereToLook: "Style name only — no numeric code.",
+    searchByModelName: true,
+    searchTip: `Search "Rothy's" + style name — example: "Rothy's The Point." Rothy's uses style names rather than numeric codes.`,
+  },
+  {
+    name: "Salomon",
+    slug: "salomon",
+    images: ["salomon-style-tag-1.jpg"],
+    whereToLook: "Article number on the inner tag.",
+    format: `Numeric — example: <code>378337</code>`,
+    searchTip: `Search "Salomon" + article number. Strong resale demand year-round.`,
+  },
+  {
+    name: "Salvatore Ferragamo",
+    slug: "salvatore-ferragamo",
+    images: ["salvatore-ferragamo-style-tag-1.jpg"],
+    whereToLook: "Full digit number beside the size on the tag.",
+    format: `Numeric — example: <code>8327</code>`,
+    searchTip: `Search "Ferragamo" + style number. Premium resale value — worth the extra minute to look up sold comps carefully.`,
+  },
+  {
+    name: "Saucony",
+    slug: "saucony",
+    images: ["saucony-style-tag-1.jpg","saucony-style-tag-2.jpg"],
+    whereToLook: "Inner tag.",
+    format: `Alphanumeric starting with S — example: <code>SDS10943-100</code>`,
+    searchTip: "Search the full code including the dash and suffix.",
+  },
+  {
+    name: "Shyanne",
+    slug: "shyanne",
+    images: ["shyanne-style-tag-1.jpg"],
+    whereToLook: "Beside the Style label on the tag.",
+    format: `Alphanumeric — example: <code>BBW113</code>`,
+  },
+  {
+    name: "Skechers",
+    slug: "skechers",
+    images: ["skechers-style-tag-1.jpg","skechers-style-tag-2.jpg","skechers-style-tag-3.jpg","skechers-style-tag-4.jpg"],
+    whereToLook: "SN number on the inner tag.",
+    format: `Numeric — example: <code>15615</code>`,
+    searchTip: `Search "Skechers" + SN number.`,
+  },
+  {
+    name: "Skechers Work",
+    slug: "skechers-work",
+    images: ["skechers-work-style-tag-1.jpg"],
+    whereToLook: "Same as standard Skechers — SN number on the tag.",
+    format: "Numeric",
+    searchTip: `Search "Skechers Work" + SN number to differentiate from standard Skechers results.`,
+  },
+  {
+    name: "Sorel",
+    slug: "sorel",
+    images: ["sorel-style-tag-1.jpg","sorel-style-tag-2.jpg"],
+    whereToLook: "Under the WMNS (women's) designation on the tag.",
+    format: `Alphanumeric — example: <code>NL5283-355</code>`,
+    searchTip: "Include the full code with the dash for accurate results.",
+  },
+  {
+    name: "Steve Madden",
+    slug: "steve-madden",
+    images: ["steve-madden-style-tag-1.jpg"],
+    whereToLook: "Style name or code at the top of the tag.",
+    format: `Style name/code hybrid — example: <code>GRAY</code> or <code>09S1</code>`,
+    searchTip: `Search "Steve Madden" + the style name at the top of the tag.`,
+  },
+  {
+    name: "Teva",
+    slug: "teva",
+    images: ["teva-style-tag-1.jpg","teva-style-tag-2.jpg","teva-style-tag-3.jpg"],
+    whereToLook: "Look for the Teva SN number on the tag. Some tags also show an FM number — use the SN number.",
+    format: `Numeric — example: <code>1019395Y</code>`,
+    note: "Two numbers may appear on some Teva tags. The SN number is more reliable for eBay search.",
+  },
+  {
+    name: "Timberland",
+    slug: "timberland",
+    images: ["timberland-style-tag-1.jpg","timberland-style-tag-2.jpg","timberland-style-tag-3.jpg"],
+    whereToLook: "Left side number near the sizing, or the TB-prefixed alphanumeric code.",
+    format: `Numeric — example: <code>12135</code> OR alphanumeric with TB prefix — example: <code>TB0831</code>`,
+    commonMistake: "Timberland tags often show two numbers. The number on the RIGHT side of the tag is NOT the style code. Use the left side number or the TB-prefixed code only.",
+  },
+  {
+    name: "Timberland Pro",
+    slug: "timberland-pro",
+    images: ["timberland-pro-style-tag-1.jpg","timberland-pro-style-tag-2.jpg"],
+    whereToLook: "Same as standard Timberland — left side of the tag.",
+    format: "Numeric or alphanumeric with TB prefix",
+    note: "Same caution as Timberland — use the left side number only.",
+  },
+  {
+    name: "Tony Lama",
+    slug: "tony-lama",
+    images: ["tony-lama-style-tag-1.jpg"],
+    whereToLook: "Stock number on the tag.",
+    format: "Alphanumeric stock number",
+    searchTip: `Search "Tony Lama" + stock number.`,
+  },
+  {
+    name: "Twisted X",
+    slug: "twisted-x",
+    images: ["twisted-x-style-tag-1.jpg"],
+    whereToLook: "Right above the size designation on the tag.",
+    format: `Alphanumeric — example: <code>YHY0802</code>`,
+  },
+  {
+    name: "UGG",
+    slug: "ugg",
+    images: ["ugg-style-tag-1.jpg"],
+    whereToLook: "Model name at the top right of the tag, or alongside the brand name.",
+    format: `Model name — example: <code>Bret</code>`,
+    searchByModelName: true,
+    searchTip: `Search "UGG" + model name. The model name is the most reliable search term for UGG.`,
+  },
+  {
+    name: "Vans",
+    slug: "vans",
+    images: ["vans-style-tag-1.jpg"],
+    whereToLook: "Bottom left of the inner tag.",
+    format: `Numeric — example: <code>721356</code>`,
+    note: "Vans produces a high volume of styles and colorway variations. The style code alone may not narrow results significantly. Search brand + model name + colorway for better results. Note that Vans is a competitive resale market with compressed margins on common styles.",
+  },
+  {
+    name: "Vibram FiveFingers",
+    slug: "vibram-fivefingers",
+    images: ["vibram-five-finger-style-tag-1.jpg"],
+    whereToLook: "Top of the inner tag.",
+    format: `Numeric — example: <code>V709</code>`,
+    searchTip: `Search "Vibram FiveFingers" + style number.`,
+  },
+  {
+    name: "Vionic",
+    slug: "vionic",
+    images: ["vionic-style-tag-1.jpg"],
+    whereToLook: "Top left of the tag, above the sizing information.",
+    format: `Model name — example: <code>BRISK LONA</code>`,
+    searchByModelName: true,
+    searchTip: `Search "Vionic" + model name.`,
+  },
+  {
+    name: "Wolverine",
+    slug: "wolverine",
+    images: ["wolverine-style-tag-1.jpg","wolverine-style-tag-2.jpg"],
+    whereToLook: "Near the sizing — look for the stock number.",
+    format: `Alphanumeric starting with W — example: <code>W10632</code>`,
+    searchTip: `Search "Wolverine" + stock number.`,
+  },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": brands.map(b => ({
+    "@type": "Question",
+    "name": `Where is the ${b.name} style code?`,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": b.whereToLook.replace(/<[^>]+>/g, ''),
+    }
+  }))
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Read Shoe Style Codes — ResellingShoes.com</title>
-  <meta name="description" content="A visual reference for shoe style codes and tags across 70+ brands. Use this to identify the model number when reselling shoes on eBay.">
+  <title>How to Find a Shoe Style Code on Any Brand</title>
+  <meta name="description" content="A visual reference guide to finding style codes on 70+ shoe brands. Know what to search on eBay before you buy at the thrift store.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://resellingshoes.com/style-code-guide">
+  <link rel="canonical" href="https://www.resellingshoes.com/style-code-guide">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --ink: #1A1A1A; --ink-2: #3A3630; --ink-3: #6b6b6b; --ink-4: #A39D97;
       --cream: #faf8f5; --cream-dark: #f0ece4; --border: #e5e0d8;
       --walnut: #C4943A; --green: #2F8B5C; --green-hover: #267049;
+      --green-bg: #e8f4ee; --green-text: #1e6b45;
       --serif: 'DM Serif Display', Georgia, serif;
       --sans: 'DM Sans', sans-serif;
     }
@@ -127,54 +638,113 @@ const brands = [
     }
     h1 {
       font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.75rem);
-      line-height: 1.1; margin-bottom: 12px; color: var(--ink);
+      line-height: 1.1; margin-bottom: 16px; color: var(--ink);
     }
-    .page-sub { font-size: 16px; color: var(--ink-3); margin-bottom: 48px; max-width: 56ch; line-height: 1.7; }
+    .page-sub { font-size: 17px; color: var(--ink-3); margin-bottom: 52px; max-width: 62ch; line-height: 1.75; }
+
+    .why-section { margin-bottom: 16px; }
+    .why-section h2 {
+      font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.85rem);
+      color: var(--ink); margin-bottom: 14px; line-height: 1.2;
+    }
+    .why-section p { font-size: 16px; color: var(--ink-2); line-height: 1.8; margin-bottom: 14px; max-width: 72ch; }
+
+    .pro-tip {
+      background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--walnut);
+      border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0 52px;
+      max-width: 660px;
+    }
+    .pro-tip-label {
+      font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--walnut); margin-bottom: 7px; display: block;
+    }
+    .pro-tip p { font-size: 15px; color: var(--ink-2); line-height: 1.7; }
+    .pro-tip strong { color: var(--ink); }
+
+    .brands-header { margin-bottom: 28px; }
+    .brands-header h2 {
+      font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.85rem);
+      color: var(--ink); margin-bottom: 5px; line-height: 1.2;
+    }
+    .brands-subhead { font-size: 14px; color: var(--ink-4); }
 
     .brand-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+      display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 64px;
     }
-    @media (min-width: 640px) {
-      .brand-grid { grid-template-columns: 1fr 1fr; }
-    }
+    @media (min-width: 640px) { .brand-grid { grid-template-columns: 1fr 1fr; } }
 
     .brand-card {
       background: #fff; border: 1px solid var(--border); border-radius: 14px;
-      overflow: hidden;
+      overflow: hidden; display: flex; flex-direction: column;
     }
     .brand-card-header {
-      padding: 16px 20px 12px;
-      border-bottom: 1px solid var(--border);
+      padding: 15px 20px 13px; border-bottom: 1px solid var(--border);
     }
-    .brand-name {
-      font-size: 15px; font-weight: 700; color: var(--ink);
+    .brand-card-header h3 {
+      font-family: var(--sans); font-size: 14.5px; font-weight: 700; color: var(--ink); margin: 0;
     }
+
     .brand-images {
-      display: flex;
-      gap: 10px;
-      padding: 16px 20px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      display: flex; gap: 10px; padding: 14px 18px;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      border-bottom: 1px solid var(--border);
     }
     .brand-images::-webkit-scrollbar { display: none; }
     .brand-images img {
-      height: 160px;
-      width: auto;
-      flex-shrink: 0;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      object-fit: cover;
-      display: block;
+      height: 155px; width: auto; flex-shrink: 0;
+      border-radius: 7px; border: 1px solid var(--border); object-fit: cover; display: block;
     }
     .brand-card.single-image .brand-images img {
-      height: 180px;
-      width: 100%;
-      object-fit: contain;
-      background: var(--cream-dark);
+      height: 170px; width: 100%; object-fit: contain; background: var(--cream-dark);
     }
+
+    .brand-card-body { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 11px; flex: 1; }
+
+    .where-to-look {
+      background: var(--cream-dark); border-left: 3px solid var(--walnut);
+      border-radius: 0 8px 8px 0; padding: 11px 14px;
+    }
+    .wtl-label {
+      font-size: 9px; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--walnut); margin-bottom: 5px; display: block;
+    }
+    .where-to-look p { font-size: 13px; color: var(--ink-2); line-height: 1.65; }
+
+    .format-row { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+    .format-label { font-weight: 700; color: var(--ink-2); margin-right: 3px; }
+    code {
+      font-family: 'Courier New', monospace; font-size: 12px;
+      background: var(--cream-dark); border: 1px solid var(--border);
+      border-radius: 4px; padding: 1px 5px; color: var(--ink-2);
+    }
+
+    .badge-model-name {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--green-bg); color: var(--green-text);
+      font-size: 11px; font-weight: 700; padding: 5px 11px;
+      border-radius: 20px; width: fit-content; letter-spacing: 0.01em;
+    }
+    .badge-model-name::before { content: "→"; }
+
+    .common-mistake {
+      background: #fff8ec; border: 1px solid #e8c87a; border-radius: 8px;
+      padding: 10px 13px; font-size: 13px; color: #7a5a10; line-height: 1.65;
+    }
+    .mistake-label { font-weight: 700; margin-right: 3px; }
+
+    .search-tip { font-size: 13px; color: var(--ink-3); line-height: 1.65; }
+    .search-tip::before { content: "→ "; color: var(--green); font-weight: 700; }
+
+    .card-note { font-size: 12.5px; color: var(--ink-4); line-height: 1.6; font-style: italic; }
+
+    .bottom-section { max-width: 72ch; margin-bottom: 64px; }
+    .bottom-section h2 {
+      font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 1.85rem);
+      color: var(--ink); margin-bottom: 14px; line-height: 1.2;
+    }
+    .bottom-section p { font-size: 16px; color: var(--ink-2); line-height: 1.8; margin-bottom: 14px; }
+
+    #related-root { margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -189,32 +759,113 @@ const brands = [
 </nav>
 
 <div class="page-wrap">
-  <span class="eyebrow">Reference</span>
-  <h1>How to Read Shoe Style Codes</h1>
-  <p class="page-sub">A visual reference for style tags across {brands.length} brands. Use this to identify the model number when listing shoes on eBay.</p>
+
+  <span class="eyebrow">Reference Guide</span>
+  <h1>How to Find a Shoe Style Code on Any Brand</h1>
+  <p class="page-sub">When you pick up a shoe at a thrift store, the style code is the fastest way to know what you're holding and what it's worth. It's a unique identifier — part number, part model fingerprint — that tells eBay's search engine exactly which shoe you have. Get it right and you'll find accurate sold listings in seconds. Skip it and you're guessing. This guide covers {brands.length}+ brands and shows you exactly where the style code appears on each one, what it looks like, and what to search. Bookmark it before your next sourcing run.</p>
+
+  <div class="why-section">
+    <h2>Why the style code matters</h2>
+    <p>Every shoe brand formats its tags differently. Nike puts the code on the tongue label as a six-digit number followed by a dash and three more digits. New Balance puts it under the width designation. Frye uses a five-digit number that's easy to confuse with a longer identifier on the same tag. Knowing which number to search — and which to ignore — is the difference between finding three relevant sold comps and getting zero results.</p>
+    <p>The process is simple: pick up the shoe, locate the style code using this guide, type it into eBay's search bar, and filter to Sold listings. What comes back tells you what buyers are actually paying for that exact shoe. That's your pricing baseline before you commit to buying.</p>
+
+    <div class="pro-tip">
+      <span class="pro-tip-label">Pro Tip</span>
+      <p>Always filter eBay to <strong>Sold listings</strong> — not active listings. Active listings show what sellers are asking. Sold listings show what buyers are actually paying. Those are very different numbers. The style code gets you to the right results. The sold filter shows you the real market.</p>
+    </div>
+  </div>
+
+  <div class="brands-header">
+    <h2>Style codes by brand</h2>
+    <p class="brands-subhead">{brands.length}+ brands — updated from real sourcing experience</p>
+  </div>
 
   <div class="brand-grid">
     {brands.map((brand) => (
       <div class={`brand-card${brand.images.length === 1 ? ' single-image' : ''}`}>
         <div class="brand-card-header">
-          <div class="brand-name">{brand.name}</div>
+          <h3 id={brand.slug}>{brand.name} Style Code</h3>
         </div>
         <div class="brand-images">
           {brand.images.map((img) => (
-            <img
-              src={`/style-tags/${img}`}
-              alt={`${brand.name} style tag`}
-              loading="lazy"
-            />
+            <img src={`/style-tags/${img}`} alt={`${brand.name} style tag`} loading="lazy" />
           ))}
+        </div>
+        <div class="brand-card-body">
+          <div class="where-to-look">
+            <span class="wtl-label">Where to look</span>
+            <p set:html={brand.whereToLook} />
+          </div>
+
+          {brand.format && (
+            <div class="format-row">
+              <span class="format-label">Format:</span>
+              <span set:html={brand.format} />
+            </div>
+          )}
+
+          {brand.searchByModelName && (
+            <span class="badge-model-name">Search by model name</span>
+          )}
+
+          {brand.commonMistake && (
+            <div class="common-mistake">
+              <span class="mistake-label">⚠️ Common mistake:</span>
+              <span set:html={brand.commonMistake} />
+            </div>
+          )}
+
+          {brand.searchTip && (
+            <p class="search-tip" set:html={brand.searchTip} />
+          )}
+
+          {brand.note && (
+            <p class="card-note" set:html={brand.note} />
+          )}
         </div>
       </div>
     ))}
   </div>
+
+  <div class="bottom-section">
+    <h2>How to use this at the thrift store</h2>
+    <p>You won't have this page memorized on day one — and you don't need to. Bookmark it on your phone and pull it up while you're standing in the shoe aisle. Pick up the pair, find the brand, locate the style code using the guide, and search eBay sold listings before you commit to buying. After a few sourcing runs you'll have the major brands memorized. The ones you source regularly will become automatic. The ones you see less often are exactly why this page exists.</p>
+    <p>A few brands on this list — Fizik, Lake, NoBull, Oakley footwear — don't use traditional style codes. For those, search by model name. It takes a few extra seconds but the results are just as useful.</p>
+    <p>One more thing: the style code tells you what shoe you have. The sold listings tell you what it's worth. Neither one alone is enough — you need both before you put that shoe in your cart.</p>
+  </div>
+
+  <div id="related-root"></div>
+
 </div>
 
 <div id="footer-root"></div>
+<script is:inline src="/js/articles-data.js"></script>
 <script is:inline src="/js/footer.js"></script>
+<script is:inline>
+(function () {
+  if (typeof ARTICLES_DATA === 'undefined') return;
+  var sourcing = ARTICLES_DATA.filter(function (a) {
+    return a.category === 'SOURCING' && !a.comingSoon;
+  }).slice(0, 3);
+  if (!sourcing.length) return;
+  var root = document.getElementById('related-root');
+  if (!root) return;
+  var catColors = { 'SOURCING': '#2F8B5C', 'BEGINNER': '#C4943A', 'SELLING': '#4a7ab5', 'GETTING STARTED': '#7a5a10', 'PLATFORM STRATEGY': '#6b4f8a' };
+  var html = '<div style="border-top:1px solid #e5e0d8;padding-top:48px">'
+    + '<p style="font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#C4943A;margin-bottom:16px">More on Sourcing</p>'
+    + '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">';
+  sourcing.forEach(function (a) {
+    var color = catColors[a.category] || '#6b6b6b';
+    html += '<a href="' + a.url + '" style="display:block;background:#fff;border:1px solid #e5e0d8;border-radius:12px;padding:20px;text-decoration:none" onmouseover="this.style.boxShadow=\'0 4px 16px rgba(0,0,0,0.08)\'" onmouseout="this.style.boxShadow=\'none\'">'
+      + '<span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:' + color + ';margin-bottom:8px;display:block">' + a.category + '</span>'
+      + '<div style="font-family:\'DM Serif Display\',Georgia,serif;font-size:15px;color:#1A1A1A;line-height:1.35;margin-bottom:8px">' + a.title + '</div>'
+      + '<span style="font-size:12px;color:#A39D97">' + a.readTime + '</span>'
+      + '</a>';
+  });
+  html += '</div></div>';
+  root.innerHTML = html;
+})();
+</script>
 
 </body>
 </html>

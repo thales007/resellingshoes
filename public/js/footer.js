@@ -36,6 +36,7 @@
           + '<a href="/1000-shoe-reselling-method">$1,000 Method</a>'
           + '<a href="/the-everyday-shoe-flip">The Everyday Shoe Flip</a>'
           + '<a href="/learn">Learn</a>'
+          + '<a href="/style-code-guide">Style Code Guide</a>'
         + '</div>'
       + '</div>'
       + '<div>'

@@ -1,0 +1,66 @@
+name: Google Indexing — Request crawl on new articles
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'public/sitemap.xml'
+
+jobs:
+  request-indexing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Google APIs
+        run: npm install googleapis
+
+      - name: Find new URLs and request indexing
+        env:
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
+        run: |
+          node << 'EOF'
+          const { google } = require('googleapis');
+          const { execSync } = require('child_process');
+
+          const diff = execSync('git diff HEAD~1 HEAD -- public/sitemap.xml').toString();
+          const addedUrls = [...diff.matchAll(/\+\s*<loc>(https:\/\/[^<]+)<\/loc>/g)]
+            .map(m => m[1]);
+
+          if (addedUrls.length === 0) {
+            console.log('No new URLs found in sitemap diff — skipping indexing request');
+            process.exit(0);
+          }
+
+          console.log(`Found ${addedUrls.length} new URL(s) to index:`, addedUrls);
+
+          const serviceAccountKey = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
+          const auth = new google.auth.GoogleAuth({
+            credentials: serviceAccountKey,
+            scopes: ['https://www.googleapis.com/auth/indexing']
+          });
+
+          const client = await auth.getClient();
+          const indexing = google.indexing({ version: 'v3', auth: client });
+
+          for (const url of addedUrls) {
+            try {
+              await indexing.urlNotifications.publish({
+                requestBody: { url, type: 'URL_UPDATED' }
+              });
+              console.log(`✅ Indexing requested for: ${url}`);
+            } catch (error) {
+              console.error(`❌ Failed to request indexing for ${url}:`, error.message);
+            }
+          }
+          EOF

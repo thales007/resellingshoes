@@ -1,0 +1,200 @@
+name: Article Validate — Check frontmatter and content rules
+
+on:
+  pull_request:
+    paths:
+      - 'src/content/articles/**.md'
+
+jobs:
+  validate-articles:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate article files
+        id: validate
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+
+          const { execSync } = require('child_process');
+          let changedFiles;
+          try {
+            changedFiles = execSync('git diff --name-only origin/astro-migration...HEAD -- src/content/articles/*.md')
+              .toString().trim().split('\n').filter(Boolean);
+          } catch(e) {
+            changedFiles = fs.readdirSync('src/content/articles')
+              .filter(f => f.endsWith('.md'))
+              .map(f => path.join('src/content/articles', f));
+          }
+
+          const REQUIRED_FIELDS = ['title', 'category', 'description', 'blurb', 'readTime', 'publishedAt'];
+          const VALID_CATEGORIES = ['BEGINNER', 'SOURCING', 'SELLING', 'PLATFORM STRATEGY', 'GETTING STARTED'];
+          const FORBIDDEN_TERMS = ['Jordan', 'StockX', 'GOAT', 'Yeezy', '[PLACEHOLDER]', 'TODO:', 'TBD'];
+          const MIN_WORDS = 1200;
+          const MAX_WORDS = 1600;
+          const MAX_TITLE_LENGTH = 60;
+
+          const issues = [];
+          const warnings = [];
+          const passes = [];
+
+          function parseFrontmatter(content) {
+            const match = content.match(/^---\n([\s\S]*?)\n---/);
+            if (!match) return null;
+            const fm = {};
+            match[1].split('\n').forEach(line => {
+              const colonIndex = line.indexOf(':');
+              if (colonIndex > 0) {
+                const key = line.slice(0, colonIndex).trim();
+                const value = line.slice(colonIndex + 1).trim().replace(/^["']|["']$/g, '');
+                fm[key] = value;
+              }
+            });
+            return fm;
+          }
+
+          function countWords(content) {
+            const body = content.replace(/^---[\s\S]*?---/, '').replace(/<[^>]*>/g, ' ');
+            return body.trim().split(/\s+/).filter(w => w.length > 0).length;
+          }
+
+          for (const filePath of changedFiles) {
+            if (!fs.existsSync(filePath)) continue;
+            const content = fs.readFileSync(filePath, 'utf8');
+            const fm = parseFrontmatter(content);
+            const fileName = path.basename(filePath);
+            const expectedSlug = fileName.replace('.md', '');
+
+            console.log(`\nValidating: ${fileName}`);
+
+            if (!fm) {
+              issues.push(`❌ **${fileName}**: Missing frontmatter block`);
+              continue;
+            }
+
+            // Check required fields
+            for (const field of REQUIRED_FIELDS) {
+              if (!fm[field]) {
+                issues.push(`❌ **${fileName}**: Missing required frontmatter field: \`${field}\``);
+              }
+            }
+
+            // Check title length
+            if (fm.title) {
+              if (fm.title.length > MAX_TITLE_LENGTH) {
+                issues.push(`❌ **${fileName}**: Title is ${fm.title.length} characters — must be under ${MAX_TITLE_LENGTH} (currently: "${fm.title}")`);
+              } else {
+                passes.push(`✅ **${fileName}**: Title length OK (${fm.title.length} chars)`);
+              }
+            }
+
+            // Check slug in frontmatter matches filename (optional field — warn only)
+            if (fm.slug && fm.slug !== expectedSlug) {
+              issues.push(`❌ **${fileName}**: Frontmatter slug \`${fm.slug}\` doesn't match filename \`${expectedSlug}\``);
+            } else {
+              passes.push(`✅ **${fileName}**: Filename slug OK (\`${expectedSlug}\`)`);
+            }
+
+            // Check category
+            if (fm.category && !VALID_CATEGORIES.includes(fm.category)) {
+              warnings.push(`⚠️ **${fileName}**: Category \`${fm.category}\` is not in the standard list. Valid categories: ${VALID_CATEGORIES.join(', ')}. This is OK if it's a new category.`);
+            }
+
+            // Check for unfilled placeholder brackets
+            const bracketMatches = content.match(/\[[A-Z\s]+\]/g);
+            if (bracketMatches) {
+              const unfilled = bracketMatches.filter(m => m !== '[slug]' && !m.match(/^\[data-/));
+              if (unfilled.length > 0) {
+                issues.push(`❌ **${fileName}**: Unfilled placeholder(s) found: ${unfilled.join(', ')}`);
+              }
+            }
+
+            // Check for forbidden terms
+            for (const term of FORBIDDEN_TERMS) {
+              if (content.includes(term)) {
+                issues.push(`❌ **${fileName}**: Forbidden term found: \`${term}\``);
+              }
+            }
+
+            // Check word count
+            const wordCount = countWords(content);
+            if (wordCount < MIN_WORDS) {
+              warnings.push(`⚠️ **${fileName}**: Word count is ${wordCount} — target is ${MIN_WORDS}–${MAX_WORDS} words`);
+            } else if (wordCount > MAX_WORDS) {
+              warnings.push(`⚠️ **${fileName}**: Word count is ${wordCount} — slightly over the ${MAX_WORDS} word target`);
+            } else {
+              passes.push(`✅ **${fileName}**: Word count OK (${wordCount} words)`);
+            }
+
+            // Check publishedAt format
+            if (fm.publishedAt && !fm.publishedAt.match(/^\d{4}-\d{2}-\d{2}$/)) {
+              issues.push(`❌ **${fileName}**: publishedAt must be in YYYY-MM-DD format (got: ${fm.publishedAt})`);
+            }
+          }
+
+          const result = { hasIssues: issues.length > 0, issues, warnings, passes };
+          fs.writeFileSync('/tmp/validation-result.json', JSON.stringify(result, null, 2));
+
+          if (issues.length > 0) {
+            console.log('\nVALIDATION FAILED:');
+            issues.forEach(i => console.log(i));
+            process.exit(1);
+          } else {
+            console.log('\nVALIDATION PASSED');
+          }
+          EOF
+
+      - name: Post validation results as PR comment
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let result;
+            try {
+              result = JSON.parse(fs.readFileSync('/tmp/validation-result.json', 'utf8'));
+            } catch(e) {
+              result = { hasIssues: true, issues: ['Validation script failed to run'], warnings: [], passes: [] };
+            }
+
+            const lines = ['## Article Validation Results\n'];
+
+            if (result.issues.length > 0) {
+              lines.push('### ❌ Issues (must fix before merge)\n');
+              result.issues.forEach(i => lines.push(i));
+              lines.push('');
+            }
+
+            if (result.warnings.length > 0) {
+              lines.push('### ⚠️ Warnings (review before merge)\n');
+              result.warnings.forEach(w => lines.push(w));
+              lines.push('');
+            }
+
+            if (result.passes.length > 0) {
+              lines.push('### ✅ Checks passed\n');
+              result.passes.forEach(p => lines.push(p));
+            }
+
+            if (!result.hasIssues && result.warnings.length === 0) {
+              lines.push('\n🎉 All checks passed — ready to merge.');
+            }
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: lines.join('\n')
+            });

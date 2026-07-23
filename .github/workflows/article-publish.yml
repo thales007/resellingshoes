@@ -32,7 +32,7 @@ jobs:
           echo "Changed files: $CHANGED"
 
       - name: Update articles-data.js and sitemap.xml
-        run: node .github/scripts/update-articles.js
+        run: node .github/scripts/update-articles.cjs
 
       - name: Commit changes
         run: |

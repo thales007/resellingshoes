@@ -1,0 +1,956 @@
+---
+const pw = import.meta.env.CONTENT_PASSWORD || 'admin';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Ops — ResellingShoes.com</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <script define:vars={{ pw }}>window.__RS_PW = pw;</script>
+  <style is:global>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1A1A1A; --ink-2: #3A3630; --ink-3: #6b6b6b; --ink-4: #A39D97;
+      --cream: #faf8f5; --cream-dark: #f0ece4; --border: #e5e0d8;
+      --walnut: #C4943A; --walnut-light: #fdf6e7; --green: #2F8B5C; --green-hover: #267049;
+      --green-light: #e8f5ef; --red: #c0392b; --red-light: #fdecea;
+      --yellow: #d4a017; --yellow-light: #fef9e7;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+    body { font-family: var(--sans); background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: var(--sans); }
+
+    /* NAV */
+    nav {
+      background: rgba(250,248,245,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 24px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-weight: 800; font-size: 18px; color: var(--ink); }
+    .nav-logo span { color: var(--green); }
+    .nav-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--walnut-light); color: var(--walnut); border: 1px solid #e8d4a0; padding: 3px 10px; border-radius: 20px; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    #btn-logout { background: none; border: 1px solid var(--border); color: var(--ink-3); font-size: 13px; padding: 6px 14px; border-radius: 6px; display: none; }
+    #btn-logout:hover { border-color: var(--ink-3); color: var(--ink); }
+
+    /* LOGIN */
+    #login-screen {
+      min-height: calc(100vh - 64px); display: flex; align-items: center; justify-content: center;
+    }
+    .login-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 48px 40px; width: 100%; max-width: 380px; text-align: center; }
+    .login-card h1 { font-family: var(--serif); font-size: 26px; margin-bottom: 8px; }
+    .login-card p { color: var(--ink-3); font-size: 14px; margin-bottom: 28px; }
+    .login-input { width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: 15px; font-family: var(--sans); background: var(--cream); margin-bottom: 12px; outline: none; }
+    .login-input:focus { border-color: var(--green); }
+    .login-btn { width: 100%; background: var(--green); color: #fff; border: none; border-radius: 8px; padding: 13px; font-size: 15px; font-weight: 700; }
+    .login-btn:hover { background: var(--green-hover); }
+    .login-error { color: var(--red); font-size: 13px; margin-top: 10px; display: none; }
+
+    /* DASHBOARD */
+    #dashboard { display: none; }
+    .dash-wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    /* TABS */
+    .tabs-nav { display: flex; gap: 4px; border-bottom: 2px solid var(--border); margin-bottom: 32px; overflow-x: auto; }
+    .tab-btn { background: none; border: none; padding: 10px 18px; font-size: 13px; font-weight: 600; color: var(--ink-3); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
+    .tab-btn:hover { color: var(--ink); }
+    .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* COMMON COMPONENTS */
+    .section-title { font-family: var(--serif); font-size: 22px; margin-bottom: 4px; }
+    .section-sub { color: var(--ink-3); font-size: 14px; margin-bottom: 24px; }
+    .stats-bar { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+    .stat-chip { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 14px 20px; min-width: 120px; }
+    .stat-chip .val { font-size: 28px; font-weight: 800; color: var(--ink); }
+    .stat-chip .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-4); margin-top: 2px; }
+    .stat-chip.highlight .val { color: var(--green); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    thead { background: var(--cream-dark); }
+    th { padding: 11px 14px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+    td { padding: 12px 14px; border-top: 1px solid var(--border); vertical-align: middle; }
+    tr:hover td { background: var(--cream); }
+
+    .chip { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; }
+    .chip-green { background: var(--green-light); color: var(--green); }
+    .chip-yellow { background: var(--yellow-light); color: var(--yellow); }
+    .chip-red { background: var(--red-light); color: var(--red); }
+    .chip-blue { background: #e8f0fe; color: #1a73e8; }
+    .chip-gray { background: var(--cream-dark); color: var(--ink-3); }
+    .chip-walnut { background: var(--walnut-light); color: var(--walnut); }
+
+    .btn { display: inline-block; border: none; border-radius: 7px; padding: 7px 14px; font-size: 13px; font-weight: 600; font-family: var(--sans); }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-green:hover { background: var(--green-hover); }
+    .btn-outline { background: #fff; border: 1px solid var(--border); color: var(--ink-3); }
+    .btn-outline:hover { border-color: var(--ink-3); color: var(--ink); }
+    .btn-red { background: var(--red-light); color: var(--red); }
+    .btn-red:hover { background: #f5c0bb; }
+    .btn-walnut { background: var(--walnut-light); color: var(--walnut); border: 1px solid #e8d4a0; }
+    .btn-walnut:hover { background: #f5e7c0; }
+    .btn-sm { padding: 5px 10px; font-size: 12px; }
+
+    .notice { background: var(--walnut-light); border-left: 3px solid var(--walnut); border-radius: 0 8px 8px 0; padding: 12px 16px; font-size: 13px; color: var(--ink-2); margin-bottom: 24px; }
+
+    /* KEYWORD TAB */
+    .kw-actions { display: flex; gap: 8px; }
+    .toggle-wrap { display: flex; align-items: center; gap: 6px; }
+    .toggle { width: 34px; height: 18px; background: var(--border); border-radius: 20px; border: none; position: relative; transition: background 0.2s; }
+    .toggle::after { content: ''; position: absolute; width: 14px; height: 14px; background: #fff; border-radius: 50%; top: 2px; left: 2px; transition: left 0.2s; }
+    .toggle.on { background: var(--green); }
+    .toggle.on::after { left: 18px; }
+    .toggle-label { font-size: 12px; color: var(--ink-3); }
+
+    /* CUSTOM TOPICS TAB */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+    .form-input, .form-select, .form-textarea { border: 1px solid var(--border); border-radius: 7px; padding: 10px 12px; font-size: 14px; font-family: var(--sans); background: var(--cream); outline: none; width: 100%; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--green); }
+    .form-check { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .form-check input { width: 15px; height: 15px; accent-color: var(--green); }
+    .topic-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .topic-card-title { font-weight: 600; font-size: 14px; }
+    .topic-card-meta { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+    .topic-card-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+    /* REVIEW TAB */
+    .review-layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
+    .review-list { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .review-list-item { padding: 14px 16px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; }
+    .review-list-item:last-child { border-bottom: none; }
+    .review-list-item:hover, .review-list-item.selected { background: var(--green-light); }
+    .review-list-item-title { font-size: 13px; font-weight: 600; }
+    .review-list-item-meta { font-size: 11px; color: var(--ink-3); margin-top: 2px; }
+    .review-panel { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    .review-panel h3 { font-family: var(--serif); font-size: 18px; margin-bottom: 12px; }
+    .review-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .review-blurb { background: var(--cream); border-radius: 8px; padding: 12px 14px; font-size: 13px; color: var(--ink-2); line-height: 1.6; margin-bottom: 20px; }
+    .review-field { margin-bottom: 16px; }
+    .review-actions { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+    .review-empty { padding: 40px; text-align: center; color: var(--ink-4); font-size: 14px; }
+    .review-status-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+
+    /* PIPELINE TAB */
+    .pipeline-list { display: flex; flex-direction: column; gap: 10px; }
+    .pipeline-item { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+    .pipeline-status { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+    .status-Q { background: #e8f0fe; color: #1a73e8; }
+    .status-W { background: var(--walnut-light); color: var(--walnut); }
+    .status-R { background: var(--yellow-light); color: var(--yellow); }
+    .status-done { background: var(--green-light); color: var(--green); }
+    .pipeline-title { font-size: 14px; font-weight: 600; flex: 1; }
+    .pipeline-sub { font-size: 12px; color: var(--ink-3); }
+    .pipeline-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .pipeline-empty { text-align: center; padding: 48px; color: var(--ink-4); font-size: 14px; }
+
+    /* IMAGES TAB */
+    .images-section { margin-bottom: 36px; }
+    .images-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+    .brand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+    .brand-chip { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+    .brand-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    .upload-panel { background: var(--cream-dark); border-radius: 10px; padding: 20px 24px; font-size: 14px; color: var(--ink-2); border: 1px dashed var(--border); }
+    .upload-panel code { background: var(--border); padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 13px; }
+    .img-article { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+    .img-article-title { font-size: 14px; font-weight: 600; flex: 1; }
+    .img-status-sel { border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; font-size: 12px; font-family: var(--sans); background: var(--cream); }
+
+    /* PUBLISHED TAB */
+    .progress-wrap { background: var(--cream-dark); border-radius: 10px; padding: 20px 24px; margin-bottom: 28px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+    .progress-bar { background: var(--border); border-radius: 20px; height: 10px; overflow: hidden; }
+    .progress-fill { background: var(--green); height: 100%; border-radius: 20px; transition: width 0.3s; }
+    .indexing-sel { border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-size: 12px; font-family: var(--sans); background: var(--cream); }
+
+    @media (max-width: 768px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .review-layout { grid-template-columns: 1fr; }
+      .stats-bar { gap: 10px; }
+      .stat-chip { min-width: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a href="/" class="nav-logo">Reselling<span>Shoes</span>.com</a>
+    <span class="nav-badge">Content Ops</span>
+  </div>
+  <div class="nav-right">
+    <button id="btn-logout">Log out</button>
+  </div>
+</nav>
+
+<div id="login-screen">
+  <div class="login-card">
+    <h1>Content Ops</h1>
+    <p>Internal tool — not public facing</p>
+    <input type="password" class="login-input" id="pw-input" placeholder="Password" autocomplete="current-password">
+    <button type="button" class="login-btn" id="btn-login">Enter</button>
+    <div class="login-error" id="login-error">Incorrect password.</div>
+  </div>
+</div>
+
+<div id="dashboard">
+  <div class="dash-wrap">
+    <div class="tabs-nav" id="tabs-nav">
+      <button class="tab-btn active" data-tab="keywords">Keywords</button>
+      <button class="tab-btn" data-tab="custom">Custom Topics</button>
+      <button class="tab-btn" data-tab="review">Review Queue</button>
+      <button class="tab-btn" data-tab="pipeline">Pipeline</button>
+      <button class="tab-btn" data-tab="images">Images</button>
+      <button class="tab-btn" data-tab="published">Published</button>
+    </div>
+
+    <!-- TAB 1: KEYWORDS -->
+    <div class="tab-panel active" id="tab-keywords">
+      <div class="section-title">Keyword Queue</div>
+      <div class="section-sub">Review pending keywords and approve or skip them for the content pipeline.</div>
+      <div class="stats-bar" id="kw-stats"></div>
+      <div style="margin-bottom:16px;display:flex;justify-content:flex-end">
+        <button class="btn btn-outline btn-sm" id="btn-reset-queue">Reset queue state</button>
+      </div>
+      <table id="kw-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Volume</th>
+            <th>Difficulty</th>
+            <th>Type</th>
+            <th>Comp. Analysis</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="kw-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- TAB 2: CUSTOM TOPICS -->
+    <div class="tab-panel" id="tab-custom">
+      <div class="section-title">Custom Topics</div>
+      <div class="section-sub">Add article ideas outside the keyword list.</div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:28px">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label class="form-label">Topic / Working Title</label>
+            <input type="text" class="form-input" id="ct-title" placeholder="e.g. Best Shoes to Flip at Savers in 2026">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-select" id="ct-category">
+              <option value="BEGINNER">BEGINNER</option>
+              <option value="SOURCING">SOURCING</option>
+              <option value="SELLING">SELLING</option>
+              <option value="PLATFORM STRATEGY">PLATFORM STRATEGY</option>
+              <option value="GETTING STARTED">GETTING STARTED</option>
+              <option value="PRODUCT REVIEW">PRODUCT REVIEW</option>
+              <option value="SEASONAL">SEASONAL</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Article Type</label>
+            <select class="form-select" id="ct-type">
+              <option value="qa">Q&amp;A article</option>
+              <option value="auto">Auto — no Q&amp;A</option>
+              <option value="review">Product review</option>
+              <option value="seasonal">Seasonal</option>
+            </select>
+          </div>
+          <div class="form-group full" id="ct-affiliate-wrap" style="display:none">
+            <label class="form-label">Amazon Affiliate Link</label>
+            <input type="url" class="form-input" id="ct-affiliate" placeholder="https://amazon.com/...">
+          </div>
+          <div class="form-group" style="justify-content:flex-end">
+            <label class="form-check">
+              <input type="checkbox" id="ct-comp-analysis"> Competitor analysis
+            </label>
+            <label class="form-check" style="margin-top:8px">
+              <input type="checkbox" id="ct-image-required"> Image required before publish
+            </label>
+          </div>
+          <div class="form-group" style="justify-content:flex-end;align-items:flex-end">
+            <button class="btn btn-green" id="btn-add-topic">Add to Queue</button>
+          </div>
+        </div>
+      </div>
+      <div class="section-title" style="font-size:16px;margin-bottom:16px">In Queue</div>
+      <div id="ct-list"><p style="color:var(--ink-4);font-size:14px">No custom topics yet.</p></div>
+    </div>
+
+    <!-- TAB 3: REVIEW QUEUE -->
+    <div class="tab-panel" id="tab-review">
+      <div class="section-title">Review Queue</div>
+      <div class="section-sub">Articles published in the last 14 days. Track review status and leave notes.</div>
+      <div class="notice">
+        Articles publish automatically when <code>.md</code> files are pushed to the repo. Use this tab to track review status and leave notes.
+      </div>
+      <div class="review-layout">
+        <div class="review-list" id="review-list"></div>
+        <div id="review-panel-wrap">
+          <div class="review-panel review-empty" id="review-empty">Select an article from the left to review it.</div>
+          <div class="review-panel" id="review-panel" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: PIPELINE -->
+    <div class="tab-panel" id="tab-pipeline">
+      <div class="section-title">Content Pipeline</div>
+      <div class="section-sub">Full production state for approved keywords and custom topics.</div>
+      <div class="pipeline-list" id="pipeline-list">
+        <div class="pipeline-empty">No approved keywords yet. Go to the Keywords tab to approve some.</div>
+      </div>
+    </div>
+
+    <!-- TAB 5: IMAGES -->
+    <div class="tab-panel" id="tab-images">
+      <div class="images-section">
+        <div class="section-title">Articles Needing Images</div>
+        <div class="section-sub">Articles where image status is missing or Unsplash placeholder.</div>
+        <div id="images-needed-list"></div>
+      </div>
+      <div class="images-section">
+        <div class="upload-panel">
+          <strong>Adding photos:</strong> Add original photos to <code>/public/images/articles/</code> via Claude Code or Finder, then update the article's image status above.
+        </div>
+      </div>
+      <div class="images-section">
+        <div class="section-title" style="font-size:16px;margin-bottom:16px">Style Tag Photo Reference</div>
+        <div class="section-sub">Known brands with style tag images in <code>/public/style-tags/</code></div>
+        <div class="brand-grid" id="brand-grid"></div>
+      </div>
+    </div>
+
+    <!-- TAB 6: PUBLISHED -->
+    <div class="tab-panel" id="tab-published">
+      <div class="section-title">Published Articles</div>
+      <div class="section-sub">All articles from articles-data.js.</div>
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Monthly Progress</span>
+          <span id="progress-label-val"></span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <table id="published-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Published</th>
+            <th>Image Status</th>
+            <th>Indexing</th>
+            <th>File Path</th>
+          </tr>
+        </thead>
+        <tbody id="published-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script is:inline src="/js/articles-data.js"></script>
+<script is:inline>
+(function() {
+  // ─── Constants ───────────────────────────────────────────
+  var LS = {
+    SESSION: 'rs_content_session',
+    KW_STATE: 'rs_kw_state',
+    PIPELINE: 'rs_pipeline_state',
+    REVIEW: 'rs_review_state',
+    INDEXING: 'rs_indexing_state',
+    CUSTOM_TOPICS: 'rs_custom_topics',
+    IMAGE_STATUS: 'rs_image_status',
+    CT_COMP: 'rs_ct_comp',
+  };
+
+  var BRANDS = [
+    'Adidas','Allen Edmonds','Altra','Ariat','Asics','Brooks','Chaco','Clarks',
+    'Cole Haan','Converse','Danner','Donald Pliner','ECCO','Fizik','Frye',
+    'Hoka','Inov-8','Keen','Lake','Lowa','Merrell','Mizuno','New Balance',
+    'Nike','NoBull','Oakley','On Running','Rothy\'s','Salomon','Saucony',
+    'Scarpa','Sketchers','Sorel','Timberland','Ugg','Vans','Vionic',
+    'Wolverine','Yeti','Keen','Brooks'
+  ].filter(function(v, i, a) { return a.indexOf(v) === i; });
+
+  // ─── State ────────────────────────────────────────────────
+  var kwQueue = null;
+  var articles = [];
+  var kwState = {};
+  var pipelineState = {};
+  var reviewState = {};
+  var indexingState = {};
+  var customTopics = [];
+  var imageStatus = {};
+  var selectedReviewSlug = null;
+  var currentTab = 'keywords';
+
+  // ─── Helpers ──────────────────────────────────────────────
+  function lsGet(key) {
+    try { return JSON.parse(localStorage.getItem(key)) || null; } catch(e) { return null; }
+  }
+  function lsSet(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+
+  function loadState() {
+    kwState = lsGet(LS.KW_STATE) || {};
+    pipelineState = lsGet(LS.PIPELINE) || {};
+    reviewState = lsGet(LS.REVIEW) || {};
+    indexingState = lsGet(LS.INDEXING) || {};
+    customTopics = lsGet(LS.CUSTOM_TOPICS) || [];
+    imageStatus = lsGet(LS.IMAGE_STATUS) || {};
+  }
+
+  function escHtml(str) {
+    return String(str || '')
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
+  }
+
+  function diffChip(d) {
+    if (d < 15) return '<span class="chip chip-green">' + d + '</span>';
+    if (d <= 25) return '<span class="chip chip-yellow">' + d + '</span>';
+    return '<span class="chip chip-red">' + d + '</span>';
+  }
+
+  function typeChip(t) {
+    if (t === 'qa') return '<span class="chip chip-blue">Q&amp;A</span>';
+    if (t === 'review') return '<span class="chip chip-walnut">Review</span>';
+    if (t === 'seasonal') return '<span class="chip chip-gray">Seasonal</span>';
+    return '<span class="chip chip-gray">Auto</span>';
+  }
+
+  function kwStatus(kw) {
+    return (kwState[kw] || {}).status || 'pending';
+  }
+
+  function pipelineStatus(key) {
+    return (pipelineState[key] || {}).status || 'Q';
+  }
+
+  function imgStatus(slug) {
+    return imageStatus[slug] || 'missing';
+  }
+
+  function thisMonthCount() {
+    var now = new Date();
+    var m = now.getMonth(); var y = now.getFullYear();
+    return articles.filter(function(a) {
+      if (a.comingSoon) return false;
+      var d = new Date(a.publishedAt);
+      return d.getMonth() === m && d.getFullYear() === y;
+    }).length;
+  }
+
+  function within14Days(dateStr) {
+    var d = new Date(dateStr);
+    var now = new Date();
+    var diff = (now - d) / (1000 * 60 * 60 * 24);
+    return diff >= 0 && diff <= 14;
+  }
+
+  // ─── Auth ─────────────────────────────────────────────────
+  function isAuth() {
+    return localStorage.getItem(LS.SESSION) === 'authenticated';
+  }
+
+  function login(pw) {
+    if (pw === window.__RS_PW) {
+      localStorage.setItem(LS.SESSION, 'authenticated');
+      return true;
+    }
+    return false;
+  }
+
+  function logout() {
+    localStorage.removeItem(LS.SESSION);
+    location.reload();
+  }
+
+  // ─── Tab switching ────────────────────────────────────────
+  function switchTab(name) {
+    currentTab = name;
+    document.querySelectorAll('.tab-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.tab === name);
+    });
+    document.querySelectorAll('.tab-panel').forEach(function(p) {
+      p.classList.toggle('active', p.id === 'tab-' + name);
+    });
+    renderTab(name);
+  }
+
+  function renderTab(name) {
+    if (name === 'keywords') renderKeywords();
+    else if (name === 'custom') renderCustomTopics();
+    else if (name === 'review') renderReview();
+    else if (name === 'pipeline') renderPipeline();
+    else if (name === 'images') renderImages();
+    else if (name === 'published') renderPublished();
+  }
+
+  // ─── TAB 1: Keywords ─────────────────────────────────────
+  function renderKeywords() {
+    if (!kwQueue) return;
+    var pending = kwQueue.keywords.filter(function(k) { return kwStatus(k.keyword) === 'pending'; });
+    var approved = kwQueue.keywords.filter(function(k) { return kwStatus(k.keyword) === 'approved'; });
+    var rejected = kwQueue.keywords.filter(function(k) { return kwStatus(k.keyword) === 'rejected'; });
+    var published = articles.filter(function(a) { return !a.comingSoon; }).length;
+
+    document.getElementById('kw-stats').innerHTML =
+      stat(pending.length, 'Pending') +
+      stat(approved.length, 'Approved', true) +
+      stat(20, 'Monthly Target') +
+      stat(published, 'Published');
+
+    var rows = '';
+    if (pending.length === 0) {
+      rows = '<tr><td colspan="6" style="text-align:center;color:var(--ink-4);padding:32px">No pending keywords. All approved or skipped.</td></tr>';
+    } else {
+      pending.forEach(function(k) {
+        var compOn = !!(kwState[k.keyword] || {}).compAnalysis;
+        if (compOn === false && k.competitorAnalysis) compOn = k.competitorAnalysis;
+        rows += '<tr>' +
+          '<td style="font-weight:600">' + escHtml(k.keyword) + '</td>' +
+          '<td>' + k.volume + '</td>' +
+          '<td>' + diffChip(k.difficulty) + '</td>' +
+          '<td>' + typeChip(k.type) + '</td>' +
+          '<td><button class="toggle ' + (compOn ? 'on' : '') + '" data-kw="' + escHtml(k.keyword) + '" data-action="comp"></button></td>' +
+          '<td class="kw-actions">' +
+            '<button class="btn btn-green btn-sm" data-kw="' + escHtml(k.keyword) + '" data-action="approve">Approve</button>' +
+            '<button class="btn btn-outline btn-sm" data-kw="' + escHtml(k.keyword) + '" data-action="skip">Skip</button>' +
+          '</td>' +
+        '</tr>';
+      });
+    }
+    document.getElementById('kw-tbody').innerHTML = rows;
+  }
+
+  function stat(val, label, highlight) {
+    return '<div class="stat-chip' + (highlight ? ' highlight' : '') + '"><div class="val">' + val + '</div><div class="lbl">' + label + '</div></div>';
+  }
+
+  // ─── TAB 2: Custom Topics ─────────────────────────────────
+  function renderCustomTopics() {
+    var list = document.getElementById('ct-list');
+    if (customTopics.length === 0) {
+      list.innerHTML = '<p style="color:var(--ink-4);font-size:14px">No custom topics yet.</p>';
+      return;
+    }
+    list.innerHTML = customTopics.map(function(t, i) {
+      return '<div class="topic-card">' +
+        '<div>' +
+          '<div class="topic-card-title">' + escHtml(t.title) + '</div>' +
+          '<div class="topic-card-meta">' + escHtml(t.category) + ' · ' + typeChip(t.type) + (t.imageRequired ? ' · <span style="color:var(--walnut);font-size:11px">Image required</span>' : '') + '</div>' +
+        '</div>' +
+        '<div class="topic-card-right">' +
+          (t.type === 'qa' || t.type === 'seasonal' ? '<a class="btn btn-walnut btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Start Q&amp;A ↗</a>' : '') +
+          '<button class="btn btn-outline btn-sm" data-ct-del="' + i + '">Remove</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  // ─── TAB 3: Review Queue ─────────────────────────────────
+  function renderReview() {
+    var recent = articles.filter(function(a) { return !a.comingSoon && within14Days(a.publishedAt); });
+    var list = document.getElementById('review-list');
+
+    if (recent.length === 0) {
+      list.innerHTML = '<div style="padding:24px;text-align:center;color:var(--ink-4);font-size:14px">No articles published in the last 14 days.</div>';
+      return;
+    }
+
+    list.innerHTML = recent.map(function(a) {
+      var rs = reviewState[a.slug] || {};
+      var badge = rs.reviewStatus === 'approved' ? '✓ ' : rs.reviewStatus === 'changes' ? '⚠ ' : rs.reviewStatus === 'rejected' ? '✗ ' : '';
+      var selected = selectedReviewSlug === a.slug ? ' selected' : '';
+      return '<div class="review-list-item' + selected + '" data-review-slug="' + a.slug + '">' +
+        '<div class="review-list-item-title">' + badge + escHtml(a.title) + '</div>' +
+        '<div class="review-list-item-meta">' + a.category + ' · ' + a.publishedAt + '</div>' +
+      '</div>';
+    }).join('');
+
+    if (selectedReviewSlug) renderReviewPanel(selectedReviewSlug);
+  }
+
+  function renderReviewPanel(slug) {
+    var a = articles.find(function(x) { return x.slug === slug; });
+    if (!a) return;
+    var rs = reviewState[slug] || {};
+    var is = imgStatus(slug);
+
+    document.getElementById('review-empty').style.display = 'none';
+    var panel = document.getElementById('review-panel');
+    panel.style.display = 'block';
+
+    var statusBadge = '';
+    if (rs.reviewStatus === 'approved') statusBadge = '<span class="chip chip-green">Approved</span>';
+    else if (rs.reviewStatus === 'changes') statusBadge = '<span class="chip chip-yellow">Changes Requested</span>';
+    else if (rs.reviewStatus === 'rejected') statusBadge = '<span class="chip chip-red">Rejected</span>';
+
+    panel.innerHTML =
+      '<h3>' + escHtml(a.title) + '</h3>' +
+      '<div class="review-meta">' +
+        '<span class="chip chip-gray">' + a.category + '</span>' +
+        '<span class="chip chip-gray">' + a.readTime + '</span>' +
+        '<span class="chip chip-gray">' + a.slug + '</span>' +
+        statusBadge +
+      '</div>' +
+      '<div class="review-blurb">' + escHtml(a.blurb) + '</div>' +
+      '<div class="review-field">' +
+        '<label class="form-label">Image Status</label>' +
+        '<select class="form-select" id="r-img-status" style="max-width:260px;margin-top:6px">' +
+          opt('missing', 'Missing / not set', is) +
+          opt('no-image', 'No image needed', is) +
+          opt('unsplash', 'Unsplash placeholder', is) +
+          opt('original', 'Original photo', is) +
+        '</select>' +
+      '</div>' +
+      '<div class="review-field">' +
+        '<label class="form-label">Notes / Feedback</label>' +
+        '<textarea class="form-textarea" id="r-feedback" rows="3" style="margin-top:6px">' + escHtml(rs.feedback || '') + '</textarea>' +
+      '</div>' +
+      '<div class="review-actions">' +
+        '<button class="btn btn-green" data-review-action="approved" data-slug="' + slug + '">Approve &amp; mark reviewed</button>' +
+        '<button class="btn btn-outline" data-review-action="changes" data-slug="' + slug + '">Request changes</button>' +
+        '<button class="btn btn-red" data-review-action="rejected" data-slug="' + slug + '">Reject</button>' +
+      '</div>' +
+      '<div id="review-confirm" style="margin-top:12px;font-size:13px;color:var(--green);display:none">Status saved.</div>';
+  }
+
+  function opt(val, label, current) {
+    return '<option value="' + val + '"' + (current === val ? ' selected' : '') + '>' + label + '</option>';
+  }
+
+  // ─── TAB 4: Pipeline ─────────────────────────────────────
+  function renderPipeline() {
+    var items = [];
+
+    // Approved keywords
+    if (kwQueue) {
+      kwQueue.keywords.forEach(function(k) {
+        if (kwStatus(k.keyword) === 'approved') {
+          items.push({ key: 'kw:' + k.keyword, title: k.keyword, type: k.type, source: 'keyword' });
+        }
+      });
+    }
+
+    // Custom topics
+    customTopics.forEach(function(t, i) {
+      items.push({ key: 'ct:' + i, title: t.title, type: t.type, source: 'custom' });
+    });
+
+    var list = document.getElementById('pipeline-list');
+    if (items.length === 0) {
+      list.innerHTML = '<div class="pipeline-empty">No approved keywords yet. Go to the Keywords tab to approve some.</div>';
+      return;
+    }
+
+    list.innerHTML = items.map(function(item) {
+      var st = pipelineStatus(item.key);
+      var statusClass = st === 'published' ? 'status-done' : 'status-' + st;
+      var statusLabel = { Q: 'Awaiting Q&A', W: 'Writing in progress', R: 'In review', published: 'Published' }[st] || st;
+      var statusLetter = st === 'published' ? '✓' : st;
+
+      var actions = '';
+      if (item.type === 'qa' || item.type === 'seasonal') {
+        actions += '<a class="btn btn-walnut btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Start Q&amp;A ↗</a> ';
+      }
+      if (st === 'Q') {
+        actions += '<button class="btn btn-outline btn-sm" data-pipeline-key="' + escHtml(item.key) + '" data-pipeline-status="W">Mark writing</button>';
+      } else if (st === 'W') {
+        actions += '<button class="btn btn-outline btn-sm" data-pipeline-key="' + escHtml(item.key) + '" data-pipeline-status="R">Mark in review</button>';
+      } else if (st === 'R') {
+        actions += '<button class="btn btn-green btn-sm" data-pipeline-key="' + escHtml(item.key) + '" data-pipeline-status="published">Mark published</button>';
+      }
+
+      return '<div class="pipeline-item">' +
+        '<div class="pipeline-status ' + statusClass + '">' + statusLetter + '</div>' +
+        '<div style="flex:1">' +
+          '<div class="pipeline-title">' + escHtml(item.title) + '</div>' +
+          '<div class="pipeline-sub">' + typeChip(item.type) + ' <span style="margin-left:6px">' + statusLabel + '</span></div>' +
+        '</div>' +
+        '<div class="pipeline-actions">' + actions + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  // ─── TAB 5: Images ────────────────────────────────────────
+  function renderImages() {
+    var needing = articles.filter(function(a) {
+      if (a.comingSoon) return false;
+      var is = imgStatus(a.slug);
+      return is === 'missing' || is === 'unsplash';
+    });
+
+    var needList = document.getElementById('images-needed-list');
+    if (needing.length === 0) {
+      needList.innerHTML = '<p style="color:var(--ink-4);font-size:14px">All articles have images set.</p>';
+    } else {
+      needList.innerHTML = needing.map(function(a) {
+        var is = imgStatus(a.slug);
+        return '<div class="img-article">' +
+          '<div class="img-article-title">' + escHtml(a.title) + '</div>' +
+          '<span class="chip ' + (is === 'missing' ? 'chip-red' : 'chip-yellow') + '">' + (is === 'missing' ? 'Missing' : 'Unsplash') + '</span>' +
+          '<select class="img-status-sel" data-img-slug="' + a.slug + '">' +
+            opt('missing', 'Missing', is) +
+            opt('unsplash', 'Unsplash placeholder', is) +
+            opt('original', 'Original photo', is) +
+            opt('no-image', 'No image needed', is) +
+          '</select>' +
+        '</div>';
+      }).join('');
+    }
+
+    document.getElementById('brand-grid').innerHTML = BRANDS.map(function(b) {
+      return '<div class="brand-chip"><span class="brand-dot"></span>' + escHtml(b) + '</div>';
+    }).join('');
+  }
+
+  // ─── TAB 6: Published ─────────────────────────────────────
+  function renderPublished() {
+    var published = articles.filter(function(a) { return !a.comingSoon; });
+    var monthCount = thisMonthCount();
+    var pct = Math.min(100, Math.round((monthCount / 20) * 100));
+
+    document.getElementById('progress-label-val').textContent = monthCount + ' / 20 this month';
+    document.getElementById('progress-fill').style.width = pct + '%';
+
+    document.getElementById('published-tbody').innerHTML = published.map(function(a) {
+      var is = imgStatus(a.slug);
+      var idx = indexingState[a.slug] || 'pending';
+      return '<tr>' +
+        '<td style="font-weight:600;max-width:280px">' + escHtml(a.title) + '</td>' +
+        '<td><span class="chip chip-gray">' + a.category + '</span></td>' +
+        '<td>' + a.publishedAt + '</td>' +
+        '<td>' +
+          '<select class="img-status-sel" data-pub-img="' + a.slug + '">' +
+            opt('missing', 'Missing', is) +
+            opt('unsplash', 'Unsplash', is) +
+            opt('original', 'Original', is) +
+            opt('no-image', 'No image', is) +
+          '</select>' +
+        '</td>' +
+        '<td>' +
+          '<select class="indexing-sel" data-indexing-slug="' + a.slug + '">' +
+            opt('pending', 'Pending', idx) +
+            opt('indexed', 'Indexed', idx) +
+            opt('submitted', 'Submitted', idx) +
+          '</select>' +
+        '</td>' +
+        '<td style="font-family:monospace;font-size:12px;color:var(--ink-3)">src/content/articles/' + a.slug + '.md</td>' +
+      '</tr>';
+    }).join('');
+  }
+
+  // ─── Event delegation ─────────────────────────────────────
+  function bindEvents() {
+    // Login
+    document.getElementById('btn-login').addEventListener('click', function() {
+      var pw = document.getElementById('pw-input').value;
+      if (login(pw)) {
+        initDashboard();
+      } else {
+        document.getElementById('login-error').style.display = 'block';
+      }
+    });
+    document.getElementById('pw-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btn-login').click(); }
+    });
+
+    // Logout
+    document.getElementById('btn-logout').addEventListener('click', logout);
+
+    // Tab switching
+    document.getElementById('tabs-nav').addEventListener('click', function(e) {
+      var btn = e.target.closest('.tab-btn');
+      if (btn) switchTab(btn.dataset.tab);
+    });
+
+    // Keywords table
+    document.getElementById('kw-table').addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      var kw = btn.dataset.kw;
+      var action = btn.dataset.action;
+      if (action === 'approve') {
+        kwState[kw] = Object.assign(kwState[kw] || {}, { status: 'approved' });
+        lsSet(LS.KW_STATE, kwState);
+        renderKeywords();
+        if (currentTab === 'pipeline') renderPipeline();
+      } else if (action === 'skip') {
+        kwState[kw] = Object.assign(kwState[kw] || {}, { status: 'rejected' });
+        lsSet(LS.KW_STATE, kwState);
+        renderKeywords();
+      } else if (action === 'comp') {
+        var cur = !!(kwState[kw] || {}).compAnalysis;
+        kwState[kw] = Object.assign(kwState[kw] || {}, { compAnalysis: !cur });
+        lsSet(LS.KW_STATE, kwState);
+        btn.classList.toggle('on', !cur);
+      }
+    });
+
+    // Reset queue
+    document.getElementById('btn-reset-queue').addEventListener('click', function() {
+      if (!confirm('Reset all keyword approve/skip state?')) return;
+      kwState = {};
+      lsSet(LS.KW_STATE, kwState);
+      renderKeywords();
+    });
+
+    // Custom topics form
+    document.getElementById('ct-type').addEventListener('change', function() {
+      var show = this.value === 'review';
+      document.getElementById('ct-affiliate-wrap').style.display = show ? 'block' : 'none';
+    });
+    document.getElementById('btn-add-topic').addEventListener('click', function() {
+      var title = document.getElementById('ct-title').value.trim();
+      if (!title) { alert('Enter a topic title.'); return; }
+      customTopics.push({
+        title: title,
+        category: document.getElementById('ct-category').value,
+        type: document.getElementById('ct-type').value,
+        affiliateLink: document.getElementById('ct-affiliate').value.trim(),
+        compAnalysis: document.getElementById('ct-comp-analysis').checked,
+        imageRequired: document.getElementById('ct-image-required').checked,
+      });
+      lsSet(LS.CUSTOM_TOPICS, customTopics);
+      document.getElementById('ct-title').value = '';
+      document.getElementById('ct-affiliate').value = '';
+      document.getElementById('ct-comp-analysis').checked = false;
+      document.getElementById('ct-image-required').checked = false;
+      renderCustomTopics();
+    });
+
+    // Custom topic delete
+    document.getElementById('ct-list').addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-ct-del]');
+      if (!btn) return;
+      var idx = parseInt(btn.dataset.ctDel);
+      customTopics.splice(idx, 1);
+      lsSet(LS.CUSTOM_TOPICS, customTopics);
+      renderCustomTopics();
+    });
+
+    // Review list click
+    document.getElementById('review-list').addEventListener('click', function(e) {
+      var item = e.target.closest('[data-review-slug]');
+      if (!item) return;
+      selectedReviewSlug = item.dataset.reviewSlug;
+      document.querySelectorAll('.review-list-item').forEach(function(el) {
+        el.classList.toggle('selected', el.dataset.reviewSlug === selectedReviewSlug);
+      });
+      renderReviewPanel(selectedReviewSlug);
+    });
+
+    // Review panel actions (delegated since panel is re-rendered)
+    document.getElementById('review-panel').addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-review-action]');
+      if (!btn) return;
+      var slug = btn.dataset.slug;
+      var action = btn.dataset.reviewAction;
+      if (action === 'changes') {
+        var fb = document.getElementById('r-feedback').value.trim();
+        if (!fb) { alert('Add feedback notes before requesting changes.'); return; }
+      }
+      var is = document.getElementById('r-img-status').value;
+      imageStatus[slug] = is;
+      lsSet(LS.IMAGE_STATUS, imageStatus);
+      reviewState[slug] = {
+        reviewStatus: action,
+        feedback: document.getElementById('r-feedback').value,
+        imageStatus: is,
+      };
+      lsSet(LS.REVIEW, reviewState);
+      document.getElementById('review-confirm').style.display = 'block';
+      setTimeout(function() {
+        var el = document.getElementById('review-confirm');
+        if (el) el.style.display = 'none';
+      }, 3000);
+      renderReview();
+    });
+
+    // Pipeline status update
+    document.getElementById('pipeline-list').addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-pipeline-key]');
+      if (!btn) return;
+      var key = btn.dataset.pipelineKey;
+      var status = btn.dataset.pipelineStatus;
+      pipelineState[key] = { status: status };
+      lsSet(LS.PIPELINE, pipelineState);
+      renderPipeline();
+    });
+
+    // Image status in Images tab
+    document.getElementById('images-needed-list').addEventListener('change', function(e) {
+      var sel = e.target.closest('[data-img-slug]');
+      if (!sel) return;
+      imageStatus[sel.dataset.imgSlug] = sel.value;
+      lsSet(LS.IMAGE_STATUS, imageStatus);
+      renderImages();
+    });
+
+    // Image status + indexing in Published tab
+    document.getElementById('published-tbody').addEventListener('change', function(e) {
+      var imgSel = e.target.closest('[data-pub-img]');
+      if (imgSel) {
+        imageStatus[imgSel.dataset.pubImg] = imgSel.value;
+        lsSet(LS.IMAGE_STATUS, imageStatus);
+        return;
+      }
+      var idxSel = e.target.closest('[data-indexing-slug]');
+      if (idxSel) {
+        indexingState[idxSel.dataset.indexingSlug] = idxSel.value;
+        lsSet(LS.INDEXING, indexingState);
+      }
+    });
+  }
+
+  // ─── Init ─────────────────────────────────────────────────
+  function initDashboard() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    document.getElementById('btn-logout').style.display = 'block';
+    loadState();
+    articles = window.ARTICLES_DATA || [];
+
+    fetch('/js/keyword-queue.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) { kwQueue = data; renderKeywords(); })
+      .catch(function() { kwQueue = { keywords: [], customTopics: [], approved: [], rejected: [] }; renderKeywords(); });
+
+    renderCustomTopics();
+    renderPipeline();
+    renderImages();
+    renderPublished();
+  }
+
+  function init() {
+    bindEvents();
+    if (isAuth()) {
+      initDashboard();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>

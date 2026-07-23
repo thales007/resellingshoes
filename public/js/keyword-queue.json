@@ -1,0 +1,19 @@
+{
+  "keywords": [
+    { "keyword": "shoe reselling business", "volume": 30, "difficulty": 6, "type": "qa", "competitorAnalysis": true, "status": "pending" },
+    { "keyword": "how to clean shoes to resell", "volume": 10, "difficulty": 8, "type": "auto", "competitorAnalysis": false, "status": "pending" },
+    { "keyword": "how to price shoes for resale", "volume": 20, "difficulty": 12, "type": "qa", "competitorAnalysis": true, "status": "pending" },
+    { "keyword": "how to photograph shoes for resale", "volume": 10, "difficulty": 5, "type": "auto", "competitorAnalysis": false, "status": "pending" },
+    { "keyword": "HOKA resell value", "volume": 30, "difficulty": 9, "type": "qa", "competitorAnalysis": true, "status": "pending" },
+    { "keyword": "New Balance resell value", "volume": 20, "difficulty": 11, "type": "qa", "competitorAnalysis": true, "status": "pending" },
+    { "keyword": "how to find shoes to resell", "volume": 30, "difficulty": 14, "type": "qa", "competitorAnalysis": false, "status": "pending" },
+    { "keyword": "shoe reselling side hustle", "volume": 20, "difficulty": 7, "type": "auto", "competitorAnalysis": false, "status": "pending" },
+    { "keyword": "how to ship shoes for resale", "volume": 10, "difficulty": 6, "type": "auto", "competitorAnalysis": false, "status": "pending" },
+    { "keyword": "Frye boots resell value", "volume": 20, "difficulty": 8, "type": "qa", "competitorAnalysis": false, "status": "pending" },
+    { "keyword": "reselling shoes with no money", "volume": 10, "difficulty": 4, "type": "auto", "competitorAnalysis": false, "status": "pending" },
+    { "keyword": "Salomon shoes resell value", "volume": 20, "difficulty": 10, "type": "qa", "competitorAnalysis": false, "status": "pending" }
+  ],
+  "customTopics": [],
+  "approved": [],
+  "rejected": []
+}

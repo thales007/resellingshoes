@@ -6,6 +6,7 @@ description: "Flipping shoes is straightforward once you know the brands, the ma
 blurb: "The complete beginner's breakdown — brands, math, sourcing, listing, and what a real flip actually looks like."
 readTime: "7 min read"
 publishedAt: "2026-07-05"
+updatedAt: "2026-07-23"
 ---
 
 Flipping shoes means buying a pair for less than you can sell it for online — and doing it repeatedly. That's the whole business. You find a pair of New Balance or Merrell at a thrift store for $8, list it on eBay for $55, sell it for $46 net after fees and shipping, and put that money back into the next pair. Do that consistently and it becomes a real side income. This guide covers exactly how to do it, from the first sourcing trip to the first sale.

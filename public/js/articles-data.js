@@ -6,6 +6,16 @@
 
 const ARTICLES_DATA = [
   {
+    slug: "how-to-photograph-shoes-to-sell",
+    title: "How I Photograph Shoes to Sell",
+    category: "SELLING",
+    blurb: "The exact shot sequence I use to photograph shoes for resale — setup, lighting, all 10 angles, and how to get photos done fast so they stop being the bottleneck.",
+    url: "/how-to-photograph-shoes-to-sell",
+    readTime: "9 min read",
+    publishedAt: "2026-07-24",
+    comingSoon: false,
+  },
+  {
     slug: "how-to-flip-shoes",
     title: "How to Flip Shoes for Profit",
     category: "BEGINNER",

@@ -196,11 +196,13 @@ const ICONS: Record<string, string> = {
 
   /* ── WHY LISTEN ──────────────────────────────────── */
   #why { background: var(--cream-dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 72px 32px; }
-  .why-inner { max-width: 680px; margin: 0 auto; }
-  .why-inner .section-title { margin-bottom: 20px; }
+  .why-inner { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
+  .why-photo { width: 148px; height: 148px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--cream); flex-shrink: 0; display: block; }
+  .why-content .section-title { margin-bottom: 14px; }
   .why-copy { font-size: 17px; line-height: 1.7; color: var(--ink-2); margin-bottom: 24px; }
   .why-link { font-size: 15px; font-weight: 700; color: var(--green); }
   .why-link:hover { color: var(--green-hover); }
+  @media (max-width: 600px) { .why-inner { grid-template-columns: 1fr; gap: 28px; } .why-photo { width: 100px; height: 100px; } }
 
   /* ── WANT MORE STRUCTURE ─────────────────────────── */
   #structure { padding: 72px 32px; }
@@ -289,10 +291,13 @@ const ICONS: Record<string, string> = {
 <!-- WHY LISTEN TO ME -->
 <section id="why">
   <div class="why-inner">
-    <div class="section-eyebrow">About</div>
-    <div class="section-title">Why listen to me?</div>
-    <p class="why-copy">I'm Timothy — I have a full-time job, and reselling shoes is something I do on the side. I started because I needed extra income, and thrift-store and yard-sale shoes turned out to be one of the more reliable ways to make it. Everything on this site comes from what I've actually done — no hype sneakers, no guessing, just what's worked.</p>
-    <a href="/about" class="why-link">Read my full story →</a>
+    <img src="/images/timothy.jpg" alt="Timothy Hales" class="why-photo" />
+    <div class="why-content">
+      <div class="section-eyebrow">About</div>
+      <div class="section-title">A bit about me.</div>
+      <p class="why-copy">I'm Timothy — I have a full-time job, and reselling shoes is something I do on the side. I started because I needed extra income, and thrift-store and yard-sale shoes turned out to be one of the more reliable ways to make it. Everything on this site comes from what I've actually done — no hype sneakers, no guessing, just what's worked.</p>
+      <a href="/about" class="why-link">Read my full story →</a>
+    </div>
   </div>
 </section>
 

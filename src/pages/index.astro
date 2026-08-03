@@ -1,35 +1,49 @@
 ---
-import { getCollection } from 'astro:content';
-
-const allArticles = await getCollection('articles');
-const articles = allArticles
-  .filter(a => !a.data.comingSoon)
-  .sort((a, b) => new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime());
-
-const bySlug = Object.fromEntries(articles.map(a => [a.id.replace(/\.md$/, ''), a.data]));
+import { Image } from 'astro:assets';
+import listingPhoto from '../assets/hero/listing-photo.jpg';
+import soldScreenshot from '../assets/hero/sold-screenshot.jpg';
 
 const START_HERE = [
   {
     slug: 'is-reselling-shoes-profitable',
+    eyebrow: 'BEGINNER',
     label: 'Is This Actually Worth It?',
     blurb: 'An honest look at real profit numbers before you get started.',
+    colorClass: 'sc-walnut',
+    icon: 'dollar',
   },
   {
     slug: 'how-to-start-reselling-shoes',
+    eyebrow: 'GETTING STARTED',
     label: 'How to Start Reselling Shoes',
     blurb: 'The exact first steps, from sourcing to your first sale.',
+    colorClass: 'sc-charcoal',
+    icon: 'rocket',
   },
   {
     slug: 'best-shoes-to-resell',
+    eyebrow: 'SOURCING',
     label: 'What Shoes to Look For',
-    blurb: 'The brands and models that actually sell — and the ones that don\'t.',
+    blurb: "The brands and models that actually sell, and the ones that don't.",
+    colorClass: 'sc-green',
+    icon: 'search',
   },
   {
     slug: 'where-to-sell-used-shoes',
+    eyebrow: 'PLATFORM STRATEGY',
     label: 'Where to Sell Them',
     blurb: 'eBay, Poshmark, and Mercari compared, so you pick right the first time.',
+    colorClass: 'sc-light',
+    icon: 'store',
   },
 ];
+
+const ICONS: Record<string, string> = {
+  dollar: `<line x1="12" y1="1" x2="12" y2="23" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" fill="none"/>`,
+  rocket: `<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2l1.5-1.5" fill="none"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" fill="none"/>`,
+  search: `<circle cx="11" cy="11" r="8" fill="none"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke-linecap="round"/>`,
+  store: `<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none"/><polyline points="9 22 9 12 15 12 15 22" fill="none"/>`,
+};
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -90,16 +104,19 @@ const START_HERE = [
   @media (max-width: 600px) { .nav-links a:not(.nav-cta) { display: none; } }
 
   /* ── HERO ────────────────────────────────────────── */
-  .hero { max-width: 780px; margin: 0 auto; padding: 80px 32px 72px; text-align: center; }
+  .hero {
+    max-width: 1100px; margin: 0 auto; padding: 80px 32px 80px;
+    display: grid; grid-template-columns: 1fr 400px; align-items: center; gap: 64px;
+  }
   .hero h1 {
-    font-family: var(--serif); font-size: 52px; line-height: 1.1;
+    font-family: var(--serif); font-size: 48px; line-height: 1.1;
     margin-bottom: 22px; color: var(--ink);
   }
   .hero-sub {
-    font-size: 18px; line-height: 1.65; color: var(--ink-3);
-    max-width: 580px; margin: 0 auto 36px;
+    font-size: 17px; line-height: 1.65; color: var(--ink-3);
+    margin-bottom: 36px;
   }
-  .hero-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
   .btn-primary {
     background: var(--green); color: #fff; padding: 14px 30px;
     border-radius: 9px; font-size: 16px; font-weight: 700; border: none; cursor: pointer;
@@ -107,6 +124,41 @@ const START_HERE = [
   .btn-primary:hover { background: var(--green-hover); }
   .hero-text-link { font-size: 15px; font-weight: 600; color: var(--ink-3); }
   .hero-text-link:hover { color: var(--ink); }
+
+  /* Hero photo composition */
+  /* Image file paths when real photos are ready:
+     Listing photo:    /src/assets/hero/listing-photo.jpg  (290×290)
+     Sold screenshot:  /src/assets/hero/sold-screenshot.jpg (210×150) */
+  .hero-visual {
+    position: relative; height: 340px; flex-shrink: 0;
+  }
+  .hero-listing {
+    position: absolute; top: 20px; left: 0;
+    width: 290px; height: 290px;
+    transform: rotate(-3deg);
+    border-radius: 10px; border: 1.5px solid var(--border);
+    overflow: hidden;
+  }
+  .hero-sold-wrap {
+    position: absolute; bottom: 0; right: 0;
+  }
+  .sold-pill {
+    position: absolute; top: -11px; left: -11px; z-index: 2;
+    background: var(--green); color: var(--cream);
+    font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+    padding: 4px 11px; border-radius: 100px; text-transform: uppercase;
+  }
+  .hero-screenshot {
+    width: 260px; height: 131px;
+    transform: rotate(4deg);
+    border-radius: 10px; border: 1.5px solid var(--border);
+    background: #fff; overflow: hidden;
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 0; padding-bottom: 48px; }
+    .hero-visual { display: none; }
+  }
   @media (max-width: 680px) { .hero h1 { font-size: 36px; } .hero-sub { font-size: 16px; } }
 
   /* ── START HERE ──────────────────────────────────── */
@@ -114,37 +166,33 @@ const START_HERE = [
   .section-inner { max-width: 1100px; margin: 0 auto; }
   .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
   .section-title { font-family: var(--serif); font-size: 34px; line-height: 1.15; margin-bottom: 36px; color: var(--ink); }
-  .start-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  .start-card {
-    display: block; background: #fff; border: 1px solid var(--border); border-radius: 14px;
-    padding: 24px; transition: box-shadow 0.15s, border-color 0.15s;
-  }
-  .start-card:hover { box-shadow: 0 6px 20px -8px rgba(0,0,0,0.12); border-color: #d0cac0; }
-  .start-num { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
-  .start-card h3 { font-family: var(--serif); font-size: 19px; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
-  .start-card p { font-size: 14px; color: var(--ink-3); line-height: 1.55; margin-bottom: 16px; }
-  .start-arrow { font-size: 13px; font-weight: 700; color: var(--green); }
-  @media (max-width: 860px) { .start-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 540px) { .start-grid { grid-template-columns: 1fr; } }
 
-  /* ── FEATURED ARTICLES ───────────────────────────── */
-  #articles { padding: 72px 32px; }
-  .articles-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
-  .articles-header-left .section-title { margin-bottom: 0; }
-  .articles-browse { font-size: 14px; font-weight: 600; color: var(--green); }
-  .articles-browse:hover { color: var(--green-hover); }
-  .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .article-card {
-    display: block; background: #fff; border: 1px solid var(--border); border-radius: 14px;
-    padding: 24px; transition: box-shadow 0.15s, border-color 0.15s;
+  .start-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .start-card {
+    display: flex; flex-direction: column;
+    border-radius: 12px; padding: 28px;
+    transition: opacity 0.15s;
   }
-  .article-card:hover { box-shadow: 0 6px 20px -8px rgba(0,0,0,0.12); border-color: #d0cac0; }
-  .article-cat { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--walnut); margin-bottom: 12px; }
-  .article-card h3 { font-family: var(--serif); font-size: 18px; line-height: 1.25; margin-bottom: 10px; color: var(--ink); }
-  .article-card p { font-size: 14px; color: var(--ink-3); line-height: 1.55; margin-bottom: 14px; }
-  .article-read { font-size: 13px; color: var(--ink-4); }
-  @media (max-width: 860px) { .article-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 540px) { .article-grid { grid-template-columns: 1fr; } }
+  .start-card:hover { opacity: 0.88; }
+
+  /* color variants */
+  .sc-walnut { background: #C4943A; color: #faf8f5; }
+  .sc-charcoal { background: #1A1A1A; color: #faf8f5; }
+  .sc-green { background: #2F8B5C; color: #faf8f5; }
+  .sc-light { background: #faf8f5; color: #1A1A1A; border: 1.5px solid #1A1A1A; }
+
+  .sc-icon {
+    width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px; flex-shrink: 0;
+  }
+  .sc-walnut .sc-icon, .sc-charcoal .sc-icon, .sc-green .sc-icon { border-color: rgba(250,248,245,0.35); }
+  .sc-light .sc-icon { border-color: #1A1A1A; }
+
+  .sc-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; opacity: 0.75; }
+  .start-card h3 { font-family: var(--serif); font-size: 22px; line-height: 1.2; margin-bottom: 10px; }
+  .start-card p { font-size: 14px; line-height: 1.55; opacity: 0.75; margin-bottom: 20px; flex: 1; }
+  .sc-read { font-size: 13px; font-weight: 700; }
 
   /* ── WHY LISTEN ──────────────────────────────────── */
   #why { background: var(--cream-dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 72px 32px; }
@@ -173,7 +221,7 @@ const START_HERE = [
 
   /* ── SHARED ──────────────────────────────────────── */
   @media (max-width: 560px) {
-    #start-here, #articles, #why, #structure { padding-left: 20px; padding-right: 20px; }
+    #start-here, #why, #structure { padding-left: 20px; padding-right: 20px; }
     .hero { padding-left: 20px; padding-right: 20px; }
     nav { padding-left: 20px; padding-right: 20px; }
   }
@@ -196,11 +244,24 @@ const START_HERE = [
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Helping you turn everyday shoes into a dependable income</h1>
-  <p class="hero-sub">I buy everyday shoes — New Balance, HOKA, Brooks, Skechers — from thrift stores and yard sales, then resell them on eBay and Poshmark. This site is everything I've learned doing it, based on what's actually worked.</p>
-  <div class="hero-actions">
-    <a href="#start-here" class="btn-primary">Start Here</a>
-    <a href="/learn" class="hero-text-link">Browse all articles →</a>
+  <div class="hero-text">
+    <h1>Helping you turn everyday shoes into a dependable income</h1>
+    <p class="hero-sub">I buy everyday shoes — New Balance, HOKA, Brooks, Skechers — from thrift stores and yard sales, then resell them on eBay and Poshmark. This site is everything I've learned doing it, based on what's actually worked.</p>
+    <div class="hero-actions">
+      <a href="#start-here" class="btn-primary">Start Here</a>
+      <a href="/learn" class="hero-text-link">Browse all articles →</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-listing">
+      <Image src={listingPhoto} alt="Timberland waterproof boots, product photo" width={290} height={290} style="object-fit: cover; border-radius: 10px;" />
+    </div>
+    <div class="hero-sold-wrap">
+      <div class="sold-pill">SOLD</div>
+      <div class="hero-screenshot">
+        <Image src={soldScreenshot} alt="eBay sold order confirmation, Timberland boots, delivered" width={260} height={131} style="object-fit: cover; border-radius: 10px;" />
+      </div>
+    </div>
   </div>
 </section>
 
@@ -210,43 +271,17 @@ const START_HERE = [
     <div class="section-eyebrow">Start Here</div>
     <div class="section-title">New here? Start with these.</div>
     <div class="start-grid">
-      {START_HERE.map((item, i) => {
-        const data = bySlug[item.slug];
-        return (
-          <a href={`/${item.slug}`} class="start-card">
-            <div class="start-num">0{i + 1}</div>
-            <h3>{item.label}</h3>
-            <p>{item.blurb}</p>
-            <span class="start-arrow">Read →</span>
-          </a>
-        );
-      })}
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED ARTICLES -->
-<section id="articles">
-  <div class="section-inner">
-    <div class="articles-header">
-      <div class="articles-header-left">
-        <div class="section-eyebrow">Articles</div>
-        <div class="section-title">Everything on the site.</div>
-      </div>
-      <a href="/learn" class="articles-browse">Browse all →</a>
-    </div>
-    <div class="article-grid">
-      {articles.map(article => {
-        const slug = article.id.replace(/\.md$/, '');
-        return (
-          <a href={`/${slug}`} class="article-card">
-            <div class="article-cat">{article.data.category}</div>
-            <h3>{article.data.title}</h3>
-            <p>{article.data.blurb}</p>
-            <span class="article-read">{article.data.readTime}</span>
-          </a>
-        );
-      })}
+      {START_HERE.map((item) => (
+        <a href={`/${item.slug}`} class={`start-card ${item.colorClass}`}>
+          <div class="sc-icon">
+            <svg set:html={ICONS[item.icon]} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true" />
+          </div>
+          <div class="sc-eyebrow">{item.eyebrow}</div>
+          <h3>{item.label}</h3>
+          <p>{item.blurb}</p>
+          <span class="sc-read">Read →</span>
+        </a>
+      ))}
     </div>
   </div>
 </section>

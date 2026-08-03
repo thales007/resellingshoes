@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import timothyLake from '../assets/misc/TimothyLake.jpg';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +122,7 @@
   <h1>Helping you earn your first <em>$1,000.</em></h1>
 
   <div class="about-grid">
-    <img src="/images/timothy.jpg" alt="Timothy Hales" class="about-photo">
+    <Image src={timothyLake} alt="Timothy Hales" width={200} height={250} class="about-photo" />
     <div class="about-body">
       <p>I'm Timothy Hales — a shoe reseller, content creator, and founder of ResellingShoes.com. This site exists for one reason: to help part-time resellers earn their first $1,000 flipping everyday shoes.</p>
       <p>Not Jordans. Not limited drops. <strong>Everyday brands</strong> — Merrell, Dansko, New Balance, Brooks, KEEN — the kind of shoes sitting on thrift store shelves every single day, mostly ignored.</p>

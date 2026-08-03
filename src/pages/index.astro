@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import listingPhoto from '../assets/hero/listing-photo.jpg';
 import soldScreenshot from '../assets/hero/sold-screenshot.jpg';
+import timothyPhoto from '../assets/misc/TimothyLake.jpg';
 
 const START_HERE = [
   {
@@ -291,7 +292,7 @@ const ICONS: Record<string, string> = {
 <!-- WHY LISTEN TO ME -->
 <section id="why">
   <div class="why-inner">
-    <img src="/images/timothy.jpg" alt="Timothy Hales" class="why-photo" />
+    <Image src={timothyPhoto} alt="Timothy Hales" width={148} height={148} class="why-photo" style="object-position: center 18%;" />
     <div class="why-content">
       <div class="section-eyebrow">About</div>
       <div class="section-title">A bit about me.</div>

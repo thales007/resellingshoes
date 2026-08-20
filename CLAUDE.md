@@ -28,8 +28,7 @@ GitHub Actions handle downstream automation (`article-publish.yml`, `article-val
 ## Before drafting anything
 
 - Read 2–3 existing articles in `src/content/articles/` for voice and structure consistency.
-- Check `verified-examples.md` for any real sales numbers needed — this is the *only* approved source for real data. Never invent a statistic, dollar figure, or sales example.
-- Check `affiliate-reference.md` for the current status of any product link before including it. **Never publish an article with a fabricated, guessed, or placeholder affiliate link** — if a link isn't confirmed there, stop and ask Timothy for it.
+- Check content-reference/verified-examples.md and content-reference/affiliate-reference.md for real sales numbers and confirmed product links. These are periodically-synced mirrors of the master copies in Claude.ai Project Knowledge — if a needed product or number isn't in them, stop and ask, don't guess or fabricate.
 
 ## Content rules (non-negotiable, every tier)
 

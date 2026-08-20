@@ -6,6 +6,16 @@
 
 const ARTICLES_DATA = [
   {
+    slug: "how-to-clean-shoes-for-resale",
+    title: "How I Clean Shoes for Resale",
+    category: "PROCESS",
+    blurb: "Every product I use and the exact order I use them — from sole scrubbing to interior cleaning to finishing work.",
+    url: "/how-to-clean-shoes-for-resale",
+    readTime: "11 min read",
+    publishedAt: "2026-08-19",
+    comingSoon: false,
+  },
+  {
     slug: "how-to-photograph-shoes-to-sell",
     title: "How I Photograph Shoes to Sell",
     category: "SELLING",

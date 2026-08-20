@@ -111,6 +111,14 @@ const { title, description, slug, category, readTime } = Astro.props;
     }
 
     /* ── Article body base ── */
+    .article-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin: 1.75rem 0 0.5rem;
+    }
     .article-body p { margin-bottom: 1.4rem; }
     .article-body h2 {
       font-family: 'DM Serif Display', serif;
